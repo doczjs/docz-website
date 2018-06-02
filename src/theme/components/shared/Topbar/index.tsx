@@ -38,7 +38,7 @@ const linkStyle = (p: any) => css`
   &:hover {
     color: ${p.theme.colors.main};
     opacity: 1;
-  }:
+  }
 `
 
 const MenuLink = styled(Link)`
@@ -69,7 +69,7 @@ export const Topbar = () => (
           return (
             <Menu>
               {docsWithoutMenu.map(doc => (
-                <MenuLink key={doc.id} to={doc.slug}>
+                <MenuLink key={doc.id} to={doc.route}>
                   {doc.name}
                 </MenuLink>
               ))}
