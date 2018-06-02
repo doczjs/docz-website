@@ -1,5 +1,5 @@
-const path = require('path')
-const { createPlugin } = require('docz-core')
+import * as path from 'path'
+import { createPlugin } from 'docz-core'
 
 const setAlias = () =>
   createPlugin({
@@ -14,7 +14,7 @@ const setAlias = () =>
     },
   })
 
-module.exports = {
+export default {
   theme: 'theme/index',
   plugins: [setAlias()],
 }
