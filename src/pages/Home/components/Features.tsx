@@ -1,0 +1,112 @@
+import * as React from 'react'
+import styled from 'react-emotion'
+import { Link } from 'docz'
+
+import { Container as BaseContainer } from '@components/ui'
+import magicWand from '@images/icons/magic-wand.svg'
+import settings from '@images/icons/settings.svg'
+import plug from '@images/icons/plug.svg'
+import rocket from '@images/icons/rocket.svg'
+import mdx from '@images/icons/mdx.svg'
+import typescript from '@images/icons/typescript.svg'
+
+const Container = styled(BaseContainer)`
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 50px;
+  padding-bottom: 50px;
+`
+
+const FeatureItem = styled('div')`
+  width: 33%;
+  padding: 0 30px;
+  margin: 25px 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+`
+
+const Image = styled('img')`
+  height: 70px;
+  margin-bottom: 20px;
+`
+
+const Title = styled('h3')`
+  padding: 0;
+  margin: 0;
+  font-family: 'Zilla Slab';
+  font-size: 30px;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+`
+
+const Text = styled('p')`
+  padding: 0;
+  margin: 20px 0 0;
+`
+
+export const Features = () => (
+  <Container>
+    <FeatureItem>
+      <Image src={magicWand} />
+      <Title>Zero Config</Title>
+      <Text>
+        Don't worry about need complex configurations setups to build and run
+        your documentation. With docz you can just init your app with a single
+        command. So, if you want to modify by your won tasty you have a lot of
+        options to do that!
+      </Text>
+    </FeatureItem>
+    <FeatureItem>
+      <Image src={rocket} />
+      <Title>Really Blazing Fast</Title>
+      <Text>
+        In now a days be blazing fast is something mandatory for a tool. So, by
+        accomplish that, docz using Webpack 4 with a lot of performance
+        techniques. With a really fast dev server and build, you don't need to
+        worry about other things unless write your docs!
+      </Text>
+    </FeatureItem>
+    <FeatureItem>
+      <Image src={settings} />
+      <Title>Easy to customize</Title>
+      <Text>
+        Create some docs for your library or even create your oww design system
+        is something that required to pass your identity, your style. With docz
+        you can easily use and modify community's{' '}
+        <Link to="/themes">themes</Link> or creating your own theme. Like this
+        website that you're looking!
+      </Text>
+    </FeatureItem>
+    <FeatureItem>
+      <Image src={mdx} />
+      <Title>MSX Based</Title>
+      <Text>
+        MDX is <i>Markdown + JSX</i>. It brought the word of components into
+        markdown. With MDX you can easy import and use your components in a
+        markdown style file. To help you docz has a lot of built-ins components
+        that can improve and accelerate your documentation process.
+      </Text>
+    </FeatureItem>
+    <FeatureItem>
+      <Image src={plug} />
+      <Title>Fully pluggable</Title>
+      <Text>
+        Plugins is one of the best and old ways to make some application
+        functional, flexible and optimized. With plugins you can manipulate a
+        lot of things throught the docz flow and data. You can easy use or
+        create some really cool stuff to help you to build your docs!
+      </Text>
+    </FeatureItem>
+    <FeatureItem>
+      <Image src={typescript} />
+      <Title>Typescript Support</Title>
+      <Text>
+        Docz provide a native typescript support if you want to use your tsx
+        components and all docz packages was built entire around typescript. So
+        we have a fully support for your type if you like to write typescript
+        files. You can see more about your typings in your api section.
+      </Text>
+    </FeatureItem>
+  </Container>
+)
