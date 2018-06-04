@@ -64,6 +64,8 @@ const getKind = ({ kind = 'primary', outline = false }: ButtonProps) =>
 const ButtonStyled = styled<ButtonProps, 'button'>('button')`
   ${getKind};
   ${getScale};
+  display: flex;
+  align-items: center;
   cursor: pointer;
   margin: 3px 5px;
   border: none;

@@ -1,4 +1,5 @@
 import * as React from 'react'
+import Helmet from 'react-helmet'
 import styled from 'react-emotion'
 
 import { Button, Container, Logo } from '@components/ui'
@@ -6,7 +7,6 @@ import pattern from '@images/pattern.png'
 
 const Wrapper = styled('div')`
   width: 100%;
-  height: calc(100vh - 60px);
   background: url(${pattern});
   border-bottom: 1px solid ${p => p.theme.colors.grayLight};
   padding: 50px 0;
@@ -56,6 +56,13 @@ const Buttons = styled('div')`
 
 export const Hero = () => (
   <Wrapper>
+    <Helmet>
+      <script
+        src="https://fast.wistia.com/embed/medias/8d1cq6wec3.jsonp"
+        async
+      />
+      <script src="https://fast.wistia.com/assets/external/E-v1.js" async />
+    </Helmet>
     <Container>
       <Logo height={100} />
       <Subtitle>It has never been so easy to document your things!</Subtitle>

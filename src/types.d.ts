@@ -1,4 +1,6 @@
 declare module 'react-feather'
+declare module 'react-helmet'
+
 declare module '*.svg' {
   const content: any
   export default content
