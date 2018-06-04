@@ -13,8 +13,8 @@ import typescript from '@images/icons/typescript.svg'
 const Container = styled(BaseContainer)`
   display: flex;
   flex-wrap: wrap;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 80px;
+  padding-bottom: 80px;
 `
 
 const FeatureItem = styled('div')`

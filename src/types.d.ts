@@ -1,4 +1,5 @@
-declare module 'react-feather'
+declare module 'remark'
+declare module 'remark-react'
 
 declare module '*.svg' {
   const content: any
