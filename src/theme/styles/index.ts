@@ -1,7 +1,7 @@
 export const styles = {
   h1: {
     fontFamily: 'Zilla Slab',
-    margin: '50px 0',
+    margin: '0 0 50px',
     fontSize: 52,
     fontWeight: 300,
     letterSpacing: '-0.03em',

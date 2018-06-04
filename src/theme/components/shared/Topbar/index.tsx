@@ -58,12 +58,12 @@ export const Topbar = () => (
     <Container>
       <Logo height={30} />
       <Docs>
-        {({ docs }) => {
-          const docsWithoutMenu = docs.filter(doc => !doc.menu)
+        {({ docs: allDocs }) => {
+          const docs = allDocs.filter(doc => !doc.settings.parent)
 
           return (
             <Menu>
-              {docsWithoutMenu.map(doc => (
+              {docs.map(doc => (
                 <MenuLink key={doc.id} to={doc.route}>
                   {doc.name}
                 </MenuLink>
