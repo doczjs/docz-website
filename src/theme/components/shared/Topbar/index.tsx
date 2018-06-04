@@ -3,8 +3,7 @@ import styled, { css } from 'react-emotion'
 import { Docs, Link } from 'docz'
 import { Github } from 'react-feather'
 
-import { Container } from '@components/ui'
-import logo from '@images/logo.svg'
+import { Container, Logo } from '@components/ui'
 
 const Wrapper = styled('div')`
   height: 60px;
@@ -17,10 +16,6 @@ const Wrapper = styled('div')`
     justify-content: space-between;
     height: 100%;
   }
-`
-
-const Logo = styled('img')`
-  height: 30px;
 `
 
 const Menu = styled('div')`
@@ -61,7 +56,7 @@ const IconLink = styled('a')`
 export const Topbar = () => (
   <Wrapper>
     <Container>
-      <Logo src={logo} />
+      <Logo height={30} />
       <Docs>
         {({ docs }) => {
           const docsWithoutMenu = docs.filter(doc => !doc.menu)

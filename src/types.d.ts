@@ -1,3 +1,4 @@
+declare module 'react-feather'
 declare module '*.svg' {
   const content: any
   export default content

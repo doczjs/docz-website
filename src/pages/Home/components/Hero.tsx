@@ -1,8 +1,7 @@
 import * as React from 'react'
 import styled from 'react-emotion'
 
-import { Button, Container } from '@components/ui'
-import logo from '@images/logo.svg'
+import { Button, Container, Logo } from '@components/ui'
 import pattern from '@images/pattern.png'
 
 const Wrapper = styled('div')`
@@ -19,10 +18,6 @@ const Wrapper = styled('div')`
     flex-direction: column;
     height: 100%;
   }
-`
-
-const Logo = styled('img')`
-  height: 100px;
 `
 
 const Subtitle = styled('h2')`
@@ -62,7 +57,7 @@ const Buttons = styled('div')`
 export const Hero = () => (
   <Wrapper>
     <Container>
-      <Logo src={logo} />
+      <Logo height={100} />
       <Subtitle>It has never been so easy to document your things!</Subtitle>
       <VideoWrapper>
         <Video className="wistia_responsive_padding">
