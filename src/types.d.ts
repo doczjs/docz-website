@@ -1,6 +1,3 @@
-declare module 'remark'
-declare module 'remark-react'
-
 declare module '*.svg' {
   const content: any
   export default content

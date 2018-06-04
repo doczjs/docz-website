@@ -1,7 +1,8 @@
 import * as React from 'react'
 import styled from 'react-emotion'
+import { withRouter } from 'react-router'
 
-import { Container } from '@components/ui'
+import { Button, Container } from '@components/ui'
 import pattern from '@images/dark-pattern2.png'
 
 const Wrapper = styled('div')`
@@ -9,6 +10,12 @@ const Wrapper = styled('div')`
   background: url(${pattern});
   color: ${p => p.theme.colors.grayLight};
   text-align: center;
+
+  ${Container.toString()} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `
 
 const Title = styled('h2')`
@@ -22,26 +29,33 @@ const Title = styled('h2')`
 const Text = styled('p')`
   font-size: 20px;
   color: white;
-  margin: 30px 0;
 `
 
 const Image = styled('img')`
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 5px;
+  margin: 15px 0 30px;
 `
 
-export const HowTo = () => (
+export const HowTo = withRouter(({ history }) => (
   <Wrapper>
     <Container>
       <Title>How to</Title>
-      <Text>install on your project:</Text>
+      <Text>install on your project</Text>
       <Image src="https://i.imgur.com/apN5678.png" width={600} />
       <Text>
-        Create some <code>.mdx</code> file anywhere:
+        Create some <code>.mdx</code> file anywhere
       </Text>
       <Image src="https://i.imgur.com/DOsIi1j.png" width={600} />
       <Text>That's it, your document is ready now!</Text>
       <Image src="https://i.imgur.com/6X3L9zv.png" width={600} />
+      <Button
+        scale="big"
+        kind="secondary"
+        onClick={() => history.push('/documentation')}
+      >
+        More details
+      </Button>
     </Container>
   </Wrapper>
-)
+))
