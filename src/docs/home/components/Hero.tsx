@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Helmet from 'react-helmet'
 import styled from 'react-emotion'
+import { withRouter } from 'react-router'
 
 import { Button, Container, Logo } from '@components/ui'
 import pattern from '@images/pattern.png'
@@ -54,7 +55,7 @@ const Buttons = styled('div')`
   display: flex;
 `
 
-export const Hero = () => (
+export const Hero = withRouter(({ history }) => (
   <Wrapper>
     <Helmet>
       <script
@@ -76,9 +77,16 @@ export const Hero = () => (
         </Video>
       </VideoWrapper>
       <Buttons>
-        <Button scale="big">Get started</Button>
-        <Button scale="big">Documentation</Button>
+        <Button
+          scale="big"
+          onClick={() => history.push('/introduction/get-started')}
+        >
+          Get started
+        </Button>
+        <Button scale="big" onClick={() => history.push('/documentation')}>
+          Documentation
+        </Button>
       </Buttons>
     </Container>
   </Wrapper>
-)
+))
