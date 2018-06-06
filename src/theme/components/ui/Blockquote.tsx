@@ -7,4 +7,14 @@ export const Blockquote = styled('blockquote')`
   border-left: 4px solid ${p => p.theme.colors.primary};
   background: ${p => p.theme.colors.grayExtraLight};
   color: ${p => p.theme.colors.grayDark};
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 22px;
+    margin: 0 0 10px 0;
+  }
 `
