@@ -25,6 +25,7 @@
     "@types/react-dom": "^16.0.5",
     "@types/react-router": "^4.0.26",
     "babel-plugin-emotion": "^9.0.1",
+    "favicons-webpack-plugin": "^0.0.9",
     "prettier": "^1.13.0",
     "tslint": "^5.10.0",
     "tslint-config-prettier": "^1.13.0",
