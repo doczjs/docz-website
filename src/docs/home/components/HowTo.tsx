@@ -2,7 +2,7 @@ import * as React from 'react'
 import styled from 'react-emotion'
 import { withRouter } from 'react-router'
 
-import { Button, Container } from '@components/ui'
+import { Button, Container, Pre as BasePre } from '@components/ui'
 import pattern from '@images/dark-pattern2.png'
 
 const Wrapper = styled('div')`
@@ -32,28 +32,41 @@ const Text = styled('p')`
   color: white;
 `
 
-const Image = styled('img')`
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 5px;
-  margin: 15px 0 30px;
+const Pre = styled(BasePre)`
+  margin: 10px 0 20px 0;
+  min-width: 650px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+`
+
+const mdxExample = `---
+name: Hello world
+---
+
+import { MyComponent } from './MyComponent'
+
+# Hello world
+
+I'm a markdown document that can have components!
+
+<MyComponent />
 `
 
 export const HowTo = withRouter(({ history }) => (
   <Wrapper>
     <Container>
       <Title>How to</Title>
-      <Text>Install on your project</Text>
-      <Image src="https://i.imgur.com/apN5678.png" width={600} />
+      <Text>Install Docz as dependency</Text>
+      <Pre className="language-bash">$ yarn add docz --dev</Pre>
       <Text>
-        Create some <code>.mdx</code> file anywhere
+        Create some <code>.mdx</code> file anywhere on your project
       </Text>
-      <Image src="https://i.imgur.com/DOsIi1j.png" width={600} />
-      <Text>That's it, your document is ready now!</Text>
-      <Image src="https://i.imgur.com/6X3L9zv.png" width={600} />
+      <Pre className="language-markdown">{mdxExample}</Pre>
+      <Text>That's it, your docs is ready to fly!</Text>
+      <Pre className="language-bash">$ docz dev</Pre>
       <Button
         scale="big"
         kind="secondary"
-        onClick={() => history.push('/documentation')}
+        onClick={() => history.push('/introduction/getting-started')}
       >
         More details
       </Button>

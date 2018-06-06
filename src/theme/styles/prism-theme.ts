@@ -11,7 +11,6 @@ pre[class*="language-"] {
   color: #ABB2BF;
   background: none;
   font-family: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  border: none;
   border-radius: 5px;
   text-align: left;
   white-space: pre;

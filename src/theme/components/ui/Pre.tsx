@@ -11,7 +11,6 @@ import prism from 'prismjs'
 import styled, { cx } from 'react-emotion'
 
 const PreStyled = styled('pre')`
-  border: 1px solid ${p => p.theme.colors.border};
   ${p => p.theme.styles.pre};
 `
 
