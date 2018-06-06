@@ -29,11 +29,12 @@
     "outDir": "dist",
     "typeRoots": ["node_modules/@types", "src/types"],
     "paths": {
-      "@images/*": ["src/images/*"],
+      "@fonts/*": ["public/fonts/*"],
+      "@images/*": ["public/images/*"],
       "@components/*": ["src/theme/components/*"],
       "@styles/*": ["src/theme/styles/*"]
     }
   },
-  "include": ["src/**/*"],
+  "include": ["public/*", "src/**/*"],
   "exclude": ["node_modules/**"]
 }

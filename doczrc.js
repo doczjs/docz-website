@@ -5,7 +5,8 @@ const setAlias = () =>
   createPlugin({
     modifyBundlerConfig: config => {
       config.resolve.alias = Object.assign({}, config.resolve.alias, {
-        '@images': path.resolve(__dirname, 'src/images'),
+        '@fonts': path.resolve(__dirname, 'public/fonts'),
+        '@images': path.resolve(__dirname, 'public/images'),
         '@components': path.resolve(__dirname, 'src/theme/components'),
         '@styles': path.resolve(__dirname, 'src/theme/styles'),
       })
