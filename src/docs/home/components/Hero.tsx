@@ -26,7 +26,7 @@ const Subtitle = styled('h2')`
 `
 
 const VideoWrapper = styled('div')`
-  width: 720px;
+  width: 830px;
   margin: 50px 0;
 `
 
@@ -36,7 +36,7 @@ const Video = styled('div')`
   position: relative;
   padding-bottom: 56.25%;
 
-  & > div {
+  & .wistia_responsive_wrapper {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -44,10 +44,21 @@ const Video = styled('div')`
     top: 0;
   }
 
-  & > div > div {
+  & .wistia_embed {
     position: relative;
     width: 100%;
     height: 100%;
+  }
+
+  & .wistia_swatch {
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    transition: opacity 200ms;
+    width: 100%;
   }
 `
 
@@ -59,7 +70,7 @@ export const Hero = withRouter(({ history }) => (
   <Wrapper>
     <Helmet>
       <script
-        src="https://fast.wistia.com/embed/medias/8d1cq6wec3.jsonp"
+        src="https://fast.wistia.com/embed/medias/cl69p284xk.jsonp"
         async
       />
       <script src="https://fast.wistia.com/assets/external/E-v1.js" async />
@@ -70,7 +81,7 @@ export const Hero = withRouter(({ history }) => (
       <VideoWrapper>
         <Video className="wistia_responsive_padding">
           <div className="wistia_responsive_wrapper">
-            <div className="wistia_embed wistia_async_8d1cq6wec3 videoFoam=true">
+            <div className="wistia_embed wistia_async_cl69p284xk videoFoam=true">
               &nbsp;
             </div>
           </div>
