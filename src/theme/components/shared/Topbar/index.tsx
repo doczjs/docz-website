@@ -18,6 +18,10 @@ const Wrapper = styled('div')`
   }
 `
 
+const LogoLink = styled(Link)`
+  height: 30px;
+`
+
 const Menu = styled('div')`
   display: flex;
 `
@@ -61,7 +65,9 @@ export const isActive = (route: string) => (match: any, location: any) =>
 export const Topbar = () => (
   <Wrapper>
     <Container>
-      <Logo height={30} />
+      <LogoLink to="/">
+        <Logo height={30} />
+      </LogoLink>
       <Docs>
         {({ docs: allDocs }) => {
           const docs = allDocs.filter(doc => !doc.settings.parent)
@@ -77,7 +83,7 @@ export const Topbar = () => (
                   {doc.name}
                 </MenuLink>
               ))}
-              <IconLink href="#">
+              <IconLink href="https://github.com/doczjs/docz" target="_blank">
                 <Github width={30} />
               </IconLink>
             </Menu>

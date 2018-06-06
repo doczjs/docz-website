@@ -10,13 +10,13 @@ settings:
 
 ## Installation
 
-As we talked about in the previous session, be easy is one of our core principles. So, to getting started with docz is something really easy and quick. First of all, you need to install docz on your project using some package manager (we assume [Yarn](https://yarnpkg.com/) to illustrate here):
+As we talked about in the previous session, be easy is one of our core principles. So, to getting started with docz is something really easy and quick. First of all, you need to install docz on your project using some package manager (we're assuming [Yarn](https://yarnpkg.com/) here):
 
 ```bash
 $ yarn add docz --dev
 ```
 
-After you have docz installed on your project is a good choice put two scripts on `package.json` that will run docz for you, this an **optional step**, mas can be very usefull:
+> **TIP:** After you got docz on your project can be a good choice put two scripts on `package.json` to run docz for you, this an **optional step** but very usefull:
 
 ```json
 {
@@ -24,11 +24,14 @@ After you have docz installed on your project is a good choice put two scripts o
   "scripts": {
     "dev": "docz dev",
     "build": "dovz build"
+  },
+  "devDependencies": {
+    "docz": "latest"
   }
 }
 ```
 
-Now you can run your dev server just running:
+Now you can up your dev server just running:
 
 ```
 $ yarn dev
@@ -36,11 +39,13 @@ $ yarn dev
 
 ## Using
 
-With your dev server up you can start to write your documents. Docz use [MDX](https://github.com/mdx-js/specification) as standard format because of your flexibility that turns possible you write JSX inside markdown files. Really cool, no?
+With your dev server up, you can start to write your documents.
 
-One thing that is very important here is that you don't need to follow any model of files architecture, you can just create your `.mdx` files anywhere on your project.
+Docz use [MDX](https://github.com/mdx-js/specification) as standard format because of your flexibility that turns possible you write JSX inside markdown files. Really cool, no?
 
-> To improve build time, we limit read files inside the `src/` folder. You can change this setting by changing [project configuration](/documentation/project-configuration).
+One thing that is very important here is that you **don't need to follow any strict files architecture**, you can just create your `.mdx` files **anywhere on your project**.
+
+> **NOTE:** To improve build time, we limit read and parse files inside the `src/` folder. You can change this setting by changing [project configuration](/documentation/project-configuration).
 
 So, let's create our first `.mdx` file:
 
@@ -54,10 +59,12 @@ name: Hello world
 Hello, I'm a mdx file!
 ```
 
-The only required thing here that you need to docz can read and parse your file is the attribute `name` that you set in the top using an yaml style configuration.
+> The only required thing here that you need to docz can parse your file is the attribute `name` that you set in the top using yaml configuration style.
 
 With server up and your first `.mdx` file created, if you open your browser and visit `localhost:3000` you should see something like that:
 
 ![](https://cdn-std.dprcdn.net/files/acc_649651/ZOUyUu)
 
-Now that you have how start with docs, see [next session](/introduction/writing-mdx) we'll talk little bit more about MSX and how you can create better documents. Let's go?
+Easy, right?
+
+Now that you know how start with docz, see [next session](/introduction/writing-mdx) where we'll talk a little bit more about MSX and how you can create better documents!
