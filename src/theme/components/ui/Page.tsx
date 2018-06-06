@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { SFC } from 'react'
+import { Fragment, SFC } from 'react'
 import { PageProps, Docs, Link as BaseLink } from 'docz'
 import styled from 'react-emotion'
 
@@ -8,10 +8,12 @@ import { Container } from './Container'
 const SidebarWrapper = styled('div')`
   display: flex;
   flex-direction: column;
-  width: 220px;
-  margin-right: 50px;
-  font-size: 18px;
-  border-right: 3px solid ${p => p.theme.colors.grayLight};
+  width: 250px;
+  min-width: 250px;
+  min-height: 100%;
+  padding: 50px 40px 50px 0;
+  margin-right: 60px;
+  border-right: 1px solid ${p => p.theme.colors.grayLight};
 `
 
 const Link = styled(BaseLink)`
@@ -24,7 +26,7 @@ const Link = styled(BaseLink)`
 
   &.active,
   &:hover {
-    color: ${p => p.theme.colors.purple};
+    color: ${p => p.theme.colors.ocean};
   }
 `
 
@@ -51,15 +53,23 @@ const Sidebar: SFC<SidebarProps> = ({ parent }) => {
   )
 }
 
-const Wrapper = styled('div')`
+interface WrapperProps {
+  padding: boolean
+}
+
+const Wrapper = styled<WrapperProps, 'div'>('div')`
   flex: 1;
-  height: 100%;
   overflow-y: auto;
 
   ${Container.toString()} {
     display: flex;
-    padding: 50px 0;
+    min-height: 100%;
+    padding: ${p => (p.padding ? 50 : 0)}px 0;
   }
+`
+
+const Document = styled('div')`
+  padding: 40px 0;
 `
 
 export const Page: SFC<PageProps> = ({ children, doc, ...props }) => {
@@ -67,13 +77,19 @@ export const Page: SFC<PageProps> = ({ children, doc, ...props }) => {
   const showSidebar = Boolean(parent || sidebar)
 
   return (
-    <Wrapper>
+    <Wrapper padding={!showSidebar}>
       {fullpage ? (
         children
       ) : (
         <Container>
-          {showSidebar && <Sidebar parent={parent || doc.name} />}
-          {children}
+          {showSidebar ? (
+            <Fragment>
+              <Sidebar parent={parent || doc.name} />
+              <Document>{children}</Document>
+            </Fragment>
+          ) : (
+            children
+          )}
         </Container>
       )}
     </Wrapper>

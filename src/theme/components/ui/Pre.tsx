@@ -1,4 +1,7 @@
+import '@styles/prism-theme'
+
 import 'prismjs'
+import 'prismjs/components/prism-json.min'
 import 'prismjs/components/prism-jsx.min'
 import 'prismjs/components/prism-bash.min'
 import 'prismjs/components/prism-markdown.min'

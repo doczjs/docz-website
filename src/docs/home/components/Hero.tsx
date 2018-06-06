@@ -90,9 +90,9 @@ export const Hero = withRouter(({ history }) => (
       <Buttons>
         <Button
           scale="big"
-          onClick={() => history.push('/introduction/get-started')}
+          onClick={() => history.push('/introduction/getting-started')}
         >
-          Get started
+          Getting started
         </Button>
         <Button scale="big" onClick={() => history.push('/documentation')}>
           Documentation

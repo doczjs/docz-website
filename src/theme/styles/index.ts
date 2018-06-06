@@ -1,15 +1,17 @@
 export const styles = {
   h1: {
+    margin: '0 0 30px',
     fontFamily: 'Zilla Slab',
-    margin: '0 0 50px',
     fontSize: 52,
-    fontWeight: 300,
+    fontWeight: 600,
     letterSpacing: '-0.03em',
   },
   h2: {
-    margin: '50px 0 20px',
-    fontSize: 32,
+    margin: '30px 0 20px',
+    fontFamily: 'Zilla Slab',
+    fontSize: 36,
     fontWeight: 400,
+    letterSpacing: '-0.03em',
   },
   h3: {
     margin: '30px 0 20px',
@@ -33,6 +35,7 @@ export const styles = {
     margin: '10px 0 10px 20px',
   },
   pre: {
-    fontSize: 16,
+    margin: '40px 0',
+    fontSize: 18,
   },
 }

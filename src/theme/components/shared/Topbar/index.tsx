@@ -27,6 +27,7 @@ const linkStyle = (p: any) => css`
   opacity: 0.5;
   transition: opacity 0.2s;
   font-size: 15px;
+  font-weight: 400;
 
   &.active,
   &:visited,
@@ -53,6 +54,10 @@ const IconLink = styled('a')`
   }
 `
 
+export const isActive = (route: string) => (match: any, location: any) =>
+  (match && match.url === location.pathname) ||
+  (location.pathname.startsWith(route) && route !== '/')
+
 export const Topbar = () => (
   <Wrapper>
     <Container>
@@ -64,7 +69,11 @@ export const Topbar = () => (
           return (
             <Menu>
               {docs.map(doc => (
-                <MenuLink key={doc.id} to={doc.route}>
+                <MenuLink
+                  key={doc.id}
+                  to={doc.route}
+                  isActive={isActive(doc.route)}
+                >
                   {doc.name}
                 </MenuLink>
               ))}

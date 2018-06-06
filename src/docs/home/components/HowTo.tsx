@@ -15,6 +15,7 @@ const Wrapper = styled('div')`
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0;
   }
 `
 
@@ -41,7 +42,7 @@ export const HowTo = withRouter(({ history }) => (
   <Wrapper>
     <Container>
       <Title>How to</Title>
-      <Text>install on your project</Text>
+      <Text>Install on your project</Text>
       <Image src="https://i.imgur.com/apN5678.png" width={600} />
       <Text>
         Create some <code>.mdx</code> file anywhere

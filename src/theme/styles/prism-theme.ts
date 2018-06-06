@@ -1,162 +1,177 @@
-export const prismTheme = `
+import { injectGlobal } from 'emotion'
+
+export const prismTheme = injectGlobal`
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #ABB2BF;
+  background: none;
+  font-family: Inconsolata, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  border: none;
+  border-radius: 5px;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+  text-shadow: none;
+  background: #383e49;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+  text-shadow: none;
+  background: #9aa2b1;
+}
+
+@media print {
   code[class*="language-"],
   pre[class*="language-"] {
-    direction: ltr;
-    text-align: left;
-    white-space: pre;
-    word-spacing: normal;
-    word-break: normal;
-    -moz-tab-size: 4;
-    -o-tab-size: 4;
-    tab-size: 4;
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
-    -ms-hyphens: none;
-    hyphens: none;
-    background: #f5f7ff;
-    border-radius: 5px;
-    color: #5e6687;
-  }
-
-  pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-  code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
     text-shadow: none;
-    background: #dfe2f1;
   }
+}
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1em;
+  overflow: auto;
+}
 
-  pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-  code[class*="language-"]::selection, code[class*="language-"] ::selection {
-    text-shadow: none;
-    background: #dfe2f1;
-  }
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: #282c34;
+}
 
-  /* Code blocks */
-  pre[class*="language-"] {
-    padding: 2rem;
-    margin: 0;
-    overflow: auto;
-  }
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+}
 
-  /* Inline code */
-  :not(pre) > code[class*="language-"] {
-    padding: .1rem;
-  }
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #5C6370;
+}
 
-  .token.comment,
-  .token.prolog,
-  .token.doctype,
-  .token.cdata {
-    color: #898ea4;
-  }
+.token.punctuation {
+  color: #abb2bf;
+}
 
-  .token.punctuation {
-    color: #5e6687;
-  }
+.token.selector,
+.token.tag {
+  color: #e06c75;
+}
 
-  .token.namespace {
-    opacity: .7;
-  }
+.token.property,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.attr-name,
+.token.deleted {
+  color: #d19a66;
+}
 
-  .token.operator,
-  .token.boolean,
-  .token.number {
-    color: #c76b29;
-  }
+.token.string,
+.token.char,
+.token.attr-value,
+.token.builtin,
+.token.inserted {
+  color: #98c379;
+}
 
-  .token.property {
-    color: #c08b30;
-  }
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #56b6c2;
+}
 
-  .token.tag {
-    color: #3d8fd1;
-  }
+.token.atrule,
+.token.keyword {
+  color: #c678dd;
+}
 
-  .token.string {
-    color: #22a2c9;
-  }
+.token.function {
+  color: #61afef;
+}
 
-  .token.selector {
-    color: #6679cc;
-  }
+.token.regex,
+.token.important,
+.token.variable {
+  color: #c678dd;
+}
 
-  .token.attr-name {
-    color: #c76b29;
-  }
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
 
-  .token.entity,
-  .token.url,
-  .language-css .token.string,
-  .style .token.string {
-    color: #22a2c9;
-  }
+.token.italic {
+  font-style: italic;
+}
 
-  .token.attr-value,
-  .token.keyword,
-  .token.control,
-  .token.directive,
-  .token.unit {
-    color: #ac9739;
-  }
+.token.entity {
+  cursor: help;
+}
 
-  .token.statement,
-  .token.regex,
-  .token.atrule {
-    color: #22a2c9;
-  }
+pre.line-numbers {
+	position: relative;
+	padding-left: 3.8em;
+	counter-reset: linenumber;
+}
 
-  .token.placeholder,
-  .token.variable {
-    color: #3d8fd1;
-  }
+pre.line-numbers > code {
+	position: relative;
+}
 
-  .token.deleted {
-    text-decoration: line-through;
-  }
+.line-numbers .line-numbers-rows {
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	font-size: 100%;
+	left: -3.8em;
+	width: 3em; /* works for line-numbers below 1000 lines */
+	letter-spacing: -1px;
+	border-right: 0;
 
-  .token.inserted {
-    border-bottom: 1px dotted #202746;
-    text-decoration: none;
-  }
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 
-  .token.italic {
-    font-style: italic;
-  }
+}
 
-  .token.important,
-  .token.bold {
-    font-weight: bold;
-  }
+.line-numbers-rows > span {
+	pointer-events: none;
+	display: block;
+	counter-increment: linenumber;
+}
 
-  .token.important {
-    color: #c94922;
-  }
-
-  .token.entity {
-    cursor: help;
-  }
-
-  pre > code.highlight {
-    outline: 0.4em solid #c94922;
-    outline-offset: .4rem;
-  }
-
-  /* overrides color-values for the Line Numbers plugin
-  * http://prismjs.com/plugins/line-numbers/
-  */
-  .line-numbers .line-numbers-rows {
-    border-right-color: #dfe2f1;
-  }
-
-  .line-numbers-rows > span:before {
-    color: #979db4;
-  }
-
-  /* overrides color-values for the Line Highlight plugin
-  * http://prismjs.com/plugins/line-highlight/
-  */
-  .line-highlight {
-    background: rgba(107, 115, 148, 0.2);
-    background: -webkit-linear-gradient(left, rgba(107, 115, 148, 0.2) 70%, rgba(107, 115, 148, 0));
-    background: linear-gradient(to right, rgba(107, 115, 148, 0.2) 70%, rgba(107, 115, 148, 0));
-  }
+.line-numbers-rows > span:before {
+	content: counter(linenumber);
+	color: #5C6370;
+	display: block;
+	padding-right: 0.8em;
+	text-align: right;
+}
 `
