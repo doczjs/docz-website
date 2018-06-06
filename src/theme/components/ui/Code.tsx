@@ -5,7 +5,7 @@ export const Code = styled('code')`
   padding: 3px 5px;
   border-radius: 3px;
   border: 1px solid ${p => p.theme.colors.gray};
-  background: #eff2f7;
+  background: ${p => p.theme.colors.grayExtraLight};
   font-size: 16px;
   color: ${p => p.theme.colors.orange};
 `

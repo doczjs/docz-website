@@ -8,8 +8,8 @@ import { Container } from './Container'
 const SidebarWrapper = styled('div')`
   display: flex;
   flex-direction: column;
-  width: 250px;
-  min-width: 250px;
+  width: 270px;
+  min-width: 270px;
   min-height: 100%;
   padding: 50px 40px 50px 0;
   margin-right: 60px;
