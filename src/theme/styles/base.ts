@@ -1,6 +1,9 @@
 import { css, injectGlobal } from 'emotion'
 
 import * as colors from './colors'
+import faktSoftNormal from '@fonts/FaktSoftPro-Normal.woff2'
+import faktSoftMedium from '@fonts/FaktSoftPro-Medium.woff2'
+import faktSoftBlond from '@fonts/FaktSoftPro-Blond.woff2'
 
 const selection = (color: string) => css`
   background: ${color};
@@ -9,76 +12,98 @@ const selection = (color: string) => css`
 
 // tslint:disable
 injectGlobal`
-    @import url('https://fonts.googleapis.com/css?family=Inconsolata');
-    @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700');
-    @import url('https://fonts.googleapis.com/css?family=Zilla+Slab:300,400,700');
+  @import url('https://fonts.googleapis.com/css?family=Inconsolata');
+  @import url('https://fonts.googleapis.com/css?family=Zilla+Slab:300,400,600');
 
-    *, *:before, *:after {
-      box-sizing: border-box;
-    }
+  @font-face {
+    font-family: 'FaktSoft';
+    font-weight: 700;
+    font-style: normal;
+    src: url(${faktSoftMedium}) format('woff2');
+  }
 
-    ::-moz-selection {
-      ${selection(colors.link)}
-    }
+  @font-face {
+    font-family: 'FaktSoft';
+    font-weight: 400;
+    font-style: normal;
+    src: url(${faktSoftNormal}) format('woff2');
+  }
 
-    ::selection {
-      ${selection(colors.link)}
-    }
+  @font-face {
+    font-family: 'FaktSoft';
+    font-weight: 300;
+    font-style: normal;
+    src: url(${faktSoftBlond}) format('woff2');
+  }
 
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Source Sans Pro', Helvetica, sans-serif;
-      font-size: 16px;
-      line-height: 1.5;
-      background: white;
-      overflow: hidden;
-    }
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
 
-    body {
-      color: transparent;
-    }
+  ::-moz-selection {
+    ${selection(colors.link)}
+  }
 
-    body > *, #root {
-      color: ${colors.text};
-    }
+  ::selection {
+    ${selection(colors.link)}
+  }
 
-    html, body, #root {
-      height: 100vh;
-      min-height: 100vh;
-    }
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'FaktSoft', Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.62;
+    letter-spacing: -0.005em;
+    background: white;
+    overflow: hidden;
+  }
 
-    a, a:visited, a:active {
-      text-decoration: none;
-      color: ${colors.link};
-    }
+  body {
+    color: transparent;
+  }
 
-    a:hover {
-      color: ${colors.link};
-    }
+  body > *, #root {
+    color: ${colors.text};
+  }
 
-    input:-webkit-autofill,
-    input:-webkit-autofill:hover,
-    input:-webkit-autofill:focus,
-    input:-webkit-autofill:active {
-      transition: color 9999s ease-out, background-color 9999s ease-out;
-      transition-delay: 9999s;
-    }
+  html, body, #root {
+    height: 100vh;
+    min-height: 100vh;
+  }
 
-    input:required,
-    input:invalid {
-      box-shadow: none;
-    }
+  a, a:visited, a:active {
+    text-decoration: none;
+    color: ${colors.link};
+  }
 
-    button:focus {
-      outline: none !important;
-    }
+  a:hover {
+    color: ${colors.link};
+  }
 
-    select {
-      color: ${colors.text};
-    }
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill:active {
+    transition: color 9999s ease-out, background-color 9999s ease-out;
+    transition-delay: 9999s;
+  }
 
-    pre, code {
-      font-family: 'Inconsolate', monospace;
-    }
-  `
+  input:required,
+  input:invalid {
+    box-shadow: none;
+  }
+
+  button:focus {
+    outline: none !important;
+  }
+
+  select {
+    color: ${colors.text};
+  }
+
+  pre, code {
+    font-family: 'Inconsolate', monospace;
+  }
+`

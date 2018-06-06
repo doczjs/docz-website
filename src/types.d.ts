@@ -1,6 +1,11 @@
 declare module 'react-feather'
 declare module 'react-helmet'
 
+declare module '*.woff2' {
+  const content: any
+  export default content
+}
+
 declare module '*.svg' {
   const content: any
   export default content
