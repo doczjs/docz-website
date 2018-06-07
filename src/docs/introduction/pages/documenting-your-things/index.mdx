@@ -6,3 +6,76 @@ settings:
 ---
 
 # Documenting your Things
+
+With all capabilities of MDX in mind, we know that you can do a lot of things using this syntax and this is what we want to do, explore all power of components and readablity of markdown to improve and facilitate your documentation flow.
+
+## Built-ins components
+
+Docz has some built-ins components that help you to document your things. By using the power of components and making some AST parsing algorithms to source data for that components, we can do a lot of things, like render on the fly your components, create tables with contents, custom getters by traversing your file, etc. The sky is limit here!
+
+The first one that has is very usefull is `<Playground>` component. With it you can render your component inside a playground and see code used together in a single view:
+
+```markdown
+---
+name: Button
+---
+
+import { Playground } from 'docz'
+import Button from './Button'
+
+# Button
+
+## Basic usage
+
+<Playground>
+  <Button>Click me</Button>
+  <Button kind="secondary">Click me</Button>
+</Playground>
+```
+
+And keep working with your stormbreaker button component, now you'll see:
+
+![](https://cdn-std.dprcdn.net/files/acc_649651/64QaXd)
+
+How you can see above, `<Playground>` rendered your component in a blank state and right above the code used to render your component. This can be very usefull to test and develop your components in a good environment while you document it then.
+
+Your can see more about the component in the [Components API](/documentation/components-api) section!
+
+## Properties from Components
+
+Maybe the most important thing when you write a component is which properties it have. This is usefull to know what it can do and how you can modify it behavior or style. But, keep a good properties documentation of your component can be boring, because you need to write the props specification and maintain the original props definition. And we know that keep two things syncs in that way is something boring!
+
+Docz has a nice component to solve your problem: the `<PropsTable>` is a simple component that automatically get the props definition of your component and transform in a table with the values. Simple like that and works nice with Flow and Typescript.
+
+To make it works, just import `<PropsTable>` from Docz and use it like that:
+
+```markdown
+---
+name: Button
+---
+
+import { Playground, PropsTable } from 'docz'
+import Button from './'
+
+# Button
+
+<PropsTable of={Button} />
+
+## Basic usage
+
+<Playground>
+  <Button>Click me</Button>
+  <Button kind="secondary">Click me</Button>
+</Playground>
+```
+
+And voia'la, you have a table of properties
+
+![](https://cdn-std.dprcdn.net/files/acc_649651/AmFJ2k)
+
+> <h3>Important</h3>
+> To get right with `<PropsTable>` you need to export your component as a `default` export, this is a very bad limitation of React Docgen, but is something necessary right now!
+
+## Just the beginning
+
+How we told you before, the sky is the limit here. With MDX we have a lot of power and we can do a lot of things. We think that this is just the beginning, combining ast parsing with the components construction is possible to arise a lot of out the box ideas and Docz is the better place to do that!
