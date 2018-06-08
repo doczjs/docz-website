@@ -31,4 +31,5 @@ export default {
   description: 'It has never been so easy to document your things',
   theme: 'theme/index',
   plugins: [modifyWebpackConfig()],
+  propsParser: false,
 }
