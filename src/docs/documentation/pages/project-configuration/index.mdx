@@ -7,3 +7,153 @@ settings:
 ---
 
 # Project Configuration
+
+The project configuration is used when you need to define some specific customizations on your project. Like use plugins, chose themes, set project title and other things.
+
+To customize your project configuration just create `doczrc.js` following this reference.
+
+> <h3>Tips and tricks</h3>
+> You can create a `doczrc.json` file too if you want, but we recommend that you use a `js` file because just with javascript you can set plugins in your configuration, since plugins are functions!
+
+## Basic config
+
+### source
+
+- Type: `string`
+- Default: `src/`
+
+Define the source folder that docz will find and parse your `.mdx` files. Every file out of this folder will not be found.
+
+### dest
+
+- Type: `string`
+- Default: `.docz/dist`
+
+Specify the output directory for `docz build`
+
+### files
+
+- Type: `string`
+- Default: `**/*.mdx`
+
+Glob pattern used to find your files. By default docz find all files inside the source folder that has a `.mdx` extension. You can be more specific you want and change this glob to find other rules.
+
+> If you want to change this glob is important that you maintain the `.mdx` extension in the glob
+
+### base
+
+- Type: `string`
+- Default: `/`
+
+The base URL the site will be deployed at. You will need to set this if you plan to deploy your site under a sub path, for example GitHub pages. If you plan to deploy your site to https://foo.github.io/bar/, then base should be set to `/bar/`.
+
+> It should always start and end with a slash.
+
+The base is automatically prepended to all the URLs that start with `/` in other options, so you only need to specify it once.
+
+### title
+
+- Type: `string`
+- Default: `MyDoc`
+
+Title for the site. This will be the prefix for all page titles, and displayed in the sidebar in the default theme.
+
+### description
+
+- Type: `string`
+- Default: `My awesome app using Docz`
+
+Description for the site. This will be rendered as a `<meta>` tag in the page HTML.
+
+### typescript
+
+- Type: `boolean`
+- Default: `false`
+
+This options is used if you need import Typescript components inside your `.mdx` files.
+
+> <h3>Important</h3>
+> If you want to import a component inside a `.mdx` file, you need to pass the `.tsx` extensions in the import declaration like that: `import { Foo } from './Foo.tsx'`
+
+### propsParser
+
+- Type: `boolean`
+- Default: `true`
+
+To be abble to use the `<ProsTable />` component and parse properties of your components, we need to run a lot of process that have some costs to your build process. If you need to disable this process to improve your build process, you can just this property to `false`.
+
+### debug
+
+- Type: `boolean`
+- Default: `process.env.DEBUG || false`
+
+Use this setting to debug your application and remove all progress bar from bundler.
+
+### protocol
+
+- Type: `string`
+- Default: `process.env.HTTPS === 'true' ? 'https' : 'http'`
+
+Specify the protocol of your dev server.
+
+### host
+
+- Type: `string`
+- Default: `process.env.HOST || '0.0.0.0'`
+
+Specify the host to use for the dev server.
+
+### port
+
+- Type: `string`
+- Default: `process.env.PORT || 3000`
+
+Specify the port to use for the dev server.
+
+## Theming
+
+### theme
+
+- Type: `string`
+- Default `docz-theme-default`
+
+Use this property to specify the theme for your site. You can pass the name of your theme if is a package like `docz-theme-default` and the docz will attempt to load the theme component at `node_modules/docz-default-theme`, or if you want to use some file inside you project, you can just pass the location relative to the `src/` folder. If your theme component is inside the `src/theme/index.js` folder, just pass `/theme` in this option.
+
+### themeConfig
+
+- Type: `Object`
+- Default: `{}`
+
+This is the config that your theme will use to customize it. By default each theme has your own `themeConfig` that you can modify, so this object may vary according to each theme.
+
+You can see the theme config of default theme [here](https://github.com/pedronauck/docz/blob/master/packages/docz-theme-default/src/config.ts)
+
+## Build pipeline
+
+### plugins
+
+- Type: `Array`
+- Default: `[]`
+
+Specify an array of plugins that you want to use.
+
+### mdPlugins
+
+- Type: `Array`
+- Default: `[]`
+
+Array of [remark plugins](https://github.com/remarkjs/remark/blob/master/doc/plugins.md) to manipulate the MDXAST
+
+### hastPlugins
+
+- Type: `Array`
+- Default: `[]`
+
+Array of [rehype plugins](https://github.com/rehypejs/rehype/blob/master/doc/plugins.md) to manipulate the MDXHAST
+
+### modifyBundlerConfig
+
+- Type: `(config: BundlerConfig, dev: boolean) => BundlerConfig`
+- Default: `undefined`
+
+This function can modify the default configuration of your bundler.
