@@ -1,6 +1,7 @@
 ---
 name: Documenting your Things
 route: /introduction/documenting-your-things
+order: 1
 settings:
   parent: Introduction
 ---
@@ -13,7 +14,9 @@ With all capabilities of MDX in mind, we know that you can do a lot of things us
 
 Docz has some built-ins components that help you to document your things. By using the power of components and making some AST parsing algorithms to source data for that components, we can do a lot of things, like render on the fly your components, create tables with contents, custom getters by traversing your file, etc. The sky is limit here!
 
-The first one that has is very usefull is `<Playground>` component. With it you can render your component inside a playground and see code used together in a single view:
+### Components Playground
+
+The first one that has is very usefull is `<Playground>` component. With it you can render your component inside a playground and see the code used together in a single view:
 
 ```markdown
 ---
@@ -33,17 +36,15 @@ import Button from './Button'
 </Playground>
 ```
 
-And keep working with your stormbreaker button component, now you'll see:
+Keep working with your stormbreaker button component, now you'll see:
 
 ![](https://cdn-std.dprcdn.net/files/acc_649651/64QaXd)
 
-How you can see above, `<Playground>` rendered your component in a blank state and right above the code used to render your component. This can be very usefull to test and develop your components in a good environment while you document it then.
+How you can see above, `<Playground>` rendered your component in a blank state and right above the code used to render your component. This can be very usefull to test and develop your components in a good environment while you document it.
 
-Your can see more about the component in the [Components API](/documentation/components-api) section!
+### Table of Properties
 
-## Properties from Components
-
-Maybe the most important thing when you write a component is which properties it have. This is usefull to know what it can do and how you can modify it behavior or style. But, keep a good properties documentation of your component can be boring, because you need to write the props specification and maintain the original props definition. And we know that keep two things syncs in that way is something boring!
+Maybe the most important thing when you write a component is which properties it has. This is usefull to know what it can do and how you can modify it behavior or style. But, keep a good properties documentation of your component can be boring, because you need to write the props specification and maintain the original props definition. And we know that keep these two things syncing can be something boring!
 
 Docz has a nice component to solve your problem: the `<PropsTable>` is a simple component that automatically get the props definition of your component and transform in a table with the values. Simple like that and works nice with Flow and Typescript.
 
@@ -75,6 +76,8 @@ And voia'la, you have a table of properties
 
 > <h3>Important</h3>
 > To get right with `<PropsTable>` you need to export your component as a `default` export, this is a very bad limitation of React Docgen, but is something necessary right now!
+
+You can see more about our built-ins components on [Components API](/documentation/components-api).
 
 ## Just the beginning
 
