@@ -14,7 +14,7 @@ export const styles = {
     letterSpacing: '-0.03em',
   },
   h3: {
-    margin: '30px 0 20px',
+    margin: '30px 0 15px',
     fontSize: 24,
     fontWeight: 400,
   },
