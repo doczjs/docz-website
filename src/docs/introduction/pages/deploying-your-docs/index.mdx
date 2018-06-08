@@ -1,0 +1,49 @@
+---
+name: Deploying your docs
+route: /introduction/deploying-your-docs
+settings:
+  parent: Introduction
+---
+
+# Building your site
+
+Now that you have a lot of knowledge about write your docs and you're a really baddass, let's go to talk how you can build and deploy your documentation.
+
+Like all the other things seen so far, build and deploy our documentation is very easy. The first thing that you need to do is build using the script created at your `package.json`:
+
+```bash
+$ yarn build
+```
+
+If everything that you did is right, this command will generate all static files for you in `.docz/dist` folder and you see something like that on your terminal:
+
+![](https://cdn-std.dprcdn.net/files/acc_649651/qIFhkT)
+
+If you want, you can change the build destination folder by changing the `dist` prop or your project configuration:
+
+```js
+// doczrc.js
+export default {
+  dist: '/my-dist-folder',
+}
+```
+
+## Deploying
+
+With your static files in hand you can deploy your documentation wherever you want, is a simple process like host a static site.
+
+So, if you don't understand nothing about deploys, we recommend a lot that you use the service we're using to host this docs that you're reading, called [Netlify](http://netlify.com/). Netlify is a really fantastic and very easy tool that you can deploy your application in a automatic way by running the deploy on every push from a branch in seconds.
+
+First, after login or create a new account on Netlify, just create a _New site from git_:
+
+![](https://cdn-std.dprcdn.net/files/acc_649651/YTCDFn)
+
+Connect your Git service and pick the repository of your documentation
+
+![](https://cdn-std.dprcdn.net/files/acc_649651/cc2g4u)
+
+After pick your repository, just fill the settings like bellow, by passing your build command and the destination folder:
+
+![](https://cdn-std.dprcdn.net/files/acc_649651/3uvA9J)
+
+That's it, now you have your documentation hosted in a domain with a very nice and quick deploy process configured.
