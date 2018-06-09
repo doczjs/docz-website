@@ -15,6 +15,10 @@ export const Blockquote = styled('blockquote')`
   h5,
   h6 {
     font-size: 22px;
-    margin: 0 0 10px 0;
+    margin: 15px 0;
+  }
+
+  p {
+    margin: 5px 0 10px;
   }
 `
