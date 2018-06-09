@@ -18,6 +18,7 @@ const Theme = () => (
           <DocPreview
             components={{
               page: components.Page,
+              loading: components.Loading,
               h1: components.H1,
               h2: components.H2,
               h3: components.H3,

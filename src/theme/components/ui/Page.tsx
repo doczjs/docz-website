@@ -69,6 +69,7 @@ const Wrapper = styled<WrapperProps, 'div'>('div')`
 `
 
 const Document = styled('div')`
+  width: 100%;
   padding: 40px 0;
 `
 
