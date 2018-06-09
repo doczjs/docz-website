@@ -5,6 +5,7 @@ import 'prismjs/components/prism-json.min'
 import 'prismjs/components/prism-jsx.min'
 import 'prismjs/components/prism-bash.min'
 import 'prismjs/components/prism-markdown.min'
+import 'prismjs/components/prism-typescript.min'
 
 import React, { PureComponent } from 'react'
 import prism from 'prismjs'

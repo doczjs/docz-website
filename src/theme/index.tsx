@@ -25,6 +25,7 @@ const Theme = () => (
               h4: components.H4,
               h5: components.H5,
               h6: components.H6,
+              hr: components.Hr,
               img: components.Image,
               ul: components.List,
               pre: components.Pre,
