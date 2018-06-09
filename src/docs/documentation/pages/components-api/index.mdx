@@ -68,7 +68,7 @@ interface RenderProps {
 }
 
 interface DocsProps {
-  children(props: RenderProps): React.ReactNode
+  children: (props: RenderProps) => React.ReactNode
 }
 
 export const Docs: React.SFC<DocPreviewProps>
@@ -134,6 +134,8 @@ interface DocPreviewProps = {
 export const DocPreview: React.SFC<DocPreviewProps>
 ```
 
+---
+
 ## `<Link>`
 
 Use this component to create links inside your theme.
@@ -166,6 +168,8 @@ import { NavLinkProps } from 'react-router-dom'
 
 export const Link: React.SFC<NavLinkProps>
 ```
+
+---
 
 ## `<Playground>`
 
@@ -209,6 +213,8 @@ interface PlaygroundProps {
   children: React.ReactNode | () => React.ReactNode
 }
 ```
+
+---
 
 ## `<PropsTable>`
 
@@ -274,4 +280,40 @@ interface ThemeConfigProps {
 }
 
 export const ThemeConfig: React.SFC<ThemeConfigProps>
+```
+
+---
+
+## `theme()`
+
+If you want to create your custom theme you need to use `theme()` function, that is a High Order Component that receive as the first parameter a `config` property and return a function that receive your theme component as parameter:
+
+```js
+import React from 'react'
+import { theme, DocPreview } from 'docz'
+
+const Theme = () => (
+  <div>
+    <MyCoolestSidebar />
+    <DocPreview />
+  </div>
+)
+
+const themeConfig = {
+  /* ... */
+}
+
+export default theme(themeConfig)(Theme)
+```
+
+### Type Definitions
+
+```ts
+import { ComponentType, ReactNode } from 'react'
+
+interface ThemeConfig {
+  [key: string]: any
+}
+
+function theme(config: ThemeConfig): (Component: ComponentType) => ReactNode
 ```

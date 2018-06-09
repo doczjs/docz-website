@@ -42,6 +42,20 @@ And, if you really have a `Button` component to import, you'll see something lik
 >
 > It's important to tell that by some mvp reasons, until now docz just works with React components. But stay calm, we working to bring Preact, Vue and some others libraries to inside!
 
+## Using theme components
+
+If you want to pass default theme components to some component that you import on your mdx file, you can do that just by passind the prop on the fly, like that:
+
+```markdown
+---
+name: Hello World
+---
+
+import { MyComponent } from './MyComponent'
+
+<MyComponent components={components} />
+```
+
 Although MDX is very powerfull, it's very simple too, there's nothing more to know to work with MDX, is just that. With this in mind we open a hole new world of possibilities using markdown and components together and Docz can possible to turn this experience even so better for you to write your docs.
 
 So, now both we know how MDX works and what it can do, see how Docz can help you to [documenting your things](/introduction/documenting-your-things) by using our helper components!
