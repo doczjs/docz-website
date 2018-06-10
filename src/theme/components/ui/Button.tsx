@@ -32,6 +32,10 @@ const kind = (outline: boolean) => (bg: string, color: string) => {
       box-shadow: inset 0 0 0 1000px ${boxShadowColor};
       color: ${color};
     }
+
+    &:visited {
+      color: ${color};
+    }
   `
 }
 
@@ -61,7 +65,7 @@ const getScale = ({ scale = 'normal' }: ButtonProps) => scales[scale]
 const getKind = ({ kind = 'primary', outline = false }: ButtonProps) =>
   kinds(outline)[kind]
 
-const ButtonStyled = styled<ButtonProps, 'button'>('button')`
+export const ButtonStyled = styled<ButtonProps, 'button'>('button')`
   ${getKind};
   ${getScale};
   display: flex;
@@ -70,6 +74,7 @@ const ButtonStyled = styled<ButtonProps, 'button'>('button')`
   margin: 3px 5px;
   border: none;
   border-radius: 3px;
+  text-align: center;
 `
 
 export const Button: SFC<ButtonProps> = ({ children, ...props }) => (
