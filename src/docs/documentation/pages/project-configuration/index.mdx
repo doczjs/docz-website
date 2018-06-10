@@ -119,7 +119,18 @@ Specify the port to use for the dev server.
 - Type: `string`
 - Default `docz-theme-default`
 
-Use this property to specify the theme for your site. You can pass the name of your theme if is a package like `docz-theme-default` and the docz will attempt to load the theme component at `node_modules/docz-default-theme`, or if you want to use some file inside you project, you can just pass the location relative to the `src/` folder. If your theme component is inside the `src/theme/index.js` folder, just pass `/theme` in this option.
+Use this property to specify the theme for your site. You can pass the name of your theme if is a package like `docz-theme-default` and the docz will attempt to load the theme component at `node_modules/docz-default-theme`, or if you want to use some file inside you project, you can just pass the filepath relative to the root path of your project.
+
+```js
+// doczrc.js
+export default {
+  theme: '/src/my/theme/folder',
+}
+```
+
+> ### Important
+>
+> You need to pass a filepath inside the source folder of your project. If the file of your theme is outside it will not be compiled by the bundler!
 
 ### themeConfig
 
