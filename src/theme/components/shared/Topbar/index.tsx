@@ -83,7 +83,10 @@ export const Topbar = () => (
                   {doc.name}
                 </MenuLink>
               ))}
-              <IconLink href="https://github.com/doczjs/docz" target="_blank">
+              <IconLink
+                href="https://github.com/pedronauck/docz"
+                target="_blank"
+              >
                 <Github width={30} />
               </IconLink>
             </Menu>
