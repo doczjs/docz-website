@@ -19,7 +19,8 @@
     "react-images": "^0.5.17",
     "react-powerplug": "^1.0.0-alpha.7",
     "react-router": "^4.2.0",
-    "react-spinners": "^0.3.2"
+    "react-spinners": "^0.3.2",
+    "react-stickynode": "^2.0.1"
   },
   "devDependencies": {
     "@types/prismjs": "^1.9.0",
@@ -27,9 +28,9 @@
     "@types/react-dom": "^16.0.5",
     "@types/react-router": "^4.0.26",
     "@types/react-router-dom": "^4.2.7",
-    "docz": "^0.2.0-beta.0",
-    "docz-core": "^0.2.0-beta.0",
     "babel-plugin-emotion": "^9.0.1",
+    "docz": "^0.2.0-beta.2",
+    "docz-core": "^0.2.0-beta.2",
     "favicons-webpack-plugin": "^0.0.9",
     "prettier": "^1.13.0",
     "tslint": "^5.10.0",

@@ -1,57 +1,10 @@
 import * as React from 'react'
 import { Fragment, SFC } from 'react'
-import { PageProps, Docs, Link as BaseLink } from 'docz'
+import { PageProps } from 'docz'
 import styled from 'react-emotion'
 
 import { Container } from './Container'
-
-const SidebarWrapper = styled('div')`
-  display: flex;
-  flex-direction: column;
-  width: 270px;
-  min-width: 270px;
-  min-height: 100%;
-  padding: 50px 40px 50px 0;
-  margin-right: 60px;
-  border-right: 1px solid ${p => p.theme.colors.grayLight};
-`
-
-const Link = styled(BaseLink)`
-  padding: 5px 0;
-
-  &,
-  &:visited {
-    color: ${p => p.theme.colors.grayDark};
-  }
-
-  &.active,
-  &:hover {
-    color: ${p => p.theme.colors.ocean};
-  }
-`
-
-interface SidebarProps {
-  parent: string
-}
-
-const Sidebar: SFC<SidebarProps> = ({ parent }) => {
-  return (
-    <Docs>
-      {({ docs: allDocs }) => {
-        const docs = allDocs.filter(doc => doc.parent === parent)
-        return (
-          <SidebarWrapper>
-            {docs.map(doc => (
-              <Link key={doc.id} to={doc.route}>
-                {doc.name}
-              </Link>
-            ))}
-          </SidebarWrapper>
-        )
-      }}
-    </Docs>
-  )
-}
+import { Sidebar } from '@components/shared'
 
 interface WrapperProps {
   padding: boolean
@@ -85,7 +38,7 @@ export const Page: SFC<PageProps> = ({ children, doc, ...props }) => {
         <Container>
           {showSidebar ? (
             <Fragment>
-              <Sidebar parent={parent || doc.name} />
+              <Sidebar parent={parent || doc.name} active={props.match.url} />
               <Document>{children}</Document>
             </Fragment>
           ) : (

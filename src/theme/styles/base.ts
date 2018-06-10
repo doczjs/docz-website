@@ -48,6 +48,10 @@ injectGlobal`
     ${selection(colors.link)}
   }
 
+  .icon-link {
+    display: none;
+  }
+
   body {
     margin: 0;
     padding: 0;

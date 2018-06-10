@@ -1883,6 +1883,10 @@ class-utils@^0.3.5:
     isobject "^3.0.0"
     static-extend "^0.1.1"
 
+classnames@^2.0.0:
+  version "2.2.6"
+  resolved "https://registry.npmjs.org/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
+
 clean-css@4.1.x:
   version "4.1.11"
   resolved "https://registry.npmjs.org/clean-css/-/clean-css-4.1.11.tgz#2ecdf145aba38f54740f26cefd0ff3e03e125d6a"
@@ -2310,7 +2314,7 @@ decamelize-keys@^1.0.0:
     decamelize "^1.1.0"
     map-obj "^1.0.0"
 
-decamelize@^1.1.0, decamelize@^1.1.1:
+decamelize@^1.0.0, decamelize@^1.1.0, decamelize@^1.1.1:
   version "1.2.0"
   resolved "https://registry.npmjs.org/decamelize/-/decamelize-1.2.0.tgz#f6534d15148269b20352e7bee26f501f9a191290"
 
@@ -2441,9 +2445,9 @@ doctrine@^2.0.0:
   dependencies:
     esutils "^2.0.2"
 
-docz-core@^0.2.0-beta.0:
-  version "0.2.0-beta.0"
-  resolved "https://registry.npmjs.org/docz-core/-/docz-core-0.2.0-beta.0.tgz#9467d9f5d878efff57f64aa1dfbf865d6e9b9dcc"
+docz-core@^0.2.0-beta.2:
+  version "0.2.0-beta.2"
+  resolved "https://registry.npmjs.org/docz-core/-/docz-core-0.2.0-beta.2.tgz#d8197e9a7f63e08398023024a5561b6c5b45b980"
   dependencies:
     "@babel/core" "7.0.0-beta.49"
     "@babel/preset-typescript" "^7.0.0-beta.49"
@@ -2470,6 +2474,7 @@ docz-core@^0.2.0-beta.0:
     happypack "^5.0.0"
     hast-util-to-string "^1.0.1"
     html-webpack-plugin "^3.2.0"
+    humanize-string "^1.0.2"
     koa-connect "^2.0.1"
     koa-mount "^3.0.0"
     koa-static "^4.0.3"
@@ -2479,9 +2484,12 @@ docz-core@^0.2.0-beta.0:
     react-dev-utils "^5.0.1"
     react-docgen-typescript-loader "^2.1.0"
     react-hot-loader "4.3.0"
+    rehype-autolink-headings "^2.0.2"
+    rehype-slug "^2.0.1"
     remark-frontmatter "^1.2.0"
     remark-parse "^5.0.0"
     remark-parse-yaml "^0.0.1"
+    remark-slug "^5.0.0"
     resolve "^1.7.1"
     signale "^1.1.0"
     to-vfile "^4.0.0"
@@ -2501,11 +2509,11 @@ docz-core@^0.2.0-beta.0:
     ws "^5.2.0"
     yargs "^11.0.0"
 
-docz-theme-default@^0.2.0-beta.0:
-  version "0.2.0-beta.0"
-  resolved "https://registry.npmjs.org/docz-theme-default/-/docz-theme-default-0.2.0-beta.0.tgz#67056c700dc99dcd2c0f5a7d13ed7704dea7abd3"
+docz-theme-default@^0.2.0-beta.2:
+  version "0.2.0-beta.2"
+  resolved "https://registry.npmjs.org/docz-theme-default/-/docz-theme-default-0.2.0-beta.2.tgz#39db85430c5201e434375fb098bb82babc9827ed"
   dependencies:
-    docz "^0.2.0-beta.0"
+    docz "^0.2.0-beta.2"
     emotion "^9.2.1"
     emotion-theming "^9.2.1"
     fast-deep-equal "^2.0.1"
@@ -2519,14 +2527,14 @@ docz-theme-default@^0.2.0-beta.0:
     react-powerplug "^1.0.0-alpha.7"
     react-spinners "^0.3.2"
 
-docz@^0.2.0-beta.0:
-  version "0.2.0-beta.0"
-  resolved "https://registry.npmjs.org/docz/-/docz-0.2.0-beta.0.tgz#62b4361ac913c9cdeb2e66d20cc660c3aed09e13"
+docz@^0.2.0-beta.2:
+  version "0.2.0-beta.2"
+  resolved "https://registry.npmjs.org/docz/-/docz-0.2.0-beta.2.tgz#0da65310ce41f686088bc005fdfce0061b84c21a"
   dependencies:
     "@sindresorhus/slugify" "^0.3.0"
     deepmerge "^2.1.1"
-    docz-core "^0.2.0-beta.0"
-    docz-theme-default "^0.2.0-beta.0"
+    docz-core "^0.2.0-beta.2"
+    docz-theme-default "^0.2.0-beta.2"
     invariant "^2.2.4"
     loadable-components "^2.2.2"
     pascalcase "^0.1.1"
@@ -2647,6 +2655,10 @@ elliptic@^6.0.0:
     inherits "^2.0.1"
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.0"
+
+"emoji-regex@>=6.0.0 <=6.1.1":
+  version "6.1.1"
+  resolved "https://registry.npmjs.org/emoji-regex/-/emoji-regex-6.1.1.tgz#c6cd0ec1b0642e2a3c67a1137efc5e796da4f88e"
 
 emojis-list@^2.0.0:
   version "2.1.0"
@@ -2837,6 +2849,10 @@ etag@~1.8.1:
   version "1.8.1"
   resolved "https://registry.npmjs.org/etag/-/etag-1.8.1.tgz#41ae2eeb65efa62268aebfea83ac7d79299b0887"
 
+eventemitter3@^3.0.0:
+  version "3.1.0"
+  resolved "https://registry.npmjs.org/eventemitter3/-/eventemitter3-3.1.0.tgz#090b4d6cdbd645ed10bf750d4b5407942d7ba163"
+
 events@^1.0.0:
   version "1.1.1"
   resolved "https://registry.npmjs.org/events/-/events-1.1.1.tgz#9ebdb7635ad099c70dcc4c2a1f5004288e8bd924"
@@ -2964,7 +2980,7 @@ extend-shallow@^3.0.0, extend-shallow@^3.0.2:
     assign-symbols "^1.0.0"
     is-extendable "^1.0.1"
 
-extend@^3.0.0, extend@~3.0.1:
+extend@^3.0.0, extend@^3.0.1, extend@~3.0.1:
   version "3.0.1"
   resolved "https://registry.npmjs.org/extend/-/extend-3.0.1.tgz#a755ea7bc1adfcc5a31ce7e762dbaadc5e636444"
 
@@ -3082,7 +3098,7 @@ faye-websocket@~0.11.0:
   dependencies:
     websocket-driver ">=0.5.1"
 
-fbjs@^0.8.1, fbjs@^0.8.16:
+fbjs@^0.8.1, fbjs@^0.8.16, fbjs@^0.8.4:
   version "0.8.16"
   resolved "https://registry.npmjs.org/fbjs/-/fbjs-0.8.16.tgz#5e67432f550dc41b572bf55847b8aca64e5337db"
   dependencies:
@@ -3344,6 +3360,12 @@ getpass@^0.1.1:
   dependencies:
     assert-plus "^1.0.0"
 
+github-slugger@^1.0.0, github-slugger@^1.1.1:
+  version "1.2.0"
+  resolved "https://registry.npmjs.org/github-slugger/-/github-slugger-1.2.0.tgz#8ada3286fd046d8951c3c952a8d7854cfd90fd9a"
+  dependencies:
+    emoji-regex ">=6.0.0 <=6.1.1"
+
 glob-base@^0.3.0:
   version "0.3.0"
   resolved "https://registry.npmjs.org/glob-base/-/glob-base-0.3.0.tgz#dbb164f6221b1c0b1ccf82aea328b497df0ea3c4"
@@ -3542,7 +3564,15 @@ hasha@^2.2.0:
     is-stream "^1.0.1"
     pinkie-promise "^2.0.0"
 
-hast-util-to-string@^1.0.1:
+hast-util-has-property@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/hast-util-has-property/-/hast-util-has-property-1.0.1.tgz#ac08c40bcbf27b80a85aaae91e4f6250a53e802f"
+
+hast-util-is-element@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/hast-util-is-element/-/hast-util-is-element-1.0.0.tgz#3f7216978b2ae14d98749878782675f33be3ce00"
+
+hast-util-to-string@^1.0.0, hast-util-to-string@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/hast-util-to-string/-/hast-util-to-string-1.0.1.tgz#b28055cdca012d3c8fd048757c8483d0de0d002c"
 
@@ -3665,6 +3695,12 @@ http-signature@~1.2.0:
 https-browserify@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/https-browserify/-/https-browserify-1.0.0.tgz#ec06c10e0a34c0f2faf199f7fd7fc78fffd03c73"
+
+humanize-string@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/humanize-string/-/humanize-string-1.0.2.tgz#fef0a8bc9b1b857ca4013bbfaea75071736988f6"
+  dependencies:
+    decamelize "^1.0.0"
 
 hyphenate-style-name@^1.0.1:
   version "1.0.2"
@@ -4581,6 +4617,10 @@ mdast-util-to-hast@^3.0.0:
     unist-util-position "^3.0.0"
     unist-util-visit "^1.1.0"
     xtend "^4.0.1"
+
+mdast-util-to-string@^1.0.0:
+  version "1.0.4"
+  resolved "https://registry.npmjs.org/mdast-util-to-string/-/mdast-util-to-string-1.0.4.tgz#5c455c878c9355f0c1e7f3e8b719cf583691acfb"
 
 mdurl@^1.0.1:
   version "1.0.1"
@@ -5575,6 +5615,12 @@ quick-lru@^1.0.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/quick-lru/-/quick-lru-1.1.0.tgz#4360b17c61136ad38078397ff11416e186dcfbb8"
 
+raf@^3.0.0:
+  version "3.4.0"
+  resolved "https://registry.npmjs.org/raf/-/raf-3.4.0.tgz#a28876881b4bc2ca9117d4138163ddb80f781575"
+  dependencies:
+    performance-now "^2.1.0"
+
 randomatic@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/randomatic/-/randomatic-3.0.0.tgz#d35490030eb4f7578de292ce6dfb04a91a128923"
@@ -5617,6 +5663,13 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     ini "~1.3.0"
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
+
+"react-addons-shallow-compare@^0.14.2 || ^15.0.0":
+  version "15.6.2"
+  resolved "https://registry.npmjs.org/react-addons-shallow-compare/-/react-addons-shallow-compare-15.6.2.tgz#198a00b91fc37623db64a28fd17b596ba362702f"
+  dependencies:
+    fbjs "^0.8.4"
+    object-assign "^4.1.0"
 
 react-adopt@^0.6.0:
   version "0.6.0"
@@ -5812,6 +5865,15 @@ react-spinners@^0.3.2:
     react-emotion "^9.1.1"
     recompose "0.26.0"
 
+react-stickynode@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.npmjs.org/react-stickynode/-/react-stickynode-2.0.1.tgz#88e565e07ba4c82d1df7f15e9d738711c38f56e7"
+  dependencies:
+    classnames "^2.0.0"
+    prop-types "^15.6.0"
+    react-addons-shallow-compare "^0.14.2 || ^15.0.0"
+    subscribe-ui-event "^2.0.0"
+
 react-transition-group@^1.1.3:
   version "1.2.1"
   resolved "https://registry.npmjs.org/react-transition-group/-/react-transition-group-1.2.1.tgz#e11f72b257f921b213229a774df46612346c7ca6"
@@ -5992,6 +6054,25 @@ regjsparser@^0.3.0:
   dependencies:
     jsesc "~0.5.0"
 
+rehype-autolink-headings@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.npmjs.org/rehype-autolink-headings/-/rehype-autolink-headings-2.0.2.tgz#48c7161b1a1020e942c758eb6b2c55cb1bc504d0"
+  dependencies:
+    extend "^3.0.1"
+    hast-util-has-property "^1.0.0"
+    hast-util-is-element "^1.0.0"
+    unist-util-visit "^1.1.0"
+
+rehype-slug@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.npmjs.org/rehype-slug/-/rehype-slug-2.0.1.tgz#8c1809ea1eb513b231f721cae17bd1ce9329e373"
+  dependencies:
+    github-slugger "^1.1.1"
+    hast-util-has-property "^1.0.0"
+    hast-util-is-element "^1.0.0"
+    hast-util-to-string "^1.0.0"
+    unist-util-visit "^1.1.0"
+
 relateurl@0.2.x:
   version "0.2.7"
   resolved "https://registry.npmjs.org/relateurl/-/relateurl-0.2.7.tgz#54dbf377e51440aca90a4cd274600d3ff2d888a9"
@@ -6044,6 +6125,14 @@ remark-parse@^5.0.0:
     unist-util-remove-position "^1.0.0"
     vfile-location "^2.0.0"
     xtend "^4.0.1"
+
+remark-slug@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.npmjs.org/remark-slug/-/remark-slug-5.0.0.tgz#9de71fcdc2bfae33ebb4a41eb83035288a829980"
+  dependencies:
+    github-slugger "^1.0.0"
+    mdast-util-to-string "^1.0.0"
+    unist-util-visit "^1.0.0"
 
 remark-squeeze-paragraphs@^3.0.1:
   version "3.0.1"
@@ -6665,6 +6754,14 @@ stylis-rule-sheet@^0.0.10:
 stylis@^3.5.0:
   version "3.5.0"
   resolved "https://registry.npmjs.org/stylis/-/stylis-3.5.0.tgz#016fa239663d77f868fef5b67cf201c4b7c701e1"
+
+subscribe-ui-event@^2.0.0:
+  version "2.0.2"
+  resolved "https://registry.npmjs.org/subscribe-ui-event/-/subscribe-ui-event-2.0.2.tgz#3837ebdcc18be55efbf1cdd5b433127c9276878c"
+  dependencies:
+    eventemitter3 "^3.0.0"
+    lodash "^4.17.10"
+    raf "^3.0.0"
 
 supports-color@^2.0.0:
   version "2.0.0"
