@@ -1,3 +1,5 @@
+import * as colors from './colors'
+
 export const styles = {
   h1: {
     margin: '0 0 30px',
@@ -19,8 +21,9 @@ export const styles = {
     fontWeight: 400,
   },
   h4: {
+    margin: '20px 0 15px 0',
     fontSize: 20,
-    fontWeight: 400,
+    fontWeight: 600,
   },
   h5: {
     fontSize: 18,
@@ -35,7 +38,7 @@ export const styles = {
     margin: '10px 0 10px 20px',
   },
   pre: {
-    margin: '40px 0',
+    margin: '25px 0 40px 0',
     fontSize: 18,
   },
 }

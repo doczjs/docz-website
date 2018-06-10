@@ -6,3 +6,217 @@ settings:
 ---
 
 # Creating Plugins
+
+Plugins give you hability to modify docz processes, default configurations and create hooks for build and render. This is a perfect place to integrate docz with other tools.
+
+To create a plugin you just need to use the `createPlugin` method from [docz-core](https://github.com/pedronauck/docz/tree/master/packages/docz-core)
+
+```js
+import { createPlugin } from 'docz-core'
+
+const myPlugin = () => createPlugin({
+  setConfig: (config) => /* ... */,
+  modifyBundlerConfig: (config, dev) => /* ... */,
+  modifyBabelRc: (babelrc) => /* ... */,
+  onServerListening: (server) => /* ... */,
+  onPreBuild: () => /* ... */,
+  onPostBuild: () => /* ... */,
+  onPreRender: () => /* ... */,
+  onPostRender: () => /* ... */,
+})
+```
+
+## Plugins API
+
+### `setConfig`
+
+Use to modify or create custom project configurations.
+
+#### Params
+
+- **config:** Default configuration object
+
+#### Return
+
+- `Config`
+
+#### Type definitions
+
+```ts
+interface ThemeConfig {
+  [key: string]: any
+}
+
+interface Config {
+  base: string
+  src: string
+  files: string
+  dest: string
+  debug: boolean
+  typescript: boolean
+  propsParser: boolean
+  protocol: string
+  host: string
+  port: number
+  websocketPort: number
+  websocketHost: string
+  title: string
+  description: string
+  theme: string
+  plugins?: Plugin[]
+  mdPlugins: any[]
+  hastPlugins: any[]
+  themeConfig: ThemeConfig
+  modifyBundlerConfig<C>(config: C, dev: boolean): C
+}
+
+type SetConfig = (config: Config) => Config
+```
+
+---
+
+### `modifyBundlerConfig`
+
+Use to modify bundler configuration
+
+#### Params
+
+- **babelrc:** Default bundler configuration object
+- **dev:** A boolean showing if is a `dev` environment
+
+### Return
+
+- `BundlerConfig`
+
+### Types definitions
+
+```ts
+type ModifyBundlerConfig<C = any> = (config: C, dev: boolean) => C
+```
+
+---
+
+### `modifyBabelRc`
+
+Use to modify babelrc configuration
+
+#### Params
+
+- **babelrc:** Default babelrc configuration object
+
+### Return
+
+- `BabelRc`
+
+### Types definitions
+
+```ts
+interface BabelRC {
+  presets?: any[]
+  plugins?: any[]
+  cacheDirectory?: boolean
+  babelrc?: boolean
+}
+
+type ModifyBabelRC = (babelrc: BabelRC) => BabelRC
+```
+
+---
+
+### `onServerListening`
+
+Method dispatch on bundler server start to listening
+
+#### Params
+
+- **server:** Http server object
+
+#### Return
+
+- `void`
+
+#### Type definitions
+
+```ts
+type OnServerListening = <S>(server: S) => void
+```
+
+---
+
+### `onPreBuild`
+
+Method dispatched before your build
+
+#### Params
+
+- `none`
+
+#### Return
+
+- `void`
+
+#### Type definitions
+
+```ts
+type OnPreBuild = () => void
+```
+
+---
+
+### `onPostBuild`
+
+Method dispatched after your build
+
+#### Params
+
+- `none`
+
+#### Return
+
+- `void`
+
+#### Type definitions
+
+```ts
+type onPostBuild = () => void
+```
+
+---
+
+### `onPreRender`
+
+Method dispatched before your documents rendered
+
+#### Params
+
+- `none`
+
+#### Return
+
+- `void`
+
+#### Type definitions
+
+```ts
+type onPreRender = () => void
+```
+
+---
+
+### `onPostRender`
+
+Method dispatched after your documents rendered
+
+#### Params
+
+- `none`
+
+#### Return
+
+- `void`
+
+#### Type definitions
+
+```ts
+type onPostRender = () => void
+```
