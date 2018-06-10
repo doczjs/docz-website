@@ -2441,9 +2441,9 @@ doctrine@^2.0.0:
   dependencies:
     esutils "^2.0.2"
 
-docz-core@^0.1.2-beta.5:
-  version "0.1.2-beta.5"
-  resolved "https://registry.npmjs.org/docz-core/-/docz-core-0.1.2-beta.5.tgz#c6adb6e2141e530e860776af8c90ba6a4342fad7"
+docz-core@^0.2.0-beta.0:
+  version "0.2.0-beta.0"
+  resolved "https://registry.npmjs.org/docz-core/-/docz-core-0.2.0-beta.0.tgz#9467d9f5d878efff57f64aa1dfbf865d6e9b9dcc"
   dependencies:
     "@babel/core" "7.0.0-beta.49"
     "@babel/preset-typescript" "^7.0.0-beta.49"
@@ -2476,10 +2476,8 @@ docz-core@^0.1.2-beta.5:
     load-cfg "^0.1.2-beta.1"
     lodash.get "^4.4.2"
     prettier "^1.13.5"
-    react "^16.4.0"
     react-dev-utils "^5.0.1"
     react-docgen-typescript-loader "^2.1.0"
-    react-dom "^16.4.0"
     react-hot-loader "4.3.0"
     remark-frontmatter "^1.2.0"
     remark-parse "^5.0.0"
@@ -2503,11 +2501,11 @@ docz-core@^0.1.2-beta.5:
     ws "^5.2.0"
     yargs "^11.0.0"
 
-docz-theme-default@^0.1.2-beta.6:
-  version "0.1.2-beta.6"
-  resolved "https://registry.npmjs.org/docz-theme-default/-/docz-theme-default-0.1.2-beta.6.tgz#8a55cfd925c82e41622747c3ecf38db7cde49146"
+docz-theme-default@^0.2.0-beta.0:
+  version "0.2.0-beta.0"
+  resolved "https://registry.npmjs.org/docz-theme-default/-/docz-theme-default-0.2.0-beta.0.tgz#67056c700dc99dcd2c0f5a7d13ed7704dea7abd3"
   dependencies:
-    docz "^0.1.2-beta.6"
+    docz "^0.2.0-beta.0"
     emotion "^9.2.1"
     emotion-theming "^9.2.1"
     fast-deep-equal "^2.0.1"
@@ -2521,14 +2519,14 @@ docz-theme-default@^0.1.2-beta.6:
     react-powerplug "^1.0.0-alpha.7"
     react-spinners "^0.3.2"
 
-docz@^0.1.2-beta.6:
-  version "0.1.2-beta.6"
-  resolved "https://registry.npmjs.org/docz/-/docz-0.1.2-beta.6.tgz#0b55461d1287622c0c9e2a44e80cd958edc4d992"
+docz@^0.2.0-beta.0:
+  version "0.2.0-beta.0"
+  resolved "https://registry.npmjs.org/docz/-/docz-0.2.0-beta.0.tgz#62b4361ac913c9cdeb2e66d20cc660c3aed09e13"
   dependencies:
     "@sindresorhus/slugify" "^0.3.0"
     deepmerge "^2.1.1"
-    docz-core "^0.1.2-beta.5"
-    docz-theme-default "^0.1.2-beta.6"
+    docz-core "^0.2.0-beta.0"
+    docz-theme-default "^0.2.0-beta.0"
     invariant "^2.2.4"
     loadable-components "^2.2.2"
     pascalcase "^0.1.1"

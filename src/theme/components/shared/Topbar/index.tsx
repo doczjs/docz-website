@@ -70,7 +70,7 @@ export const Topbar = () => (
       </LogoLink>
       <Docs>
         {({ docs: allDocs }) => {
-          const docs = allDocs.filter(doc => !doc.settings.parent)
+          const docs = allDocs.filter(doc => !doc.parent)
 
           return (
             <Menu>

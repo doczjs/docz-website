@@ -2,8 +2,7 @@
 name: Project Configuration
 route: /documentation/project-configuration
 order: 3
-settings:
-  parent: Documentation
+parent: Documentation
 ---
 
 # Project Configuration
@@ -140,6 +139,60 @@ export default {
 This is the config that your theme will use to customize it. By default each theme has your own `themeConfig` that you can modify, so this object may vary according to each theme.
 
 You can see the theme config of default theme [here](https://github.com/pedronauck/docz/blob/master/packages/docz-theme-default/src/config.ts)
+
+### wrapper
+
+- Type: `string`
+- Default: `undefined`
+
+Component filepath relative from root to use as wrapper on your application. This can be usefull to set providers like the store provider of redux
+
+```js
+// doczrc.js
+export default {
+  wrapper: 'src/wrapper',
+}
+```
+
+```js
+// src/wrapper.js
+import { Provider } from 'react-redux'
+
+const Wrapper = ({ children }) => (
+  <Provider store={/* your store */}>
+    {children}
+  </Provider>
+)
+```
+
+### indexHtml
+
+- Type: `string`
+- Default: `undefined`
+
+HTML filepath relative from root to use as `index.html` template. This can be usefull if you want to put some external scripts and css and other things in the index file.
+
+By default we use this html file:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="{{ description }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <div id="root" />
+  </body>
+</html>
+```
+
+> ### Important
+>
+> The `div` with id `root` is required to render the react application, please don't remove it.
 
 ## Build pipeline
 

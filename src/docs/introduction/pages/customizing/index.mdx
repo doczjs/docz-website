@@ -2,8 +2,7 @@
 name: Customizing
 route: /introduction/customizing
 order: 1
-settings:
-  parent: Introduction
+parent: Introduction
 ---
 
 # Customizing
@@ -64,23 +63,14 @@ This properties are very basic and are good to help you to improve your document
 - `order` You can sort your document here, if you want to show it above or bellow other documents
 - `menu` If you can group your documents in a single menu, you can do that changing this prop.
 
-If we stopped here, perhaps you couldn't do much customizations with this properties. So, all documents have one more property that you can define if you want to customize your document, that is the `settings` property:
+If we stopped here, perhaps you couldn't do much customizations with this properties. So, all documents could have whatever property you want to define and your theme will lead with these properties.
+
+Example: you can define if your document is a page with `100%` of width or not just by defining some property like that:
 
 ```
 ---
 name: My Document
-settings:
-  whateverYouWant: true
----
-```
-
-With the `settings` property you can really do whatever you want, since your theme lead with this property. Example: you can define if your document is a page with `100%` of width or not.
-
-```
----
-name: My Document
-settings:
-  fullpage: true
+fullpage: true
 ---
 ```
 

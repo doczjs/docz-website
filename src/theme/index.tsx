@@ -39,4 +39,4 @@ const Theme = () => (
   </ThemeConfig>
 )
 
-export default theme(Theme, config)
+export default theme(config)(Theme)

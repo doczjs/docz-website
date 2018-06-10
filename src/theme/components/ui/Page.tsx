@@ -38,7 +38,7 @@ const Sidebar: SFC<SidebarProps> = ({ parent }) => {
   return (
     <Docs>
       {({ docs: allDocs }) => {
-        const docs = allDocs.filter(doc => doc.settings.parent === parent)
+        const docs = allDocs.filter(doc => doc.parent === parent)
         return (
           <SidebarWrapper>
             {docs.map(doc => (
@@ -74,7 +74,7 @@ const Document = styled('div')`
 `
 
 export const Page: SFC<PageProps> = ({ children, doc, ...props }) => {
-  const { parent, sidebar, fullpage } = doc.settings
+  const { parent, sidebar, fullpage } = doc
   const showSidebar = Boolean(parent || sidebar)
 
   return (
