@@ -42,6 +42,21 @@ And, if you really have a `Button` component to import, you'll see something lik
 >
 > It's important to tell that by some mvp reasons, until now docz just works with React components. But stay calm, we working to bring Preact, Vue and some others libraries to inside!
 
+## Using Remark and Rehype Plugins
+
+Since MDX uses the [remark](https://github.com/remarkjs/remark)/[rehype](https://github.com/rehypejs/rehype) ecosystems, you can use plugins to modify the AST at different stages of the transpilation process and make better your documentation.
+
+To use plugins you just need set `mdPlugins` for remark plugins and the `hastPlugins` for rehype plugins on your project configuration.
+
+```js
+import images from 'remark-images'
+import emoji frm 'remark-emoji'
+
+export default {
+  mdPlugins: [images, emoji]
+}
+```
+
 ## Using theme components
 
 If you want to pass default theme components to some component that you import on your mdx file, you can do that just by passind the prop on the fly, like that:
