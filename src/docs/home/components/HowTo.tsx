@@ -58,7 +58,7 @@ export const HowTo = withRouter(({ history }) => (
       <Text>Install Docz as dependency</Text>
       <Pre className="language-bash">$ yarn add docz --dev</Pre>
       <Text>
-        Create some <code>.mdx</code> file anywhere on your project
+        Create some <code>.mdx</code> anywhere on your project
       </Text>
       <Pre className="language-markdown">{mdxExample}</Pre>
       <Text>That's it, your docs is ready to fly!</Text>

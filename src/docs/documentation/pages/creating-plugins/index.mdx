@@ -6,7 +6,7 @@ parent: Documentation
 
 # Creating Plugins
 
-Plugins give you hability to modify docz processes, default configurations and create hooks for build and render. This is a perfect place to integrate docz with other tools.
+Plugins give you the ability to modify docz processes, default configurations and create hooks for build and render. This is a perfect place to integrate docz with other tools.
 
 To create a plugin you just need to use the `createPlugin` method from [docz-core](https://github.com/pedronauck/docz/tree/master/packages/docz-core)
 
@@ -124,7 +124,7 @@ type ModifyBabelRC = (babelrc: BabelRC) => BabelRC
 
 ### `onServerListening`
 
-Method dispatch on bundler server start to listening
+Method triggered when server is ready and listening
 
 #### Params
 
@@ -144,7 +144,7 @@ type OnServerListening = <S>(server: S) => void
 
 ### `onPreBuild`
 
-Method dispatched before your build
+Method triggered before the build process
 
 #### Params
 
@@ -164,7 +164,7 @@ type OnPreBuild = () => void
 
 ### `onPostBuild`
 
-Method dispatched after your build
+Method triggered after the build process
 
 #### Params
 
@@ -184,7 +184,7 @@ type onPostBuild = () => void
 
 ### `onPreRender`
 
-Method dispatched before your documents rendered
+Method triggered before the app render
 
 #### Params
 
@@ -204,7 +204,7 @@ type onPreRender = () => void
 
 ### `onPostRender`
 
-Method dispatched after your documents rendered
+Method triggered after the app render
 
 #### Params
 

@@ -51,60 +51,42 @@ export const Features = () => (
       <Image src={magicWand} />
       <Title>Zero Config</Title>
       <Text>
-        Don't worry about complex configurations setups to build and run your
-        documentation. With docz you can just init your app with a single
-        command. So, if you want to modify by your won tasty you have a lot of
-        options to do that!
+        Don't worry about complex configurations setups to build and run your documentation. With docz you can just init your app with a single command. So, if you want to modify by your won tasty you have a lot of options to do that!
       </Text>
     </FeatureItem>
     <FeatureItem>
       <Image src={rocket} />
       <Title>Really Blazing Fast</Title>
       <Text>
-        Nowadays be blazing fast is something really important for a tool. To
-        achieve best performance docz using Webpack 4 with a lot of techniques.
-        With a really fast dev server and build, you don't need to worry about
-        other things unless write your docs!
+        Nowadays be blazing fast is something really important for a tool. To achieve best performance docz using Webpack 4 with a lot of techniques. With a really fast dev server and build, you don't need to worry about other things unless writing your docs!
       </Text>
     </FeatureItem>
     <FeatureItem>
       <Image src={settings} />
       <Title>Easy to customize</Title>
       <Text>
-        Document your library or even create your own design system is something
-        that required to pass your identity, your style. With docz you can
-        easily use and modify <Link to="/themes">themes</Link> or creating your
-        own. Like this website that you're looking!
+        Document your library or even create your own design system is something that required to pass your identity, your style. With docz you can easily use and modify <Link to="/themes">themes</Link> or creating your own. Like this website that you're looking!
       </Text>
     </FeatureItem>
     <FeatureItem>
       <Image src={mdx} />
       <Title>MDX Based</Title>
       <Text>
-        MDX is <i>Markdown + JSX</i>. It brought the word of components into
-        markdown. MDX turns possible import and use your components in a
-        markdown style file. To help you, docz has a lot of built-ins components
-        that can improve and accelerate your documentation process.
+      MDX is <i>Markdown + JSX</i>. It brought the word of components into markdown. MDX turns possible to import and use your components in a markdown style file. To help you, docz has a lot of built-in components that can improve and accelerate your documentation process.
       </Text>
     </FeatureItem>
     <FeatureItem>
       <Image src={plug} />
       <Title>Fully pluggable</Title>
       <Text>
-        Plugins is one of the best and old ways to make some application
-        functional, flexible and optimized. With plugins you can manipulate a
-        lot of things throught the docz flow and data. You can easy use or
-        create some really cool stuff to help you to build your docs!
+        Plugins are one of the best and old ways to make some application functional, flexible and optimized. With plugins, you can manipulate a lot of things through the docz flow and data. You can easily use or create some really cool stuff to help you to build your docs!
       </Text>
     </FeatureItem>
     <FeatureItem>
       <Image src={typescript} />
       <Title>Typescript Support</Title>
       <Text>
-        Docz provide a native typescript support if you want to use your tsx
-        components and all docz packages was built entire around typescript. So
-        we have a fully support for your type if you like to write typescript
-        files. You can see more about your typings in your api section.
+        Docz provides a native typescript support if you want to use your TSX components and all docz packages were built entirely around typescript. So we have a full support for your type if you like to write typescript files. You can see more about your typing in your API section.
       </Text>
     </FeatureItem>
   </Container>

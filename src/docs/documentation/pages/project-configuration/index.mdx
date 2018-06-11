@@ -7,13 +7,13 @@ parent: Documentation
 
 # Project Configuration
 
-The project configuration is used when you need to define some specific customizations on your project. Like use plugins, chose themes, set project title and other things.
+The project configuration is used when you need to define some specific customizations on your project. Like use plugins, chose themes, set project title, and other things.
 
 To customize your project configuration just create `doczrc.js` following this reference.
 
 > ### Tips and tricks
 >
-> You can create a `doczrc.json` file too if you want, but we recommend that you use a `js` file because just with javascript you can set plugins in your configuration, since plugins are functions!
+> You can create a `doczrc.json` file too if you want, but we recommend that you use a `js` file because just with javascript you can set plugins in your configuration since plugins are functions!
 
 ## Basic config
 
@@ -22,7 +22,7 @@ To customize your project configuration just create `doczrc.js` following this r
 - Type: `string`
 - Default: `src/`
 
-Define the source folder that docz will find and parse your `.mdx` files. Every file out of this folder will not be found.
+Define the source folder that docz will find and parse your mdx files. Every file out of this folder will not be found.
 
 ### dest
 
@@ -36,41 +36,41 @@ Specify the output directory for `docz build`
 - Type: `string`
 - Default: `**/*.mdx`
 
-Glob pattern used to find your files. By default docz find all files inside the source folder that has a `.mdx` extension. You can be more specific you want and change this glob to find other rules.
+Glob pattern used to find your files. By default, docz find all files inside the source folder that has a `.mdx` extension. You can be more specific you want and change this glob to find other rules.
 
-> If you want to change this glob is important that you maintain the `.mdx` extension in the glob
+> If you want to change this glob is important maintain the `.mdx` extension in the glob
 
 ### base
 
 - Type: `string`
 - Default: `/`
 
-The base URL the site will be deployed at. You will need to set this if you plan to deploy your site under a sub path, for example GitHub pages. If you plan to deploy your site to https://foo.github.io/bar/, then base should be set to `/bar/`.
+The base URL of the site will be deployed at. You will need to set this if you plan to deploy your site under a subpath, for example, GitHub pages. If you plan to deploy your site to https://foo.github.io/bar/, the base should be set to `/bar/`.
 
 > It should always start and end with a slash.
 
-The base is automatically prepended to all the URLs that start with `/` in other options, so you only need to specify it once.
+The base is automatically prepend to all the URLs that start with `/` in other options, so you only need to specify it once.
 
 ### title
 
 - Type: `string`
 - Default: `MyDoc`
 
-Title for the site. This will be the prefix for all page titles, and displayed in the sidebar in the default theme.
+The title for the site. This will be the prefix for all page titles and displayed in the sidebar in the default theme.
 
 ### description
 
 - Type: `string`
 - Default: `My awesome app using Docz`
 
-Description for the site. This will be rendered as a `<meta>` tag in the page HTML.
+The description for the site. It will be rendered as a `<meta>` tag in the page HTML.
 
 ### typescript
 
 - Type: `boolean`
 - Default: `false`
 
-This options is used if you need import Typescript components inside your `.mdx` files.
+This option is used if you need import Typescript components inside your `.mdx` files.
 
 > ### Important
 >
@@ -81,7 +81,7 @@ This options is used if you need import Typescript components inside your `.mdx`
 - Type: `boolean`
 - Default: `true`
 
-To be abble to use the `<ProsTable />` component and parse properties of your components, we need to run a lot of process that have some costs to your build process. If you need to disable this process to improve your build process, you can just this property to `false`.
+To be able to use the `<ProsTable />` component and parse properties of your components, we need to run a lot of processes that have some costs on the build process. If you need to disable this process to improve performance, you can just this property to `false`.
 
 ### debug
 
@@ -118,7 +118,7 @@ Specify the port to use for the dev server.
 - Type: `string`
 - Default `docz-theme-default`
 
-Use this property to specify the theme for your site. You can pass the name of your theme if is a package like `docz-theme-default` and the docz will attempt to load the theme component at `node_modules/docz-default-theme`, or if you want to use some file inside you project, you can just pass the filepath relative to the root path of your project.
+Use this property to specify the theme for your site. You can pass the name of your theme if is a package like `docz-theme-default` and the docz will attempt to load the theme component at `node_modules/docz-default-theme`, or if you want to use some file inside your project, you can just pass the filepath relative to the root path of your project.
 
 ```js
 // doczrc.js
@@ -136,7 +136,7 @@ export default {
 - Type: `Object`
 - Default: `{}`
 
-This is the config that your theme will use to customize it. By default each theme has your own `themeConfig` that you can modify, so this object may vary according to each theme.
+This is the config that your theme will use to customize it. By default, each theme has your own `themeConfig` that you can modify, so this object may vary according to each theme.
 
 You can see the theme config of default theme [here](https://github.com/pedronauck/docz/blob/master/packages/docz-theme-default/src/config.ts)
 
@@ -145,7 +145,7 @@ You can see the theme config of default theme [here](https://github.com/pedronau
 - Type: `string`
 - Default: `undefined`
 
-Component filepath relative from root to use as wrapper on your application. This can be usefull to set providers like the store provider of redux
+Component filepath relative from root to use as a wrapper on your application. This can be useful to set providers like the store provider of redux.
 
 ```js
 // doczrc.js
@@ -170,9 +170,9 @@ const Wrapper = ({ children }) => (
 - Type: `string`
 - Default: `undefined`
 
-HTML filepath relative from root to use as `index.html` template. This can be usefull if you want to put some external scripts and css and other things in the index file.
+HTML filepath relative from root to use as `index.html` template. This can be useful if you want to put some external scripts, css links, and other things in the index file.
 
-By default we use this html file:
+By default we use this HTML file:
 
 ```html
 <!DOCTYPE html>
@@ -222,4 +222,4 @@ Array of [rehype plugins](https://github.com/rehypejs/rehype/blob/master/doc/plu
 - Type: `(config: BundlerConfig, dev: boolean) => BundlerConfig`
 - Default: `undefined`
 
-This function can modify the default configuration of your bundler.
+This function can modify the default bundler configuration.

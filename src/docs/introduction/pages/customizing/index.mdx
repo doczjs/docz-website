@@ -7,15 +7,15 @@ parent: Introduction
 
 # Customizing
 
-One of the greatest pain when you're working with some tools that allow you to create your documentation and develop your component is that is very difficult - some times impossible - to customize and impress your brand style. In most cases you have very limitated space to do that or you need to create everything from scratch.
+One of the greatest pain, when you're working with tools that allow you to create documentation and develop your components, is that is ~impossible~ very difficult to customize and impress your brand style. In most cases, you have just a few limited features to do that, or you need to create everything from scratch.
 
-Docz was created with this pain in mind. In order to make customizing simple and give liberty and velocity to you without you need to create your things from scratch, we allow you to modify just about everything you want, from the bundler configuration to a sidebar menu color of your documentation.
+Docz was created with this pain in mind. In order to make customizing simple and give liberty and velocity to you without the need to create your things from scratch, we allow you to modify everything that you want, from the bundler configuration to a sidebar menu color of your documentation.
 
-In this section you'll explain a little bit what you need to do that!
+In this section, you'll explain a little bit about what you need to do that!
 
 ## Project configuration
 
-The first most important thing is the your project configuration. How you now Docz is a zero config tool. This is good - and very hyped - but our effort to be zero config is just to get out of your face the willingness to start a project. We know that you want to customize a lot of things. So, to make this possible we have a very complete project configuration that allow to modify by your own tasty!
+The first most important thing is your project configuration. How you now Docz is a zero-config tool. This is ~very hyped~ good but our effort to be zero-config is just to get out of your face the willingness to start a project. We know that you want to customize a lot of things. So, to make this possible we have a very complete project configuration that allows modifying by your own tasty!
 
 Create your own configuration is very easy, just add some `doczrc.js` file in the root of your project like that:
 
@@ -41,11 +41,11 @@ export default {
 }
 ```
 
-Don't be scared with these properties, we'll explain more about then above, but if you can see all details about the file configuration in the [Project Configuration](/documentation/project-configuration) section.
+Don't be scared with these properties, we'll explain more about it above, but if you can see all details about the file configuration in the [Project Configuration](/documentation/project-configuration) section.
 
 ## Documents settings
 
-Looking over here, document settings can be something simple, but it has a lot of power. The document settings are defined in the top of `.mdx` files using yaml and can change the layout or whatever the theme can define when use this settings. By default there's some basic properties that all documents can have:
+Looking over here, document settings can be something simple, but it has a lot of power. It is defined in the top of `.mdx` using yaml and can change the layout or whatever the theme can define when using these settings. By default there are some basic properties that all documents can have:
 
 ```mardown
 ---
@@ -56,16 +56,16 @@ menu: Documents
 ---
 ```
 
-This properties are very basic and are good to help you to improve your document navigation. We don't have to much to explain about, because how can you see they are very explicit, but basically they have this definition:
+These properties are very basic but good to help you to improve your document navigation. We don't have to much to explain about, because how can you see they are very explicit, but basically they have this definition:
 
 - `name` Define the name of your component.
-- `route` Define the route of your component. By default if you don't pass any route, we'll use the create some kind a slug that is a filepath of your file in a route format.
-- `order` You can sort your document here, if you want to show it above or bellow other documents
+- `route` Define the route of your component. By default, if you don't pass any route, we'll use some kinda slug that is a filepath of your file with a route format.
+- `order` You can sort your document here if you want to show it above or below other documents
 - `menu` If you can group your documents in a single menu, you can do that changing this prop.
 
-If we stopped here, perhaps you couldn't do much customizations with this properties. So, all documents could have whatever property you want to define and your theme will lead with these properties.
+If we stopped here, perhaps you couldn't do many customizations with this properties. So, all documents could have whatever property you want to define and your theme will lead with these properties.
 
-Example: you can define if your document is a page with `100%` of width or not just by defining some property like that:
+Example: you can define if your document is a page with `100%` width or not, just by defining some property like that:
 
 ```
 ---
@@ -74,13 +74,13 @@ fullpage: true
 ---
 ```
 
-So, now when you are creating your theme or maybe using some theme that lead with this settings, you will have a document with a fullpage instead of a default page with a container.
+So, now when you're creating your theme or maybe using some that lead with this settings, you'll have a full page document instead of a container.
 
-This is very powefull and can give you flexibility when developing or using custom themes.
+This is very powerful and can give you flexibility when developing or using custom themes.
 
 ## Themes
 
-By running docz and write your first `.mdx` file, when you open your browser you'll see a page like we saw until now:
+By running docz and write your first `.mdx`, when you open your browser you'll see a page like we saw until now:
 
 ![](https://cdn-std.dprcdn.net/files/acc_649651/ZOUyUu)
 
@@ -88,9 +88,9 @@ What you see above is our [docz-default-theme](https://github.com/pedronauck/doc
 
 ### Creating themes
 
-Themes are the **one of the greatest things** in Docz. With then you can modify the entire layout of your documentation, define how you'll show your docs pages, your menus and even create custom settings for each document.
+Themes are the **one of the greatest things** in Docz. With they you can modify the entire layout of your documentation, define how you'll show your docs pages, menus and even create custom settings for each document.
 
-If you want to create your own theme, we have a [fully section](/documentation/creating-themes) talking how you can do that. After create it just set the theme path in your configuration file:
+If you want to create your own theme, we have a [full section](/documentation/creating-themes) talking about that. After choosing a theme or create your own, just set the theme path in your configuration file:
 
 ```js
 // doczrc.js
@@ -101,9 +101,9 @@ export default {
 
 ### Modifying existents
 
-So, we talking about creating themes from scratch, this is good and sometimes can be very necessary depending how big is your project and how much time you have to build your own theme. But this is not always what you want, sometimes you need just to modify some colors, fonts and spaces or whatever other thing that have in your mind.
+So, we talking about creating themes from scratch, this is good and sometimes can be very necessary depending on how big is your project and how much time you have to build your own theme. But this is not always what you want, sometimes you need just to modify some colors, fonts, spaces or whatever another thing that have in your mind.
 
-Docz is awesome because that, it make possible to you to create your own theme from scratch in a very simple way or just modify some properties of the chosen theme like that:
+Docz is awesome because that, it makes possible for you to create your own theme from scratch in a very simple way or just modify some properties of the chosen theme like that:
 
 ```js
 // doczrc.js
@@ -125,11 +125,11 @@ With just these few lines you can modify your theme:
 
 ![](https://cdn-std.dprcdn.net/files/acc_649651/LUoBjJ)
 
-The `themeConfig` property is that make this possible. It's just a object that every theme can define in your creation and use along the theme components. This is very flexible, because you can create your own theme with some default configuration and give the user the capability to modify by your own tasty.
+The `themeConfig` property is that make this possible. It's just an object that every theme can define in your creation and use along the theme components. This is very flexible because you can create your own theme with some default configuration and give the user the capability to modify by your own tastes.
 
 ## Plugins
 
-Another thing that can speed up your development process are Plugins. This concept is very used and disseminated nowadays in a lot of good tools because with plugins you can modify a bunch of process of it and create and tailoring the project to your needs just by plug-and-play some packages.
+Another thing that can speed up your development process is Plugins. This concept is very used and disseminated nowadays in a lot of good tools because with it you can modify a bunch of processes and tailoring the project to your needs just by plugging some packages.
 
 Use a plugin in docz is something very ease. Just install the plugin that you want to use and call it on your project configuration like that:
 
@@ -142,4 +142,4 @@ export default {
 }
 ```
 
-As you can see, a plugin is just a function passed in a array. This is very simple and powerfull. You can see more about how create a plugin and the plugin's api in the [Creating Plugins](/documentation/creating-plugins) section and see all plugins create until now in the [Plugins](/plugins) menu.
+As you can see, a plugin is just a function passed in an array. This is very simple and powerful. You can see more about how to create a plugin and the plugin's API in the [Creating Plugins](/documentation/creating-plugins) section and see all plugins create until now in the [Plugins](/plugins) menu.

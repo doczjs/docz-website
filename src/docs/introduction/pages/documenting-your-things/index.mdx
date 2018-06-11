@@ -7,15 +7,15 @@ parent: Introduction
 
 # Documenting your Things
 
-With all capabilities of MDX in mind, we know that you can do a lot of things using this syntax and this is what we want to do, explore all power of components and readablity of markdown to improve and facilitate your documentation flow.
+With all capabilities of MDX in mind, we know that you can do a lot of things using this syntax and this is what we want to do, explore all power of components and reliability of markdown to improve and facilitate your documentation flow.
 
 ## Built-ins components
 
-Docz has some built-ins components that help you to document your things. By using the power of components and making some AST parsing algorithms to source data for that components, we can do a lot of things, like render on the fly your components, create tables with contents, custom getters by traversing your file, etc. The sky is limit here!
+Docz has some built-ins components that help you to document your things. Using the power of components and making some AST parsing algorithms to source data for that components, we can do a lot of things, like render on the fly your components, create tables with contents, custom getters by traversing your file, etc. The sky is limit here!
 
 ### Components Playground
 
-The first one that has is very usefull is `<Playground>` component. With it you can render your component inside a playground and see the code used together in a single view:
+The first one that has is very useful is `<Playground>`. With it you can render your component inside a playground and see the code used together in a single view:
 
 ```markdown
 ---
@@ -35,17 +35,17 @@ import Button from './Button'
 </Playground>
 ```
 
-Keep working with your stormbreaker button component, now you'll see:
+Keep working with your button component, now you'll see:
 
 ![](https://cdn-std.dprcdn.net/files/acc_649651/64QaXd)
 
-How you can see above, `<Playground>` rendered your component in a blank state and right above the code used to render your component. This can be very usefull to test and develop your components in a good environment while you document it.
+How you can see above, `<Playground>` rendered your component in a blank state, and right below, showed code used to render it. This can be very useful to test and develop your components in a good environment while you document it.
 
 ### Table of Properties
 
-Maybe the most important thing when you write a component is which properties it has. This is usefull to know what it can do and how you can modify it behavior or style. But, keep a good properties documentation of your component can be boring, because you need to write the props specification and maintain the original props definition. And we know that keep these two things syncing can be something boring!
+Maybe the most important thing when you write a component is which properties it has. This is useful to know what it can do and how you can modify its behavior or style. But, keep a good properties documentation of your component can be boring, because you need to write the props specification and maintain the original props definition. And we know that keep these two things syncing can be something boring!
 
-Docz has a nice component to solve your problem: the `<PropsTable>` is a simple component that automatically get the props definition of your component and transform in a table with the values. Simple like that and works nice with Flow and Typescript.
+Docz has a nice component to solve your problem: the `<PropsTable>` is a simple component that automatically gets the props definition of your component and transforms in a table with the values. Simple like that and works nicely with Flow and Typescript.
 
 To make it works, just import `<PropsTable>` from Docz and use it like that:
 
@@ -69,7 +69,7 @@ import Button from './'
 </Playground>
 ```
 
-And voia'la, you have a table of properties
+And now you have a table of properties
 
 ![](https://cdn-std.dprcdn.net/files/acc_649651/AmFJ2k)
 
@@ -81,4 +81,4 @@ You can see more about our built-ins components on [Components API](/documentati
 
 ## Just the beginning
 
-How we told you before, the sky is the limit here. With MDX we have a lot of power and we can do a lot of things. We think that this is just the beginning, combining ast parsing with the components construction is possible to arise a lot of out the box ideas and Docz is the better place to do that!
+How told you before, the sky is the limit here. With MDX you have a lot of power and can do a lot of things. We think that this is just the beginning, combining AST parsing inside the construction of the components is possible to arise a lot of out the box ideas and Docz is the better place to do that!
