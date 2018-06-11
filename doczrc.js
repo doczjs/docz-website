@@ -21,7 +21,7 @@ const modifyBundlerConfig = config => {
   )
 
   return config
-},
+}
 
 export default {
   title: 'Docz',
