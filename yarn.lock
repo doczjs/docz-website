@@ -2449,9 +2449,9 @@ doctrine@^2.0.0:
   dependencies:
     esutils "^2.0.2"
 
-docz-core@^0.2.0-beta.2:
-  version "0.2.0-beta.2"
-  resolved "https://registry.npmjs.org/docz-core/-/docz-core-0.2.0-beta.2.tgz#d8197e9a7f63e08398023024a5561b6c5b45b980"
+docz-core@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.npmjs.org/docz-core/-/docz-core-0.2.0.tgz#9b8eedd98e10eb879ff93f5d1ff40ddd932dfc80"
   dependencies:
     "@babel/core" "7.0.0-beta.49"
     "@babel/preset-typescript" "^7.0.0-beta.49"
@@ -2482,7 +2482,7 @@ docz-core@^0.2.0-beta.2:
     koa-connect "^2.0.1"
     koa-mount "^3.0.0"
     koa-static "^4.0.3"
-    load-cfg "^0.1.2-beta.1"
+    load-cfg "^0.2.0"
     lodash.get "^4.4.2"
     prettier "^1.13.5"
     react-dev-utils "^5.0.1"
@@ -2513,11 +2513,11 @@ docz-core@^0.2.0-beta.2:
     ws "^5.2.0"
     yargs "^11.0.0"
 
-docz-theme-default@^0.2.0-beta.2:
-  version "0.2.0-beta.2"
-  resolved "https://registry.npmjs.org/docz-theme-default/-/docz-theme-default-0.2.0-beta.2.tgz#39db85430c5201e434375fb098bb82babc9827ed"
+docz-theme-default@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.npmjs.org/docz-theme-default/-/docz-theme-default-0.2.0.tgz#f9c405e5057a404aaa4157835248a1e2cee387f3"
   dependencies:
-    docz "^0.2.0-beta.2"
+    docz "^0.2.0"
     emotion "^9.2.1"
     emotion-theming "^9.2.1"
     fast-deep-equal "^2.0.1"
@@ -2531,14 +2531,14 @@ docz-theme-default@^0.2.0-beta.2:
     react-powerplug "^1.0.0-alpha.7"
     react-spinners "^0.3.2"
 
-docz@^0.2.0-beta.2:
-  version "0.2.0-beta.2"
-  resolved "https://registry.npmjs.org/docz/-/docz-0.2.0-beta.2.tgz#0da65310ce41f686088bc005fdfce0061b84c21a"
+docz@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.npmjs.org/docz/-/docz-0.2.0.tgz#8324033a75c188d42ec207227aa8187d141b3a01"
   dependencies:
     "@sindresorhus/slugify" "^0.3.0"
     deepmerge "^2.1.1"
-    docz-core "^0.2.0-beta.2"
-    docz-theme-default "^0.2.0-beta.2"
+    docz-core "^0.2.0"
+    docz-theme-default "^0.2.0"
     invariant "^2.2.4"
     loadable-components "^2.2.2"
     pascalcase "^0.1.1"
@@ -4414,9 +4414,9 @@ load-bmfont@^1.2.3:
     xhr "^2.0.1"
     xtend "^4.0.0"
 
-load-cfg@^0.1.2-beta.1:
-  version "0.1.2-beta.1"
-  resolved "https://registry.npmjs.org/load-cfg/-/load-cfg-0.1.2-beta.1.tgz#9f9b4ca240dfc4cef980058f8dc1bde725eab8da"
+load-cfg@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.npmjs.org/load-cfg/-/load-cfg-0.2.0.tgz#876883073e373e85d5155aab385347becab0f215"
   dependencies:
     deepmerge "^2.1.1"
     esm "^3.0.48"
