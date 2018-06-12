@@ -4,6 +4,7 @@ declare module 'react-powerplug'
 declare module 'react-images'
 declare module 'react-spinners'
 declare module 'react-stickynode'
+declare module 'react-github-button'
 
 declare module '*.woff2' {
   const content: any

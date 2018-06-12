@@ -5764,6 +5764,12 @@ react-feather@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npmjs.org/react-feather/-/react-feather-1.1.0.tgz#f0aa692497de952237ca1f3b118ebcb5427152e1"
 
+react-github-button@^0.1.11:
+  version "0.1.11"
+  resolved "https://registry.npmjs.org/react-github-button/-/react-github-button-0.1.11.tgz#fc61e1f1e1371169d3618c1ba37306ba04081e56"
+  dependencies:
+    prop-types "^15.5.10"
+
 react-helmet@^5.2.0:
   version "5.2.0"
   resolved "https://registry.npmjs.org/react-helmet/-/react-helmet-5.2.0.tgz#a81811df21313a6d55c5f058c4aeba5d6f3d97a7"

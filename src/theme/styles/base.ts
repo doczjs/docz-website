@@ -1,3 +1,4 @@
+import './github-button'
 import { css, injectGlobal } from 'emotion'
 
 import * as colors from './colors'

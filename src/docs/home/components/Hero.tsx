@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Helmet from 'react-helmet'
 import styled from 'react-emotion'
+import GitHubButton from 'react-github-button'
 import { withRouter } from 'react-router'
 
 import { Button, Container, Logo } from '@components/ui'
@@ -78,6 +79,12 @@ export const Hero = withRouter(({ history }) => (
     <Container>
       <Logo height={100} />
       <Subtitle>It has never been so easy to document your things!</Subtitle>
+      <GitHubButton
+        type="stargazers"
+        size="large"
+        namespace="pedronauck"
+        repo="docz"
+      />
       <VideoWrapper>
         <Video className="wistia_responsive_padding">
           <div className="wistia_responsive_wrapper">
