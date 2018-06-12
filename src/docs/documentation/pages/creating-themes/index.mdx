@@ -155,9 +155,11 @@ const Menu = () => (
     {({ docs }) => (
       <ul>
         {docs.map(doc => (
-          <Link key={doc.id} to={doc.route}>
-            {doc.name}
-          </Link>
+          <li key={doc.id}>
+            <Link to={doc.route}>
+              {doc.name}
+            </Link>
+          </li>
         ))}
       </ul>
     )}
