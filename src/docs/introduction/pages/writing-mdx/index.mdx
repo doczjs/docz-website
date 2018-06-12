@@ -7,7 +7,7 @@ parent: Introduction
 
 # Writing MDX
 
-MDX is something really cool when it comes to writing documents and pages because it combines the readability of markdown with the expressivity and power of components. This makes MDX so powerful. According to the [specification](https://github.com/mdx-js/specification), it came because:
+MDX is something really cool when it comes to writing documents and pages because it combines the readability of markdown with the expressivity and power of components. This is what makes MDX so powerful. According to the [specification](https://github.com/mdx-js/specification), it was developed because:
 
 > ### Why MDX?
 >
@@ -15,9 +15,9 @@ MDX is something really cool when it comes to writing documents and pages becaus
 
 ## Working with components
 
-If you want to know more about how MDX works, parse and transpile files, it has a [good specification](https://github.com/mdx-js/specification) that's a really good read. But now, we'll assume that you just need to know that with MDX you can use your components inside your markdown files, just that!
+If you want to know more about how MDX works, parse and transpile files, it has a [specification](https://github.com/mdx-js/specification) that's a good read. But now, we'll assume that you just need to know that with MDX you can use your components inside your markdown files, just that!
 
-But how? Let's take a look at how we can improve our `.mdx` created in the previous session by importing and using some component inside it:
+But how? Let's take a look at how we can improve our `.mdx` created in the previous section by importing and using a component inside it:
 
 ```markdown
 ---
@@ -28,24 +28,24 @@ import { Button } from './Button'
 
 # Hello world
 
-Hello, I'm stil a mdx file, but now I have a button component!
+Hello, I'm still a mdx file, but now I have a button component!
 
 <Button>Click</Button>
 ```
 
-And, if you really have a `Button` component to import, you'll see something like that:
+And, if you really have a `Button` component to import, you'll see something like this:
 
 ![](https://cdn-std.dprcdn.net/files/acc_649651/4am9Is)
 
 > ### Note
 >
-> It's important to tell that by some mvp reasons, until now docz just works with React components. But stay calm, we working to bring Preact, Vue and some others libraries to inside!
+> It's important to know that by some mvp reasons, until now docz only works with React components. But stay calm, we working to bring Preact, Vue and some others libraries to docz!
 
 ## Using Remark and Rehype Plugins
 
-Since MDX uses the [remark](https://github.com/remarkjs/remark)/[rehype](https://github.com/rehypejs/rehype) ecosystems, you can use plugins to modify the AST on different stages of the process and make better your documentation.
+Since MDX uses the [remark](https://github.com/remarkjs/remark)/[rehype](https://github.com/rehypejs/rehype) ecosystems, you can use plugins to modify the AST on different stages of the process and make your documentation better.
 
-To use plugins you just need set `mdPlugins` for remark plugins and the `hastPlugins` for rehype plugins on your project configuration.
+To use plugins you just need set `mdPlugins` for remark plugins and `hastPlugins` for rehype plugins on your project configuration:
 
 ```js
 import images from 'remark-images'
@@ -58,7 +58,7 @@ export default {
 
 ## Using theme components
 
-If you want to pass default theme components to some component that you import on your mdx, you can do that just by passing the prop on the fly, like that:
+If you want to pass default theme components to some component that you import on your mdx, you can do that by passing the prop on the fly:
 
 ```markdown
 ---
@@ -70,6 +70,6 @@ import { MyComponent } from './MyComponent'
 <MyComponent components={components} />
 ```
 
-Although MDX is very powerful, it's very simple too, there's nothing more to know to work with MDX, is just that. With this in mind, we open a whole new world of possibilities using markdown and components together and Docz can possible to turn this experience so better for you to write your docs.
+Although MDX is very powerful, it's very simple too, so there's nothing more to know to work with MDX, it's just that. With this in mind, we open a whole new world of possibilities using markdown and components together and Docz can make possible to turn this experience better for you to write your docs.
 
-So, now both we know how MDX works and what it can do, see how Docz can help you to [documenting your things](/introduction/documenting-your-things) by using our helper components!
+So, now both we know how MDX works and what it can do, see how Docz can help you to [document your things](/introduction/documenting-your-things) by using our helper components!
