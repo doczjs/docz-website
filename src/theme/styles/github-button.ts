@@ -21,6 +21,13 @@ injectGlobal`
     cursor: pointer;
     border-radius: 3px;
   }
+  .gh-btn:visited,
+  .gh-count:visited,
+  .gh-btn:hover,
+  .gh-count:hover {
+    color: #333;
+  }
+
   .gh-btn {
     background-color: #eee;
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fcfcfc), color-stop(100%, #eee));
@@ -98,12 +105,12 @@ injectGlobal`
     border-right-color: #d4d4d4;
   }
   .github-btn-large {
-    height: 30px;
+    height: 50px;
   }
   .github-btn-large .gh-btn,
   .github-btn-large .gh-count {
-    padding: 3px 10px 3px 8px;
-    font-size: 16px;
+    padding: 13px 20px;
+    font-size: 18px;
     line-height: 22px;
     border-radius: 4px;
   }
