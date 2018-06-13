@@ -2,7 +2,7 @@
 
 Docz theme build for [docz site](http://docz.site)!
 
-## Install and usage
+## Installation and usage
 
 Just install the dependencies, then run docz devserver to make changes!
 
@@ -10,6 +10,8 @@ Just install the dependencies, then run docz devserver to make changes!
 yarn install
 yarn dev
 ```
+
+The website will be available at [http://localhost:3000](http://localhost:3000).
 
 After you make your changes, please send me a pull request!
 
