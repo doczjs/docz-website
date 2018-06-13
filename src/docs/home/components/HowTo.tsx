@@ -62,7 +62,7 @@ export const HowTo = withRouter(({ history }) => (
       </Text>
       <Pre className="language-markdown">{mdxExample}</Pre>
       <Text>That's it, your docs is ready to fly!</Text>
-      <Pre className="language-bash">$ docz dev</Pre>
+      <Pre className="language-bash">$ yarn docz dev</Pre>
       <Button
         scale="big"
         kind="secondary"
