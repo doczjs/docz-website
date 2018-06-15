@@ -51,7 +51,7 @@ export const Features = () => (
       <Image src={magicWand} />
       <Title>Zero Config</Title>
       <Text>
-        Don't worry about complex configurations setups to build and run your documentation. With docz you can just init your app with a single command. So, if you want to modify by your won tasty you have a lot of options to do that!
+        Don't worry about complex configurations setups to build and run your documentation. With docz you can just init your app with a single command. So, if you want to modify to your own taste you have a lot of options to do that!
       </Text>
     </FeatureItem>
     <FeatureItem>
