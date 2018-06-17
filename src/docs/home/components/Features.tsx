@@ -51,7 +51,7 @@ export const Features = () => (
       <Image src={magicWand} />
       <Title>Zero Config</Title>
       <Text>
-        Don't worry about complex configurations setups to build and run your documentation. With docz you can just init your app with a single command. So, if you want to modify by your won tasty you have a lot of options to do that!
+        Don't worry about complex configurations setups to build and run your documentation. With docz you can just init your app with a single command. So, if you want to modify to your own taste you have a lot of options to do that!
       </Text>
     </FeatureItem>
     <FeatureItem>
@@ -72,7 +72,7 @@ export const Features = () => (
       <Image src={mdx} />
       <Title>MDX Based</Title>
       <Text>
-      MDX is <i>Markdown + JSX</i>. It brought the word of components into markdown. MDX turns possible to import and use your components in a markdown style file. To help you, docz has a lot of built-in components that can improve and accelerate your documentation process.
+      MDX is <i>Markdown + JSX</i>. It brought the world of components into markdown. MDX turns possible to import and use your components in a markdown style file. To help you, docz has a lot of built-in components that can improve and accelerate your documentation process.
       </Text>
     </FeatureItem>
     <FeatureItem>
