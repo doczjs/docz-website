@@ -2449,9 +2449,9 @@ doctrine@^2.0.0:
   dependencies:
     esutils "^2.0.2"
 
-docz-core@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.npmjs.org/docz-core/-/docz-core-0.2.0.tgz#9b8eedd98e10eb879ff93f5d1ff40ddd932dfc80"
+docz-core@^0.2.6:
+  version "0.2.6"
+  resolved "https://registry.npmjs.org/docz-core/-/docz-core-0.2.6.tgz#3dddc54f39770f751c2f1317ac09ce8a80836b82"
   dependencies:
     "@babel/core" "7.0.0-beta.49"
     "@babel/preset-typescript" "^7.0.0-beta.49"
@@ -2507,17 +2507,18 @@ docz-core@^0.2.0:
     url-loader "^1.0.1"
     webpack "^4.12.0"
     webpack-chain "^4.8.0"
+    webpack-hot-client "^4.0.3"
     webpack-manifest-plugin "^2.0.3"
     webpack-serve "^1.0.4"
     webpackbar "^2.6.1"
     ws "^5.2.0"
     yargs "^11.0.0"
 
-docz-theme-default@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.npmjs.org/docz-theme-default/-/docz-theme-default-0.2.0.tgz#f9c405e5057a404aaa4157835248a1e2cee387f3"
+docz-theme-default@^0.2.6:
+  version "0.2.6"
+  resolved "https://registry.npmjs.org/docz-theme-default/-/docz-theme-default-0.2.6.tgz#002a90498b92793e2e307765466981c7d9f33aae"
   dependencies:
-    docz "^0.2.0"
+    docz "^0.2.6"
     emotion "^9.2.1"
     emotion-theming "^9.2.1"
     fast-deep-equal "^2.0.1"
@@ -2531,14 +2532,14 @@ docz-theme-default@^0.2.0:
     react-powerplug "^1.0.0-alpha.7"
     react-spinners "^0.3.2"
 
-docz@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.npmjs.org/docz/-/docz-0.2.0.tgz#8324033a75c188d42ec207227aa8187d141b3a01"
+docz@^0.2.6:
+  version "0.2.6"
+  resolved "https://registry.npmjs.org/docz/-/docz-0.2.6.tgz#9538dd442f3fd805d606522839e3097967f50ea6"
   dependencies:
     "@sindresorhus/slugify" "^0.3.0"
     deepmerge "^2.1.1"
-    docz-core "^0.2.0"
-    docz-theme-default "^0.2.0"
+    docz-core "^0.2.6"
+    docz-theme-default "^0.2.6"
     invariant "^2.2.4"
     loadable-components "^2.2.2"
     pascalcase "^0.1.1"
@@ -7498,6 +7499,19 @@ webpack-hot-client@^3.0.0:
   dependencies:
     json-stringify-safe "^5.0.1"
     loglevelnext "^1.0.2"
+    strip-ansi "^4.0.0"
+    uuid "^3.1.0"
+    webpack-log "^1.1.1"
+    ws "^4.0.0"
+
+webpack-hot-client@^4.0.3:
+  version "4.0.3"
+  resolved "https://registry.npmjs.org/webpack-hot-client/-/webpack-hot-client-4.0.3.tgz#d96cef0f199ded606fd7396e0a32e3d03bf79280"
+  dependencies:
+    "@webpack-contrib/schema-utils" "^1.0.0-beta.0"
+    json-stringify-safe "^5.0.1"
+    loglevelnext "^1.0.2"
+    merge-options "^1.0.1"
     strip-ansi "^4.0.0"
     uuid "^3.1.0"
     webpack-log "^1.1.1"
