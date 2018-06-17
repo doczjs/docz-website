@@ -18,11 +18,6 @@ const Wrapper = styled<WrapperProps, 'div'>('div')`
     display: flex;
     min-height: 100%;
     padding: ${p => (p.padding ? 50 : 0)}px 0;
-
-    & > div {
-      max-width: 1024px;
-      width: 100%;
-    }
   }
 `
 

@@ -2,10 +2,12 @@ import * as React from 'react'
 import { SFC } from 'react'
 import styled from 'react-emotion'
 
-import { Box, ButtonLink } from '@components/ui'
+import { Box as BaseBox, ButtonLink } from '@components/ui'
 
-const Info = styled('div')`
+const Box = styled(BaseBox)`
+  width: calc(512px - 20px);
   padding: 20px;
+  margin: 0 20px 0 0;
 `
 
 const Title = styled('h3')`
@@ -35,12 +37,10 @@ export const Card: SFC<CardProps> = ({
   link,
 }) => (
   <Box className={className}>
-    <Info>
-      <Title>{name}</Title>
-      <Description>{description}</Description>
-      <Link scale="small" href={link} target="_blank" kind="secondary">
-        View Source
-      </Link>
-    </Info>
+    <Title>{name}</Title>
+    <Description>{description}</Description>
+    <Link scale="small" href={link} target="_blank" kind="secondary">
+      View Source
+    </Link>
   </Box>
 )

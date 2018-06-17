@@ -2,15 +2,10 @@ import * as React from 'react'
 import { SFC } from 'react'
 import styled from 'react-emotion'
 
-import { Card as BaseCard } from './Card'
+import { Card } from './Card'
 
 const Wrapper = styled('div')`
   display: flex;
-  width: 100%;
-`
-
-const Card = styled(BaseCard)`
-  width: 33%;
 `
 
 export const Cards: SFC = () => (
