@@ -16,10 +16,9 @@ const Card = styled(BaseCard)`
 export const Cards: SFC = () => (
   <Wrapper>
     <Card
-      image="https://cdn-std.dprcdn.net/files/acc_649651/TkJQcV"
-      name="docz-theme-default"
-      description="Default theme created by docz"
-      link="https://github.com/pedronauck/docz/tree/master/packages/docz-theme-default"
+      name="docz-plugin-babel6"
+      description="Use this plugin if you want to use some older babel version"
+      link="https://github.com/pedronauck/docz/tree/master/packages/docz-plugin-babel6"
     />
   </Wrapper>
 )
