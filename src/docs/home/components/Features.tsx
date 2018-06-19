@@ -51,21 +51,21 @@ export const Features = () => (
       <Image src={magicWand} />
       <Title>Zero Config</Title>
       <Text>
-        Don't worry about complex configurations setups to build and run your documentation. With docz you can just init your app with a single command. So, if you want to modify to your own taste you have a lot of options to do that!
+        Don't worry about complex configurations setups to build and run your documentation. With docz you can just init your app with a single command. So, if you want to modify to your own taste you have a lot of options!
       </Text>
     </FeatureItem>
     <FeatureItem>
       <Image src={rocket} />
       <Title>Really Blazing Fast</Title>
       <Text>
-        Nowadays be blazing fast is something really important for a tool. To achieve best performance docz using Webpack 4 with a lot of techniques. With a really fast dev server and build, you don't need to worry about other things unless writing your docs!
+        Nowadays, being blazingly fast is something really important for a tool. We achieve the best performance with docz by using Webpack 4 with a lot of techniques. With a really fast dev server and build, you don't need to worry about other things unless writing your docs!
       </Text>
     </FeatureItem>
     <FeatureItem>
       <Image src={settings} />
       <Title>Easy to customize</Title>
       <Text>
-        Document your library or even create your own design system is something that required to pass your identity, your style. With docz you can easily use and modify <Link to="/themes">themes</Link> or creating your own. Like this website that you're looking!
+        Document your library or even create your own design system is something that required to pass your identity, your style. With docz you can easily use and modify <Link to="/themes">themes</Link> or create your own. Like this website that you're looking at!
       </Text>
     </FeatureItem>
     <FeatureItem>
