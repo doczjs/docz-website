@@ -195,11 +195,15 @@ import { MyComponent } from './MyComponent''
     <MyComponent />
   )}
 </Playground>
-```
 
-> ### Note
->
-> If you want to create some variables inside your playground you can render the children as a function.
+
+<Playground>
+  {() => {
+    const someVar = 'value'
+    return (<MyComponent example={someVar} />)
+  }}
+</Playground>
+```
 
 ### Properties
 
