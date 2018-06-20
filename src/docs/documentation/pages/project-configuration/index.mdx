@@ -200,6 +200,13 @@ By default we use this HTML file:
 
 ## Build pipeline
 
+### hashRouter
+
+- Type: `Boolean`
+- Default: `false`
+
+Enable hash router navigation instead of use History API from browser.
+
 ### plugins
 
 - Type: `Array`
@@ -224,6 +231,13 @@ Array of [rehype plugins](https://github.com/rehypejs/rehype/blob/master/doc/plu
 ### modifyBundlerConfig
 
 - Type: `(config: BundlerConfig, dev: boolean) => BundlerConfig`
-- Default: `undefined`
+- Default: `(config) => config`
 
 This function can modify the default bundler configuration.
+
+### mofidyBabelRc
+
+- Type: `(babelrc: BabelRC) => BabelRC`
+- Default: `(babelrc) => babelrc`
+
+This function can modify the default babelrc configuration.

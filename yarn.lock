@@ -2449,9 +2449,9 @@ doctrine@^2.0.0:
   dependencies:
     esutils "^2.0.2"
 
-docz-core@^0.2.6:
-  version "0.2.6"
-  resolved "https://registry.npmjs.org/docz-core/-/docz-core-0.2.6.tgz#3dddc54f39770f751c2f1317ac09ce8a80836b82"
+docz-core@^0.2.7:
+  version "0.2.7"
+  resolved "https://registry.npmjs.org/docz-core/-/docz-core-0.2.7.tgz#900b9c98c446d844eef987d8eea7cf6e14b0c37f"
   dependencies:
     "@babel/core" "7.0.0-beta.49"
     "@babel/preset-typescript" "^7.0.0-beta.49"
@@ -2514,11 +2514,11 @@ docz-core@^0.2.6:
     ws "^5.2.0"
     yargs "^11.0.0"
 
-docz-theme-default@^0.2.6:
-  version "0.2.6"
-  resolved "https://registry.npmjs.org/docz-theme-default/-/docz-theme-default-0.2.6.tgz#002a90498b92793e2e307765466981c7d9f33aae"
+docz-theme-default@^0.2.7:
+  version "0.2.7"
+  resolved "https://registry.npmjs.org/docz-theme-default/-/docz-theme-default-0.2.7.tgz#a006cdab63be0a40329bac258b037dabf0777c46"
   dependencies:
-    docz "^0.2.6"
+    docz "^0.2.7"
     emotion "^9.2.1"
     emotion-theming "^9.2.1"
     fast-deep-equal "^2.0.1"
@@ -2532,14 +2532,14 @@ docz-theme-default@^0.2.6:
     react-powerplug "^1.0.0-alpha.7"
     react-spinners "^0.3.2"
 
-docz@^0.2.6:
-  version "0.2.6"
-  resolved "https://registry.npmjs.org/docz/-/docz-0.2.6.tgz#9538dd442f3fd805d606522839e3097967f50ea6"
+docz@^0.2.7:
+  version "0.2.7"
+  resolved "https://registry.npmjs.org/docz/-/docz-0.2.7.tgz#17055e1dc0c34c777b7c1c562e66fe84a2f50b3a"
   dependencies:
     "@sindresorhus/slugify" "^0.3.0"
     deepmerge "^2.1.1"
-    docz-core "^0.2.6"
-    docz-theme-default "^0.2.6"
+    docz-core "^0.2.7"
+    docz-theme-default "^0.2.7"
     invariant "^2.2.4"
     loadable-components "^2.2.2"
     pascalcase "^0.1.1"
