@@ -33,7 +33,7 @@ const Text = styled('p')`
 
 export const Sections = withRouter(({ history }) => (
   <Wrapper>
-    <Title>Built-ins Components</Title>
+    <Title>Built-in Components</Title>
     <Image src={image} alt="Built-in components" />
     <Text>
       Docz has some built-in components that help you to document your things.
