@@ -4,10 +4,17 @@ import './styles/base'
 import * as React from 'react'
 import { theme, ThemeConfig, DocPreview } from 'docz'
 import { ThemeProvider } from 'emotion-theming'
+import webfont from 'webfontloader'
 
 import { config } from './config'
 import { Topbar, Main } from '@components/shared'
 import * as components from '@components/ui'
+
+webfont.load({
+  google: {
+    families: ['Inconsolata', 'Zilla Slab:300,400,600'],
+  },
+})
 
 const Theme = () => (
   <ThemeConfig>
