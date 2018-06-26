@@ -1,5 +1,3 @@
-import * as colors from './colors'
-
 export const styles = {
   h1: {
     margin: '0 0 30px',
