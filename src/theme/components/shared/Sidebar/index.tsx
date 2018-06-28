@@ -1,7 +1,7 @@
 import './ads'
 
 import * as React from 'react'
-import { Fragment, SFC } from 'react'
+import { Component, Fragment, SFC } from 'react'
 import { Docs, Entry, Link as BaseLink } from 'docz'
 import styled from 'react-emotion'
 
@@ -84,26 +84,48 @@ interface SidebarProps {
   active: string
 }
 
-export const Sidebar: SFC<SidebarProps> = ({ parent, active }) => (
-  <Docs>
-    {({ docs: allDocs }) => {
-      const docs = allDocs.filter(doc => doc.parent === parent)
+export class Sidebar extends Component<SidebarProps> {
+  public addCarbonAds = () => {
+    const wrapper = document.getElementById('ads')
+    const script = document.createElement('script')
 
-      return (
-        <SidebarWrapper>
-          <Wrapper>
-            {docs.map(doc => <Menu key={doc.id} doc={doc} active={active} />)}
-            <div>
-              <script
-                async
-                type="text/javascript"
-                src="//cdn.carbonads.com/carbon.js?serve=CK7D6237&placement=wwwdoczsite"
-                id="_carbonads_js"
-              />
-            </div>
-          </Wrapper>
-        </SidebarWrapper>
-      )
-    }}
-  </Docs>
-)
+    script.setAttribute('async', '')
+    script.setAttribute('type', 'text/javascript')
+    script.setAttribute(
+      'src',
+      '//cdn.carbonads.com/carbon.js?serve=CK7D6237&placement=wwwdoczsite'
+    )
+    script.setAttribute('id', '_carbonads_js')
+
+    if (wrapper) {
+      wrapper.appendChild(script)
+    }
+  }
+
+  public componentDidMount(): void {
+    this.addCarbonAds()
+  }
+
+  public render(): React.ReactNode {
+    const { active, parent } = this.props
+
+    return (
+      <Docs>
+        {({ docs: allDocs }) => {
+          const docs = allDocs.filter(doc => doc.parent === parent)
+
+          return (
+            <SidebarWrapper>
+              <Wrapper>
+                {docs.map(doc => (
+                  <Menu key={doc.id} doc={doc} active={active} />
+                ))}
+                <div id="ads" />
+              </Wrapper>
+            </SidebarWrapper>
+          )
+        }}
+      </Docs>
+    )
+  }
+}
