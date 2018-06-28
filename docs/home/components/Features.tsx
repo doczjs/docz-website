@@ -72,7 +72,7 @@ export const Features = () => (
       <Image src={mdx} />
       <Title>MDX Based</Title>
       <Text>
-      MDX is <i>Markdown + JSX</i>. It brings the world of components into markdown. MDX makes it possible to import and use your components in a markdown-style file. To help you, docz has a lot of built-in components that can improve and accelerate your documentation process.
+        MDX is <i>Markdown + JSX</i>. It brings the world of components into markdown. MDX makes it possible to import and use your components in a markdown-style file. To help you, docz has a lot of built-in components that can improve and accelerate your documentation process.
       </Text>
     </FeatureItem>
     <FeatureItem>
