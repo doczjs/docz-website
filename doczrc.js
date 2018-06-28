@@ -30,5 +30,5 @@ export default {
   theme: 'src/theme/index',
   propsParser: false,
   mdPlugins: [externalLinks.default],
-  modifyBundlerConfig
+  modifyBundlerConfig,
 }

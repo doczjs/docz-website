@@ -1,3 +1,5 @@
+import './ads'
+
 import * as React from 'react'
 import { Fragment, SFC } from 'react'
 import { Docs, Entry, Link as BaseLink } from 'docz'
@@ -91,6 +93,14 @@ export const Sidebar: SFC<SidebarProps> = ({ parent, active }) => (
         <SidebarWrapper>
           <Wrapper>
             {docs.map(doc => <Menu key={doc.id} doc={doc} active={active} />)}
+            <div>
+              <script
+                async
+                type="text/javascript"
+                src="//cdn.carbonads.com/carbon.js?serve=CK7D6237&placement=wwwdoczsite"
+                id="_carbonads_js"
+              />
+            </div>
           </Wrapper>
         </SidebarWrapper>
       )
