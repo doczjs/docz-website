@@ -33,12 +33,12 @@ const Text = styled('p')`
 
 export const Sections = withRouter(({ history }) => (
   <Wrapper>
-    <Title>Built-ins Components</Title>
+    <Title>Built-in Components</Title>
     <Image src={image} alt="Built-in components" />
     <Text>
-      Docz has some built-ins components that help you to document your things.
-      Using the power of components and making some AST parsing algorithms to
-      source data for that components, we can do a lot of things, like render
+      Docz has some built-in components that help you to document your things.
+      Using the power of components and some AST parsing algorithms to
+      source data for that components, we can render
       your components on the fly, create tables with contents, custom getters by
       traversing your file, etc. The sky is limit here!
     </Text>
