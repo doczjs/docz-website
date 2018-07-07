@@ -1,7 +1,6 @@
 ---
 name: Project Configuration
 route: /documentation/project-configuration
-order: 3
 parent: Documentation
 ---
 
@@ -139,6 +138,13 @@ export default {
 This is the config that your theme will use to customize it. By default, each theme has your own `themeConfig` that you can modify, so this object may vary according to each theme.
 
 You can see the theme config of default theme [here](https://github.com/pedronauck/docz/blob/master/packages/docz-theme-default/src/config.ts)
+
+### ordering
+
+- Type: `string`
+- Default: `ascending`
+
+This property defines how document's property `order` will works
 
 ### wrapper
 
