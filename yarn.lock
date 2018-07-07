@@ -2610,9 +2610,9 @@ doctrine@^2.0.0:
   dependencies:
     esutils "^2.0.2"
 
-docz-core@^0.5.4:
-  version "0.5.4"
-  resolved "https://registry.npmjs.org/docz-core/-/docz-core-0.5.4.tgz#fd2c735b9758a23fc90ad4fee759fe73ed4bd054"
+docz-core@^0.5.5:
+  version "0.5.5"
+  resolved "https://registry.npmjs.org/docz-core/-/docz-core-0.5.5.tgz#e9ec7add8024efb3e454bb20db6a40d150217fae"
   dependencies:
     "@babel/core" "7.0.0-beta.52"
     "@babel/preset-typescript" "^7.0.0-beta.52"
@@ -2678,11 +2678,11 @@ docz-core@^0.5.4:
     ws "^5.2.1"
     yargs "^12.0.1"
 
-docz-theme-default@^0.5.4:
-  version "0.5.4"
-  resolved "https://registry.npmjs.org/docz-theme-default/-/docz-theme-default-0.5.4.tgz#e069ce30d3b2567e4d6b2b6c8a8899fa8702361f"
+docz-theme-default@^0.5.5:
+  version "0.5.5"
+  resolved "https://registry.npmjs.org/docz-theme-default/-/docz-theme-default-0.5.5.tgz#88f7891f25e2e959fe2f0569f8002eac0e8389df"
   dependencies:
-    docz "^0.5.4"
+    docz "^0.5.5"
     emotion "^9.2.5"
     emotion-theming "^9.2.5"
     facepaint "^1.2.1"
@@ -2701,16 +2701,16 @@ docz-theme-default@^0.5.4:
     react-powerplug "^1.0.0-rc.1"
     webfontloader "^1.6.28"
 
-docz@^0.5.4:
-  version "0.5.4"
-  resolved "https://registry.npmjs.org/docz/-/docz-0.5.4.tgz#a61a2bb0c88c5d2f5161701684a0c4d10f200200"
+docz@^0.5.5:
+  version "0.5.5"
+  resolved "https://registry.npmjs.org/docz/-/docz-0.5.5.tgz#a8e756b059ae5dac1c81b9ac9f8b8d42130e0588"
   dependencies:
     "@mdx-js/tag" "^0.13.1-1"
     "@sindresorhus/slugify" "^0.3.0"
     create-react-context "^0.2.2"
     deepmerge "^2.1.1"
-    docz-core "^0.5.4"
-    docz-theme-default "^0.5.4"
+    docz-core "^0.5.5"
+    docz-theme-default "^0.5.5"
     invariant "^2.2.4"
     loadable-components "^2.2.2"
     pascalcase "^0.1.1"

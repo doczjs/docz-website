@@ -28,6 +28,7 @@ export default {
   description: 'It has never been so easy to document your things',
   indexHtml: 'src/index.html',
   theme: 'src/theme/index',
+  ordering: 'ascending',
   propsParser: false,
   mdPlugins: [externalLinks.default],
   modifyBundlerConfig,
