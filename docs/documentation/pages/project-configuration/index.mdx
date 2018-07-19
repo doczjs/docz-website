@@ -232,14 +232,14 @@ Array of [rehype plugins](https://github.com/rehypejs/rehype/blob/master/doc/plu
 
 ### modifyBundlerConfig
 
-- Type: `(config: BundlerConfig, dev: boolean) => BundlerConfig`
+- Type: `(config: BundlerConfig, dev: boolean, args: Argv) => BundlerConfig`
 - Default: `(config) => config`
 
 This function can modify the default bundler configuration.
 
 ### modifyBabelRc
 
-- Type: `(babelrc: BabelRC) => BabelRC`
+- Type: `(babelrc: BabelRC, args: Argv) => BabelRC`
 - Default: `(babelrc) => babelrc`
 
 This function can modify the default babelrc configuration.

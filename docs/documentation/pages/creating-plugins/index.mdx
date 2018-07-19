@@ -18,6 +18,7 @@ const myPlugin = () => createPlugin({
   setConfig: (config) => /* ... */,
   modifyBundlerConfig: (config, dev) => /* ... */,
   modifyBabelRc: (babelrc) => /* ... */,
+  onCreateApp: (app) => /* ... */,
   onServerListening: (server) => /* ... */,
   onPreBuild: () => /* ... */,
   onPostBuild: () => /* ... */,
@@ -47,11 +48,13 @@ interface ThemeConfig {
   [key: string]: any
 }
 
-interface Config {
+interface Argv {
+  /* io args */
   base: string
   src: string
   files: string
   dest: string
+  /* bundler args */
   debug: boolean
   typescript: boolean
   propsParser: boolean
@@ -60,14 +63,23 @@ interface Config {
   port: number
   websocketPort: number
   websocketHost: string
+  /* template args */
   title: string
   description: string
   theme: string
-  plugins?: Plugin[]
+  ordering: 'ascending' | 'descending'
+  wrapper?: string
+  indexHtml?: string
+}
+
+export interface Config extends Argv {
+  hashRouter: boolean
+  plugins: Plugin[]
   mdPlugins: any[]
   hastPlugins: any[]
   themeConfig: ThemeConfig
-  modifyBundlerConfig<C>(config: C, dev: boolean): C
+  modifyBundlerConfig<C>(config: C, dev: boolean, args: Config): C
+  modifyBabelRc(babelrc: BabelRC, args: Config): BabelRC
 }
 
 type SetConfig = (config: Config) => Config
@@ -81,8 +93,9 @@ Use to modify bundler configuration
 
 #### Params
 
-- **babelrc:** Default bundler configuration object
+- **config:** Default bundler configuration object
 - **dev:** A boolean showing if is a `dev` environment
+- **args:** The docz config object merged with argv
 
 ### Return
 
@@ -103,6 +116,7 @@ Use to modify babelrc configuration
 #### Params
 
 - **babelrc:** Default babelrc configuration object
+- **args:** The docz config object merged with argv
 
 ### Return
 
@@ -119,6 +133,26 @@ interface BabelRC {
 }
 
 type ModifyBabelRC = (babelrc: BabelRC) => BabelRC
+```
+
+---
+
+### `onCreateApp`
+
+Method trigered when the app is created
+
+#### Params
+
+- **app:** The underlying Koa app
+
+#### Return
+
+- `void`
+
+#### Type definitions
+
+```ts
+type onCreateApp = <A>(app: A) => void
 ```
 
 ---
