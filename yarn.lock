@@ -2089,6 +2089,10 @@ cipher-base@^1.0.0, cipher-base@^1.0.1, cipher-base@^1.0.3:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
 
+circular-json@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.npmjs.org/circular-json/-/circular-json-0.4.0.tgz#c448ea998b7fe31ecf472ec29c6b608e2e2a62fd"
+
 class-utils@^0.3.5:
   version "0.3.6"
   resolved "https://registry.npmjs.org/class-utils/-/class-utils-0.3.6.tgz#f93369ae8b9a7ce02fd41faad0ca83033190c463"
@@ -2734,9 +2738,9 @@ doctrine@^2.0.0:
   dependencies:
     esutils "^2.0.2"
 
-docz-core@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.npmjs.org/docz-core/-/docz-core-0.6.0.tgz#3221615216e85fc61a7f8d0892d5572f36f8c579"
+docz-core@^0.6.2:
+  version "0.6.2"
+  resolved "https://registry.npmjs.org/docz-core/-/docz-core-0.6.2.tgz#907f40de0191188a655123b0e641842fd036c758"
   dependencies:
     "@babel/core" "7.0.0-beta.54"
     "@babel/preset-typescript" "^7.0.0-beta.54"
@@ -2758,6 +2762,7 @@ docz-core@^0.6.0:
     cpy "^7.0.1"
     deepmerge "^2.1.1"
     detect-port "^1.2.3"
+    env-dot-prop "^1.0.2"
     express "^4.16.3"
     fast-glob "^2.2.2"
     file-loader "^1.1.11"
@@ -2807,11 +2812,11 @@ docz-core@^0.6.0:
     ws "^5.2.2"
     yargs "^12.0.1"
 
-docz-theme-default@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.npmjs.org/docz-theme-default/-/docz-theme-default-0.6.1.tgz#662a2feb4c4f533e9e8fbb0027f9af021d635f67"
+docz-theme-default@^0.6.2:
+  version "0.6.2"
+  resolved "https://registry.npmjs.org/docz-theme-default/-/docz-theme-default-0.6.2.tgz#81b9bbf60f1d40ec9f38334c15b26cd364973af9"
   dependencies:
-    docz "^0.6.1"
+    docz "^0.6.2"
     emotion "^9.2.6"
     emotion-theming "^9.2.6"
     facepaint "^1.2.1"
@@ -2830,16 +2835,17 @@ docz-theme-default@^0.6.1:
     react-powerplug "^1.0.0-rc.1"
     webfontloader "^1.6.28"
 
-docz@^0.6.1:
-  version "0.6.1"
-  resolved "https://registry.npmjs.org/docz/-/docz-0.6.1.tgz#4ccdc7248bdbf283f64736fa19596876d7d539ef"
+docz@^0.6.2:
+  version "0.6.2"
+  resolved "https://registry.npmjs.org/docz/-/docz-0.6.2.tgz#c5b02869b25988ac0303eab3724f5d8b6336979a"
   dependencies:
     "@mdx-js/tag" "^0.14.0"
     "@sindresorhus/slugify" "^0.3.0"
     create-react-context "^0.2.2"
     deepmerge "^2.1.1"
-    docz-core "^0.6.0"
-    docz-theme-default "^0.6.1"
+    docz-core "^0.6.2"
+    docz-theme-default "^0.6.2"
+    env-dot-prop "^1.0.2"
     invariant "^2.2.4"
     loadable-components "^2.2.2"
     pascalcase "^0.1.1"
@@ -2913,7 +2919,7 @@ domutils@1.5, domutils@1.5.1:
     dom-serializer "0"
     domelementtype "1"
 
-dot-prop@^4.1.0:
+dot-prop@^4.1.0, dot-prop@^4.2.0:
   version "4.2.0"
   resolved "https://registry.npmjs.org/dot-prop/-/dot-prop-4.2.0.tgz#1f19e0c2e1aa0e32797c49799f2837ac6af69c57"
   dependencies:
@@ -3038,6 +3044,13 @@ entities@1.0:
 entities@~1.1.1:
   version "1.1.1"
   resolved "https://registry.npmjs.org/entities/-/entities-1.1.1.tgz#6e5c2d0a5621b5dadaecef80b90edfb5cd7772f0"
+
+env-dot-prop@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/env-dot-prop/-/env-dot-prop-1.0.2.tgz#c22052199178bfc19d7364d206f0c3b461deebd1"
+  dependencies:
+    circular-json "^0.4.0"
+    dot-prop "^4.2.0"
 
 errno@^0.1.3, errno@~0.1.7:
   version "0.1.7"
