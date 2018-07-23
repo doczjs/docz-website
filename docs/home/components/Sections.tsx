@@ -22,7 +22,7 @@ const Title = styled('h2')`
 `
 
 const Image = styled('img')`
-  width: 800px;
+  width: 1024px;
 `
 
 const Text = styled('p')`
@@ -36,11 +36,10 @@ export const Sections = withRouter(({ history }) => (
     <Title>Built-in Components</Title>
     <Image src={image} alt="Built-in components" />
     <Text>
-      Docz has some built-in components that help you to document your things.
-      Using the power of components and some AST parsing algorithms to
-      source data for that components, we can render
-      your components on the fly, create tables with contents, custom getters by
-      traversing your file, etc. The sky is limit here!
+      Docz built-ins components help you to document your things. Using the
+      power of components and some AST parsing algorithms to source data, we can
+      render your components on the fly, create tables with contents, custom
+      search and so much more. The sky is limit here!
     </Text>
     <Button
       scale="big"
