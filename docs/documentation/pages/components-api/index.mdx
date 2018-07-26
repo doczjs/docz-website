@@ -234,6 +234,15 @@ import MyComponent from './MyComponent'
 <PropsTable of={MyComponent} />
 ```
 
+### Descriptions
+You can add descriptions for your props by adding a comment on the line above the prop. Note: Description comments must be in the format `/** Description */`.
+```js
+MyComponent.propTypes = {
+  /** The description for myProp */
+  myProp: PropTypes.string,
+}
+```
+
 > ### Important
 >
 > To get right with `<PropsTable>` you need to export your component as a `default` export, this is a very bad limitation of React Docgen, but is something necessary right now!
