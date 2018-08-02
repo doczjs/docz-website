@@ -16,7 +16,7 @@ export const Loading = () => (
   <ThemeConfig>
     {config => (
       <Wrapper>
-        <HashLoader color={config.colors.primary} />
+        <HashLoader color={config.themeConfig.colors.primary} />
       </Wrapper>
     )}
   </ThemeConfig>

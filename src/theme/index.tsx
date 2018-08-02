@@ -19,7 +19,7 @@ webfont.load({
 const Theme = () => (
   <ThemeConfig>
     {config => (
-      <ThemeProvider theme={config}>
+      <ThemeProvider theme={config.themeConfig}>
         <Main>
           <Topbar />
           <DocPreview
