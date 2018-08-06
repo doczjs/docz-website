@@ -20,5 +20,10 @@ export const Cards: SFC = () => (
       description="Plugin to parse css files inside your documents"
       link="https://github.com/pedronauck/docz/tree/master/packages/docz-plugin-css"
     />
+    <Card
+      name="docz-plugin-svgr"
+      description="Plugin to parse svg as react components inside your documents"
+      link="https://github.com/pedronauck/docz/tree/master/packages/docz-plugin-svgr"
+    />
   </Wrapper>
 )
