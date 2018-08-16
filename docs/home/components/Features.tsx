@@ -18,12 +18,16 @@ const Container = styled(BaseContainer)`
 `
 
 const FeatureItem = styled('div')`
-  width: 33%;
   padding: 0 30px;
   margin: 25px 0;
   display: flex;
   flex-direction: column;
   text-align: center;
+
+  ${p =>
+    p.theme.mq({
+      width: ['100%', '50%', '33%', '33%'],
+    })};
 `
 
 const Image = styled('img')`
