@@ -3468,7 +3468,7 @@ extsprintf@^1.2.0:
 
 facepaint@^1.2.1:
   version "1.2.1"
-  resolved "https://registry.npmjs.org/facepaint/-/facepaint-1.2.1.tgz#89929e601b15227278c53c516f764fc462b09c33"
+  resolved "https://registry.yarnpkg.com/facepaint/-/facepaint-1.2.1.tgz#89929e601b15227278c53c516f764fc462b09c33"
 
 fast-deep-equal@^1.0.0:
   version "1.1.0"
@@ -6484,7 +6484,7 @@ react-adopt@^0.6.0:
 
 react-breakpoints@^3.0.0:
   version "3.0.0"
-  resolved "https://registry.npmjs.org/react-breakpoints/-/react-breakpoints-3.0.0.tgz#b57d18dc7ad73a7c00c1949e689360af9cac6759"
+  resolved "https://registry.yarnpkg.com/react-breakpoints/-/react-breakpoints-3.0.0.tgz#b57d18dc7ad73a7c00c1949e689360af9cac6759"
   dependencies:
     create-react-context "0.2.1"
     hoist-non-react-statics "2.5.0"
