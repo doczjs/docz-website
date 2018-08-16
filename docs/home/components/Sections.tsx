@@ -22,6 +22,7 @@ const Title = styled('h2')`
 `
 
 const Image = styled('img')`
+  max-width: 100%;
   width: 1024px;
 `
 
