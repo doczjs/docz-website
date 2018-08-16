@@ -13,12 +13,14 @@ import typescript from '@images/icons/typescript.svg'
 const Container = styled(BaseContainer)`
   display: flex;
   flex-wrap: wrap;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding: 80px 0;
+  ${p =>
+    p.theme.mq({
+      padding: ['25px 0', '25px 0', '25px 0', '80px 0'],
+    })};
 `
 
 const FeatureItem = styled('div')`
-  padding: 0 30px;
   margin: 25px 0;
   display: flex;
   flex-direction: column;
@@ -27,6 +29,7 @@ const FeatureItem = styled('div')`
   ${p =>
     p.theme.mq({
       width: ['100%', '50%', '33%', '33%'],
+      padding: ['0 10px', '0 20px', '0 20px', '0 30px']
     })};
 `
 

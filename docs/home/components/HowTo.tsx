@@ -17,6 +17,11 @@ const Wrapper = styled('div')`
     align-items: center;
     padding: 0;
   }
+
+  ${p =>
+    p.theme.mq({
+      padding: ['50px 10px', '50px 20px', '50px 20px', '100px 0'],
+    })};
 `
 
 const Title = styled('h2')`
@@ -25,6 +30,12 @@ const Title = styled('h2')`
   font-size: 52px;
   font-weight: 600;
   color: white;
+
+  ${p =>
+    p.theme.mq({
+      lineHeight: ['1', '1', '1.62', '1.62'],
+      fontSize: ['38px', '38px', '48px', '52px']
+    })};
 `
 
 const Text = styled('p')`
@@ -33,9 +44,15 @@ const Text = styled('p')`
 `
 
 const Pre = styled(BasePre)`
+  width: 100%;
+  max-width: 650px;
   margin: 10px 0 20px 0;
-  min-width: 650px;
   border: 1px solid rgba(255, 255, 255, 0.2);
+
+  ${p =>
+    p.theme.mq({
+      minWidth: ['100%', '100%', '650px', '650px'],
+    })};
 `
 
 const mdxExample = `---

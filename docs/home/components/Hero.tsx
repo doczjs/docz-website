@@ -12,7 +12,6 @@ const Wrapper = styled('div')`
   background: url(${pattern});
   background-position: center;
   border-bottom: 1px solid ${p => p.theme.colors.grayLight};
-  padding: 50px 0;
 
   ${Container.toString()} {
     display: flex;
@@ -24,7 +23,7 @@ const Wrapper = styled('div')`
 
   ${p =>
     p.theme.mq({
-      padding: ['50px 10px', '50px 20px', '50px 20px', '50px 0'],
+      padding: ['0 10px', '0 20px', '0 20px', '50px 0'],
     })};
 `
 
