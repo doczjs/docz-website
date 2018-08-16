@@ -84,7 +84,7 @@ export const Hero = withRouter(({ history }) => (
       <script src="https://fast.wistia.com/assets/external/E-v1.js" async />
     </Helmet>
     <Container>
-      <Logo height={100} />
+      <Logo height={100} style={{ maxWidth: '100%'}} />
       <Subtitle>It has never been so easy to document your things!</Subtitle>
       <GitHubButton
         type="stargazers"
