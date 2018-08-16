@@ -16,6 +16,11 @@ const Wrapper = styled('div')`
     justify-content: space-between;
     height: 100%;
   }
+
+  ${p =>
+    p.theme.mq({
+      padding: ['0 10px', '0 20px', '0 20px', '0'],
+    })};
 `
 
 const LogoLink = styled(Link)`
@@ -23,7 +28,10 @@ const LogoLink = styled(Link)`
 `
 
 const Menu = styled('div')`
-  display: flex;
+  ${p =>
+    p.theme.mq({
+      display: ['none', 'none', 'flex', 'flex'],
+    })};
 `
 
 const linkStyle = (p: any) => css`
