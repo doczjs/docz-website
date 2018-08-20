@@ -26,12 +26,12 @@ const Wrapper = styled('div')`
     align-items: center;
     justify-content: space-between;
     height: 100%;
-  }
 
-  ${p =>
-    p.theme.mq({
-      padding: ['0 10px', '0 20px', '0 20px', '0'],
-    })};
+    ${p =>
+      p.theme.mq({
+        padding: ['0 10px', '0 20px', '0 20px', '0 20px'],
+      })};
+  }
 `
 
 const LogoLink = styled(Link)`

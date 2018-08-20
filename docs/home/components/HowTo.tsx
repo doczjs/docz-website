@@ -6,7 +6,6 @@ import { Button, Container, Pre as BasePre } from '@components/ui'
 import pattern from '@images/dark-pattern2.png'
 
 const Wrapper = styled('div')`
-  padding: 100px 0;
   background: url(${pattern});
   color: ${p => p.theme.colors.grayLight};
   text-align: center;
@@ -16,12 +15,12 @@ const Wrapper = styled('div')`
     flex-direction: column;
     align-items: center;
     padding: 0;
-  }
 
-  ${p =>
-    p.theme.mq({
-      padding: ['50px 10px', '50px 20px', '50px 20px', '100px 0'],
-    })};
+    ${p =>
+      p.theme.mq({
+        padding: ['50px 10px', '50px 20px', '50px 20px', '100px 0'],
+      })};
+  }
 `
 
 const Title = styled('h2')`

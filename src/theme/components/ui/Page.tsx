@@ -10,6 +10,8 @@ interface WrapperProps {
   padding: boolean
 }
 
+const padding = (p: WrapperProps) => (p.padding ? 50 : 0)
+
 const Wrapper = styled<WrapperProps, 'div'>('div')`
   flex: 1;
   overflow-y: auto;
@@ -17,7 +19,15 @@ const Wrapper = styled<WrapperProps, 'div'>('div')`
   ${Container.toString()} {
     display: flex;
     min-height: 100%;
-    padding: ${p => (p.padding ? 50 : 0)}px 0;
+
+    ${p =>
+      p.theme.mq({
+        paddingLeft: ['10px', '20px', '20px', '20px'],
+        paddingRight: ['10px', '20px', '20px', '20px'],
+      })};
+
+    padding-top: ${padding}px;
+    padding-bottom: ${padding}px;
   }
 `
 

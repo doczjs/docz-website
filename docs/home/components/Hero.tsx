@@ -23,7 +23,7 @@ const Wrapper = styled('div')`
 
   ${p =>
     p.theme.mq({
-      padding: ['0 10px', '0 20px', '0 20px', '50px 0'],
+      padding: ['10px 0', '20px 0', '20px 0', '50px 0'],
     })};
 `
 
