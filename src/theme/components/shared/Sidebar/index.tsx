@@ -121,6 +121,23 @@ const MenuLink = styled(Link)`
   padding: 3px 0;
 `
 
+const IconLink = styled('a')`
+  font-family: Zilla Slab;
+  display: block;
+  font-weight: bold;
+  padding: 3px 0;
+
+  &,
+  &:visited {
+    color: ${p => p.theme.colors.grayDark};
+  }
+
+  &.active,
+  &:hover {
+    color: ${p => p.theme.colors.ocean};
+  }
+`
+
 interface OpenProps {
   opened: boolean
 }
@@ -261,6 +278,13 @@ export class Sidebar extends Component<SidebarProps> {
                             {doc.name}
                           </MenuLink>
                         ))}
+                        <IconLink
+                          key="GitHub"
+                          href="https://github.com/pedronauck/docz"
+                          target="_blank"
+                        >
+                          GitHub
+                        </IconLink>
                       </MenuContainer>
                     </React.Fragment>
                   ) : ('')}
