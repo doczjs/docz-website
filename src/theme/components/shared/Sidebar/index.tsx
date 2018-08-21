@@ -259,6 +259,7 @@ export class Sidebar extends Component<SidebarProps> {
           const isDesktop = media.breakpoints[media.currentBreakpoint] > media.breakpoints.mobile ? true : false
 
           const handleSidebarToggle = (ev: React.SyntheticEvent<any>) => {
+            if (isDesktop) return
             toggle && toggle()
           }
 
