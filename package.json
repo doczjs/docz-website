@@ -22,7 +22,6 @@
     "react-images": "^0.5.17",
     "react-powerplug": "^1.0.0-alpha.7",
     "react-router": "^4.2.0",
-    "react-spinners": "^0.3.2",
     "react-stickynode": "^2.0.1",
     "webfontloader": "^1.6.28"
   },
