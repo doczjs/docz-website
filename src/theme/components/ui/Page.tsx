@@ -1,6 +1,8 @@
 import * as React from 'react'
 import { Fragment, SFC } from 'react'
 import { PageProps } from 'docz'
+import { adopt } from 'react-adopt'
+import { Media } from 'react-breakpoints'
 import styled from 'react-emotion'
 
 import { Container } from './Container'
@@ -22,8 +24,8 @@ const Wrapper = styled<WrapperProps, 'div'>('div')`
 
     ${p =>
       p.theme.mq({
-        paddingLeft: ['10px', '20px', '20px', '20px'],
-        paddingRight: ['10px', '20px', '20px', '20px'],
+        paddingLeft: ['14px', '20px', '20px', '20px'],
+        paddingRight: ['14px', '20px', '20px', '20px'],
       })};
 
     padding-top: ${padding}px;
@@ -36,26 +38,68 @@ const Document = styled('div')`
   padding: 40px 0;
 `
 
-export const Page: SFC<PageProps> = ({ children, doc, ...props }) => {
-  const { parent, sidebar, fullpage } = doc
-  const showSidebar = Boolean(parent || sidebar)
+interface Media {
+  breakpoints: any
+  currentBreakpoint: string
+}
 
-  return (
-    <Wrapper padding={!showSidebar}>
-      {fullpage ? (
-        children
-      ) : (
-        <Container>
-          {showSidebar ? (
+interface MapperProps {
+  media: Media
+}
+
+const mapper = {
+  media: <Media />
+}
+
+const mapProps = ({ media }: MapperProps) => ({
+  media
+})
+
+const Composed = adopt<MapperProps>(mapper, mapProps)
+
+export const Page: SFC<PageProps> = ({ children, doc, ...props }) => (
+  <Composed>
+    {({ media }: MapperProps) => {
+      const { parent, sidebar, fullpage } = doc
+      const showSidebar = Boolean(parent || sidebar)
+      const isAtLeastDesktop = media.breakpoints[media.currentBreakpoint] > media.breakpoints.mobile ? true : false
+
+      return (
+        <Wrapper padding={!showSidebar}>
+          {fullpage ? (
             <Fragment>
-              <Sidebar parent={parent || doc.name} active={props.match.url} />
-              <Document>{children}</Document>
+              {isAtLeastDesktop ? (
+                <Fragment>{children}</Fragment>
+              ) : (
+                <Fragment>
+                  <Sidebar parent={parent || doc.name} active={props.match.url} />
+                  {children}
+                </Fragment>
+              )}
             </Fragment>
           ) : (
-            children
+            <Container>
+              {showSidebar ? (
+                <Fragment>
+                  <Sidebar parent={parent || doc.name} active={props.match.url} />
+                  <Document>{children}</Document>
+                </Fragment>
+              ) : (
+                <Fragment>
+                  {isAtLeastDesktop ? (
+                    <Fragment>{children}</Fragment>
+                  ) : (
+                    <Fragment>
+                      <Sidebar parent={parent || doc.name} active={props.match.url} />
+                      {children}
+                    </Fragment>
+                  )}
+                </Fragment>
+              )}
+            </Container>
           )}
-        </Container>
-      )}
-    </Wrapper>
-  )
-}
+        </Wrapper>
+      )
+    }}
+  </Composed>
+)

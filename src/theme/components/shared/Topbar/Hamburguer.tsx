@@ -50,6 +50,8 @@ const IconLine = styled('span')`
 `
 
 const ToggleButton = styled('button')`
+  position: absolute;
+  top: 14px;
   cursor: pointer;
   z-index: 99;
   display: flex;
@@ -66,6 +68,7 @@ const ToggleButton = styled('button')`
   ${p =>
     p.theme.mq({
       display: ['block', 'block', 'none', 'none'],
+      right: ['2px', '10px', '10px', '10px']
     })};
 `
 
