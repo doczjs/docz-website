@@ -47,7 +47,7 @@ const SidebarWrapper = styled('div')`
       padding: ['25px 30px', '25px 30px', '50px 40px 50px 0', '50px 40px 50px 0'],
       height: ['100%', '100%', 'auto', 'auto'],
       minHeight: ['auto', 'auto', '100%', '100%'],
-      overflow: ['auto', 'auto', 'inherit', 'inherit']
+      overflow: ['hidden auto', 'hidden auto', 'inherit', 'inherit']
     })};
 `
 
