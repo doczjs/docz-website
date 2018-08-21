@@ -12,7 +12,7 @@ interface WrapperProps {
   padding: boolean
 }
 
-const padding = (p: WrapperProps) => (p.padding ? 50 : 0)
+const padding = (p: WrapperProps) => (p.padding ? 40 : 0)
 
 const Wrapper = styled<WrapperProps, 'div'>('div')`
   flex: 1;
