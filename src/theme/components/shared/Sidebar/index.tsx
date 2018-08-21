@@ -160,18 +160,19 @@ const ToggleBackground = styled('div')`
 interface MenuProps {
   doc: Entry
   active: string
+  handleSidebarToggle: () => void
 }
 
-const Menu: SFC<MenuProps> = ({ doc, active }) => (
+const Menu: SFC<MenuProps> = ({ doc, active, handleSidebarToggle }) => (
   <Fragment>
-    <Link to={doc.route}>{doc.name}</Link>
+    <Link to={doc.route} onClick={handleSidebarToggle}>{doc.name}</Link>
     {active === doc.route && (
       <Submenu>
         {doc.headings.map(
           heading =>
             heading.depth > 1 &&
             heading.depth < 3 && (
-              <SmallLink key={heading.slug} href={`#${heading.slug}`}>
+              <SmallLink key={heading.slug} href={`#${heading.slug}`} onClick={handleSidebarToggle}>
                 {heading.value}
               </SmallLink>
             )
@@ -274,6 +275,7 @@ export class Sidebar extends Component<SidebarProps> {
                             key={doc.id}
                             to={doc.route}
                             isActive={isActive(doc.route)}
+                            onClick={handleSidebarToggle}
                           >
                             {doc.name}
                           </MenuLink>
@@ -282,6 +284,7 @@ export class Sidebar extends Component<SidebarProps> {
                           key="GitHub"
                           href="https://github.com/pedronauck/docz"
                           target="_blank"
+                          onClick={handleSidebarToggle}
                         >
                           GitHub
                         </IconLink>
@@ -289,7 +292,7 @@ export class Sidebar extends Component<SidebarProps> {
                     </React.Fragment>
                   ) : ('')}
                   {docs.map(doc => (
-                    <Menu key={doc.id} doc={doc} active={active} />
+                    <Menu key={doc.id} doc={doc} active={active} handleSidebarToggle={handleSidebarToggle} />
                   ))}
                   <div id="ads" />
                 </Wrapper>
