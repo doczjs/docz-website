@@ -72,37 +72,37 @@ export const isActive = (route: string) => (match: any, location: any) =>
   (match && match.url === location.pathname) ||
   (location.pathname.startsWith(route) && route !== '/')
 
-  export const Topbar = () => (
-    <Wrapper>
-      <Container>
-        <LogoLink to="/">
-          <Logo height={30} />
-        </LogoLink>
-        <Docs>
-          {({ docs: allDocs }) => {
-            const docs = allDocs.filter(doc => !doc.parent)
+export const Topbar = () => (
+  <Wrapper>
+    <Container>
+      <LogoLink to="/">
+        <Logo height={30} />
+      </LogoLink>
+      <Docs>
+        {({ docs: allDocs }) => {
+          const docs = allDocs.filter(doc => !doc.parent)
 
-            return (
-              <Menu>
-                {docs.map(doc => (
-                  <MenuLink
-                    key={doc.id}
-                    to={doc.route}
-                    isActive={isActive(doc.route)}
-                  >
-                    {doc.name}
-                  </MenuLink>
-                ))}
-                <IconLink
-                  href="https://github.com/pedronauck/docz"
-                  target="_blank"
+          return (
+            <Menu>
+              {docs.map(doc => (
+                <MenuLink
+                  key={doc.id}
+                  to={doc.route}
+                  isActive={isActive(doc.route)}
                 >
-                  <Github width={30} />
-                </IconLink>
-              </Menu>
-            )
-          }}
-        </Docs>
-      </Container>
-    </Wrapper>
-  )
+                  {doc.name}
+                </MenuLink>
+              ))}
+              <IconLink
+                href="https://github.com/pedronauck/docz"
+                target="_blank"
+              >
+                <Github width={30} />
+              </IconLink>
+            </Menu>
+          )
+        }}
+      </Docs>
+    </Container>
+  </Wrapper>
+)
