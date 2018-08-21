@@ -8,7 +8,7 @@ import { adopt } from 'react-adopt'
 import { Media } from 'react-breakpoints'
 import { Toggle } from 'react-powerplug'
 
-import { Hamburguer } from '@components/shared/Topbar/Hamburguer'
+import { Hamburguer } from '@components/shared/Sidebar/Hamburguer'
 
 interface WrapperProps {
   opened: boolean
