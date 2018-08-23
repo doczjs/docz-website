@@ -6,11 +6,12 @@ import { Card as BaseCard } from './Card'
 
 const Wrapper = styled('div')`
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
 `
-
 const Card = styled(BaseCard)`
-  width: 33%;
+  margin: 10px;
+  width: calc(50% - 20px);
 `
 
 export const Cards: SFC = () => (
