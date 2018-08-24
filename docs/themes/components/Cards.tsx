@@ -12,7 +12,6 @@ const Wrapper = styled('div')`
 `
 
 const Card = styled(BaseCard)`
-  width: calc(33% - 20px);
   ${mq({
       width: ['100%', 'calc(50% - 20px)', 'calc(33% - 20px)', 'calc(33% - 20px)'],
       margin: ['10px 0', '10px', '10px', '10px']
