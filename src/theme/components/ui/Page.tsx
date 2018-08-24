@@ -10,16 +10,18 @@ import { Sidebar } from '@components/shared'
 
 interface WrapperProps {
   padding: boolean
+  noflex: boolean
 }
 
 const padding = (p: WrapperProps) => (p.padding ? 40 : 0)
+const noflex = (p: WrapperProps) => (p.noflex ? 'block' : 'flex')
 
 const Wrapper = styled<WrapperProps, 'div'>('div')`
   flex: 1;
   overflow-y: auto;
 
   ${Container.toString()} {
-    display: flex;
+    display: ${noflex};
     min-height: 100%;
 
     ${p =>
@@ -60,12 +62,12 @@ const Composed = adopt<MapperProps>(mapper, mapProps)
 export const Page: SFC<PageProps> = ({ children, doc, ...props }) => (
   <Composed>
     {({ media }: MapperProps) => {
-      const { parent, sidebar, fullpage } = doc
+      const { parent, sidebar, fullpage, noflex } = doc
       const showSidebar = Boolean(parent || sidebar)
       const isAtLeastDesktop = media.breakpoints[media.currentBreakpoint] > media.breakpoints.mobile ? true : false
 
       return (
-        <Wrapper padding={!showSidebar}>
+        <Wrapper padding={!showSidebar} noflex={noflex}>
           {fullpage ? (
             <Fragment>
               {isAtLeastDesktop ? (
