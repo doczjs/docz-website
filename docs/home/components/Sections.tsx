@@ -48,10 +48,10 @@ export const Sections = withRouter(({ history }) => (
     <Title>Built-in Components</Title>
     <Image src={image} alt="Built-in components" />
     <Text>
-      Docz built-ins components help you to document your things. Using the
-      power of components and some AST parsing algorithms to source data, we can
-      render your components on the fly, create tables with contents, custom
-      search and so much more. The sky is limit here!
+      Using Docz's built-in components makes it easy to document your things. Using the
+      power of components and AST parsing algorithms to source data, Docz
+      renders your components on the fly, generates fully-formatted property tables, provides custom
+      search, and so much more. The sky is the limit!
     </Text>
     <Button
       scale="big"

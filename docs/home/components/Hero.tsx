@@ -85,7 +85,7 @@ export const Hero = withRouter(({ history }) => (
     </Helmet>
     <Container>
       <Logo height={100} style={{ maxWidth: '100%'}} />
-      <Subtitle>It has never been so easy to document your things!</Subtitle>
+      <Subtitle>It's never been easier to document your things!</Subtitle>
       <GitHubButton
         type="stargazers"
         size="large"

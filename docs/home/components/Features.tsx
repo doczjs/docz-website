@@ -56,44 +56,44 @@ export const Features = () => (
   <Container>
     <FeatureItem>
       <Image src={magicWand} />
-      <Title>Zero Config</Title>
+      <Title>Zero config</Title>
       <Text>
-        Don't worry about complex configuration setups to build and run your documentation. With docz you can just init your app with a single command.
+        No worrying about complex configuration settings to build and run your documentation. With docz you can init your app with just a single command.
       </Text>
     </FeatureItem>
     <FeatureItem>
       <Image src={rocket} />
       <Title>Really Blazing Fast</Title>
       <Text>
-        Docz uses Webpack 4 with a lot of techniques. With a really fast dev server and build, you don't need to worry about anything other than writing your docs!
+        Docz uses Webpack 4 under the hood, optimized for lightning fast dev servers and build times, so you can focus on writing your docs!
       </Text>
     </FeatureItem>
     <FeatureItem>
       <Image src={settings} />
       <Title>Easy to customize</Title>
       <Text>
-        With docz you can easily create and modify <Link to="/themes">themes</Link> for your documentation site. Like this website that you're looking!
+        Easily create and modify <Link to="/themes">themes</Link> for your documentation website, just like the one you see here!
       </Text>
     </FeatureItem>
     <FeatureItem>
       <Image src={mdx} />
-      <Title>MDX Based</Title>
+      <Title>Based on MDX</Title>
       <Text>
-        MDX is <i>Markdown + JSX</i>. It brings the world of components into markdown. MDX makes it possible to import and use your components in a markdown-style file. To help you, docz has a lot of built-in components that can improve and accelerate your documentation process.
+        MDX is <i>Markdown + JSX</i>, bringing the world of components to Markdown. MDX makes it possible to import and use your components in a Markdown-style file. Docz fully leverages this, and provides many built-in components that augment and speed up your documentation workflow.
       </Text>
     </FeatureItem>
     <FeatureItem>
       <Image src={plug} />
       <Title>Fully pluggable</Title>
       <Text>
-        Plugins are one of the oldest and best ways to make an application functional, flexible and optimized. With plugins, you can manipulate a lot of things through the docz flow and data. You can easily use or create some really cool stuff to help you to build your docs!
+        Plugins have always been a great way to allow for functional, flexible and optimized applications. In docz, you can use them to hook into the docz dataflow. Have a look at our <Link to="/plugins">existing plugins</Link>, or create your own plugins to help you build awesome docs!
       </Text>
     </FeatureItem>
     <FeatureItem>
       <Image src={typescript} />
-      <Title>Typescript Support</Title>
+      <Title>TypeScript support</Title>
       <Text>
-        Docz provides a native TypeScript support if you want to use your TSX components, and all docz packages were built entirely around typescript. So we have a full support for your type if you like to write typescript files. You can see more about your typing in your API section.
+        Docz provides full, native TypeScript support for your TSX components and custom types. In fact, all docz packages are built using TypeScript. Check out the <Link to="/documentation/components-api">API section</Link> for more information.
       </Text>
     </FeatureItem>
   </Container>
