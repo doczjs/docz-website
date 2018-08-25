@@ -6,15 +6,22 @@ import { Github } from 'react-feather'
 import { Container, Logo } from '@components/ui'
 
 const Wrapper = styled('div')`
+  position: relative;
   height: 60px;
   width: 100%;
   background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);
+  z-index: 99;
 
   ${Container.toString()} {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 100%;
+
+    ${p =>
+      p.theme.mq({
+        padding: ['0 14px', '0 20px', '0 20px', '0 20px'],
+      })};
   }
 `
 
@@ -23,7 +30,10 @@ const LogoLink = styled(Link)`
 `
 
 const Menu = styled('div')`
-  display: flex;
+  ${p =>
+    p.theme.mq({
+      display: ['none', 'none', 'flex', 'flex'],
+    })};
 `
 
 const linkStyle = (p: any) => css`

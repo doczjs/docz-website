@@ -13,20 +13,32 @@ const Wrapper = styled('div')`
   flex-direction: column;
   background: ${p => p.theme.colors.grayLight};
   border-top: 1px solid ${p => p.theme.colors.gray};
+  ${p =>
+    p.theme.mq({
+      padding: ['50px 10px', '50px 20px', '50px 20px', '100px 0'],
+    })};
 `
 
 const Title = styled('h2')`
-  font-size: 48px;
   font-family: 'Zilla Slab';
   margin: 0 0 40px 0;
+  text-align: center;
+
+  ${p =>
+    p.theme.mq({
+      lineHeight: ['1', '1', '1.62', '1.62'],
+      fontSize: ['38px', '38px', '48px', '48px']
+    })};
 `
 
 const Image = styled('img')`
+  max-width: 100%;
   width: 1024px;
 `
 
 const Text = styled('p')`
   width: 600px;
+  max-width: 100%;
   margin: 40px 0;
   text-align: center;
 `
