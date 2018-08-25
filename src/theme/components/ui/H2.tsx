@@ -13,10 +13,15 @@ export const H2 = styled('h2')`
   .icon-link {
     position: absolute;
     display: inline-block;
-    top: 0;
-    left: -25px;
     opacity: 0;
     transition: opacity 0.2s;
+
+    ${p =>
+      p.theme.mq({
+        top: ['8px', '8px', '0', '0'],
+        left: ['-15px', '-15px', '-25px', '-25px'],
+        fontSize: ['25px', '25px', 'inherit', 'inherit']
+      })};
   }
 
   &:hover .icon-link {

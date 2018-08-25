@@ -3,6 +3,8 @@ import styled from 'react-emotion'
 
 import * as colors from '@styles/colors'
 
+import { breakpoints } from '@styles/responsive'
+
 const scales = {
   small: `
     padding: 5px 10px;
@@ -15,6 +17,16 @@ const scales = {
   big: `
     padding: 20px 30px;
     font-size: 18px;
+
+    @media (max-width: ${breakpoints.tablet}px) {
+      padding: 16px 26px;
+      font-size: 16px;
+    }
+
+    @media (max-width: ${breakpoints.mobile}px) {
+      padding: 14px 24px;
+      font-size: 15px;
+    }
   `,
 }
 
