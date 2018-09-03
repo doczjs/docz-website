@@ -10,8 +10,8 @@ import pattern from '@images/pattern.png'
 const Wrapper = styled('div')`
   width: 100%;
   background: url(${pattern});
+  background-position: center;
   border-bottom: 1px solid ${p => p.theme.colors.grayLight};
-  padding: 50px 0;
 
   ${Container.toString()} {
     display: flex;
@@ -20,14 +20,21 @@ const Wrapper = styled('div')`
     flex-direction: column;
     height: 100%;
   }
+
+  ${p =>
+    p.theme.mq({
+      padding: ['10px 0', '26px 0', '26px 0', '50px 0'],
+    })};
 `
 
 const Subtitle = styled('h2')`
   font-weight: 200;
+  text-align: center;
 `
 
 const VideoWrapper = styled('div')`
   width: 830px;
+  max-width: 100%;
   margin: 50px 0;
 `
 
@@ -77,8 +84,8 @@ export const Hero = withRouter(({ history }) => (
       <script src="https://fast.wistia.com/assets/external/E-v1.js" async />
     </Helmet>
     <Container>
-      <Logo height={100} />
-      <Subtitle>It has never been so easy to document your things!</Subtitle>
+      <Logo height={100} style={{ maxWidth: '100%'}} />
+      <Subtitle>It's never been easier to document your things!</Subtitle>
       <GitHubButton
         type="stargazers"
         size="large"

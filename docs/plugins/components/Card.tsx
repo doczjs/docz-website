@@ -5,9 +5,8 @@ import styled from 'react-emotion'
 import { Box as BaseBox, ButtonLink } from '@components/ui'
 
 const Box = styled(BaseBox)`
-  width: calc(512px - 20px);
+  width: 50%;
   padding: 20px;
-  margin: 0 20px 0 0;
 `
 
 const Title = styled('h3')`
