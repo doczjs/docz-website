@@ -22,7 +22,7 @@ export const Cards: SFC = () => (
     <Card
       name="docz-plugin-css"
       description="Plugin to parse css files inside your documents"
-      link="https://github.com/pedronauckdocz-plugin-css"
+      link="https://github.com/pedronauck/docz-plugin-css"
     />
     <Card
       name="docz-plugin-netlify"
