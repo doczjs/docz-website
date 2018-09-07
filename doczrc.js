@@ -5,6 +5,7 @@ const PUBLIC = path.resolve(__dirname, 'public')
 const SRC = path.resolve(__dirname, 'src')
 
 export default {
+  src: './docs',
   title: 'Docz',
   description: 'It has never been so easy to document your things',
   indexHtml: 'src/index.html',
