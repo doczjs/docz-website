@@ -12,9 +12,9 @@ const Wrapper = styled('div')`
 `
 const Card = styled(BaseCard)`
   ${mq({
-      width: ['100%', 'calc(50% - 20px)', 'calc(50% - 20px)', 'calc(50% - 20px)'],
-      margin: ['10px 0', '10px', '10px', '10px']
-    })};
+    width: ['100%', 'calc(50% - 20px)', 'calc(50% - 20px)', 'calc(50% - 20px)'],
+    margin: ['10px 0', '10px', '10px', '10px'],
+  })};
 `
 
 export const Cards: SFC = () => (
@@ -22,12 +22,7 @@ export const Cards: SFC = () => (
     <Card
       name="docz-plugin-css"
       description="Plugin to parse css files inside your documents"
-      link="https://github.com/pedronauck/docz/tree/master/packages/docz-plugin-css"
-    />
-    <Card
-      name="docz-plugin-babel6"
-      description="Use this plugin to use older babel version [DEPRECATED]"
-      link="https://github.com/pedronauck/docz/tree/master/packages/docz-plugin-babel6"
+      link="https://github.com/pedronauckdocz-plugin-css"
     />
     <Card
       name="docz-plugin-netlify"
@@ -37,17 +32,12 @@ export const Cards: SFC = () => (
     <Card
       name="docz-plugin-react-native"
       description="Allow you to use docz with React Native"
-      link="https://github.com/pedronauck/docz/blob/master/packages/docz-plugin-react-native"
+      link="https://github.com/pedronauck/docz-plugin-react-native"
     />
     <Card
       name="docz-plugin-svgr"
       description="Allow you to parse svg using svgr"
-      link="https://github.com/pedronauck/docz/blob/master/packages/docz-plugin-svgr"
-    />
-    <Card
-      name="docz-plugin-svgr"
-      description="Plugin to parse svg as react components inside your documents"
-      link="https://github.com/pedronauck/docz/tree/master/packages/docz-plugin-svgr"
+      link="https://github.com/pedronauck/docz-plugin-svgr"
     />
   </Wrapper>
 )
