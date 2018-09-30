@@ -21,8 +21,8 @@ const myPlugin = () => createPlugin({
   onCreateApp: (app) => /* ... */,
   onServerListening: (server) => /* ... */,
   onPreBuild: () => /* ... */,
-  onPostBuild: () => /* ... */,
-  onPreRender: () => /* ... */,
+  onPostBuild: (config) => /* ... */,
+  onPreRender: (config) => /* ... */,
   onPostRender: () => /* ... */,
 })
 ```
@@ -183,7 +183,7 @@ Method triggered before the build process
 
 #### Params
 
-- `none`
+- **config:** Default bundler configuration object
 
 #### Return
 
@@ -192,7 +192,7 @@ Method triggered before the build process
 #### Type definitions
 
 ```ts
-type OnPreBuild = () => void
+type OnPreBuild<C = any> = (config: C) => void
 ```
 
 ---
@@ -203,7 +203,7 @@ Method triggered after the build process
 
 #### Params
 
-- `none`
+- **config:** Default bundler configuration object
 
 #### Return
 
@@ -212,7 +212,7 @@ Method triggered after the build process
 #### Type definitions
 
 ```ts
-type onPostBuild = () => void
+type onPostBuild<C = any> = (config: C) => void
 ```
 
 ---
