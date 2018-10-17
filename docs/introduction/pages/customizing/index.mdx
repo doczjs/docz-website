@@ -51,7 +51,6 @@ Document settings can be something simple, but powerful. It should be defined in
 ---
 name: My Document
 route: /custom-route
-order: 1
 menu: Documents
 ---
 ```
@@ -60,10 +59,11 @@ These properties are basic but good to help you improve your document navigation
 
 - `name` Define the name of your component.
 - `route` Define the route of your component. By default, if you don't pass any route, we'll use some kinda slug that is a filepath of your file with a route format.
-- `order` You can sort your document here if you want to show it above or below other documents
 - `menu` You can group your documents into a single menu by changing this prop.
 
 If we stopped here, perhaps you couldn't do many customizations with this properties. So, all documents can have whatever property you want to define, and your theme will load these properties.
+
+As of v0.12.4 the ordering of menus and submenus is done in `doczrc.js`, please [see the changelog for details](https://github.com/pedronauck/docz/releases/tag/v0.12.4).
 
 Example: you can define whether your document is a page with `100%` width or not, by setting a property like this:
 
