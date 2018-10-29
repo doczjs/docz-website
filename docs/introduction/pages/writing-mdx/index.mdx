@@ -6,7 +6,7 @@ parent: Introduction
 
 # Writing MDX
 
-MDX is something really cool when it comes to writing documents and pages because it combines the readability of markdown with the expressivity and power of components. This is what makes MDX so powerful. According to the [specification](https://github.com/mdx-js/specification), it was developed because:
+MDX is well suited for writing documents and pages because it combines the readability of markdown with the expressivity and power of components. This is what makes MDX so powerful. According to the [specification](https://github.com/mdx-js/specification), it was developed because:
 
 > ### Why MDX?
 >
@@ -14,7 +14,7 @@ MDX is something really cool when it comes to writing documents and pages becaus
 
 ## Working with components
 
-If you want to know more about how MDX works, parse and transpile files, it has a [specification](https://github.com/mdx-js/specification) that's a good read. But now, we'll assume that you just need to know that with MDX you can use your components inside your markdown files, just that!
+If you want to know more about how MDX works, parsing and transpiling files, it has a [specification](https://github.com/mdx-js/specification) that's a good read. But for now, you only need to know that with MDX you can use your components inside your markdown files.
 
 But how? Let's take a look at how we can improve our `.mdx` created in the previous section by importing and using a component inside it:
 
@@ -38,13 +38,13 @@ And, if you really have a `Button` component to import, you'll see something lik
 
 > ### Note
 >
-> It's important to know that by some mvp reasons, until now docz only works with React components. But stay calm, we working to bring Preact, Vue and some others libraries to docz!
+> It's important to know that for some MVP reasons, until now docz only works with React components. But stay calm, we are working to bring Preact, Vue and some others libraries to docz!
 
 ## Using Remark and Rehype Plugins
 
 Since MDX uses the [remark](https://github.com/remarkjs/remark)/[rehype](https://github.com/rehypejs/rehype) ecosystems, you can use plugins to modify the AST on different stages of the process and make your documentation better.
 
-To use plugins you just need set `mdPlugins` for remark plugins and `hastPlugins` for rehype plugins on your project configuration:
+To use these plugins, set `mdPlugins` for remark plugins and `hastPlugins` for rehype plugins in your project configuration:
 
 ```js
 import images from 'remark-images'
@@ -57,7 +57,7 @@ export default {
 
 ## Using theme components
 
-If you want to pass default theme components to some component that you import on your mdx, you can do that by passing the prop on the fly:
+If you want to pass default theme components to some component that you import in your `.mdx`, you can do that by passing the prop on the fly:
 
 ```markdown
 ---
@@ -69,6 +69,6 @@ import { MyComponent } from './MyComponent'
 <MyComponent components={components} />
 ```
 
-Although MDX is very powerful, it's very simple too, so there's nothing more to know to work with MDX, it's just that. With this in mind, we open a whole new world of possibilities using markdown and components together and Docz can make possible to turn this experience better for you to write your docs.
+Although MDX is powerful, it's simple too, so there's nothing more to know to work with MDX. With this in mind, we open a whole new world of possibilities using markdown and components together and Docz leverages this to improve your experience while writing docs.
 
-So, now both we know how MDX works and what it can do, see how Docz can help you to [document your things](/introduction/documenting-your-things) by using our helper components!
+Now that we know how MDX works and what it can do, see how Docz can help you to [document your things](/introduction/documenting-your-things) by using our helper components!
