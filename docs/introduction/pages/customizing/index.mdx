@@ -7,15 +7,15 @@ parent: Introduction
 
 # Customizing
 
-One of the greatest pain you can have when you're working with tools that allow you to create documentation and develop your components, is that it's ~~impossible~~ very difficult to customize and impress your brand style. In most cases, you have just a few limited features to do that, or you need to create everything from scratch.
+One of the greatest pains you can have when you're working with tools that allow you to create documentation and develop your components, is that it's ~~impossible~~ very difficult to customize and inject your brand. In most cases, you have just a few limited features to do that, or you need to create everything from scratch.
 
-Docz was created with this pain in mind. In order to make customization simple and give liberty and velocity to you without the need to create your things from scratch, we allow you to modify everything that you want, from the bundler configuration to a sidebar menu color of your documentation.
+Docz was created with this pain in mind. In order to make customization simple and give you freedom and velocity without the need to create your things from scratch, we allow you to modify everything that you want, from the bundler configuration to a sidebar menu color.
 
 In this section, we'll explain about what you need to know to do that!
 
 ## Project configuration
 
-The first most important thing is your project configuration. How you now know, Docz is a zero-config tool. This is good, but our effort to be zero-config is just to get out of your face the willingness to start a project. To make this possible we have a very complete project configuration that can be modified with your own taste!
+The first most important thing is your project configuration. As you now know, Docz is a zero-config tool. This is good, but our efforts to be zero-config are mainly to get you started. To make this possible we have a complete project configuration that can be modified to your own tastes.
 
 Creating your own configuration is very easy: just add a `doczrc.js` file in the root of your project:
 
@@ -41,11 +41,11 @@ export default {
 }
 ```
 
-Don't be scared with these properties, we'll explain more about it later, but you can see all the details about the file configuration in the [Project Configuration](/documentation/project-configuration) section.
+Don't be scared with these properties, we'll explain them later, but you can see all the details about the file configuration in the [Project Configuration](/documentation/project-configuration) section.
 
 ## Document settings
 
-Document settings can be something simple, but powerful. It should be defined in the top of the `.mdx` file using yaml and can be used to change the layout or the theme. By default there are some basic properties that all documents can have:
+Document settings can be something simple, but powerful. They should be defined in the top of the `.mdx` file using yaml and can be used to change the layout or the theme. By default there are some basic properties that all documents can have:
 
 ```markdown
 ---
@@ -55,13 +55,13 @@ menu: Documents
 ---
 ```
 
-These properties are basic but good to help you improve your document navigation. As you can see, they are pretty much self-explanatory, but here is their definition:
+These properties are basic but good to help you improve your document navigation. They are pretty much self-explanatory, but here is their definition:
 
 - `name` Define the name of your component.
 - `route` Define the route of your component. By default, if you don't pass any route, we'll use some kinda slug that is a filepath of your file with a route format.
 - `menu` You can group your documents into a single menu by changing this prop.
 
-If we stopped here, perhaps you couldn't do many customizations with this properties. So, all documents can have whatever property you want to define, and your theme will load these properties.
+If we stopped here, perhaps you couldn't do many customizations with these properties. So, all documents can have arbitrary properties that you define and your theme will load them.
 
 As of v0.12.4 the ordering of menus and submenus is done in `doczrc.js`, please [see the changelog for details](https://github.com/pedronauck/docz/releases/tag/v0.12.4).
 
@@ -84,7 +84,7 @@ By running docz and having your first `.mdx` file, you should see something like
 
 ![](https://cdn-std.dprcdn.net/files/acc_649651/ZOUyUu)
 
-What you see above is our [docz-default-theme](https://github.com/pedronauck/docz/tree/master/packages/docz-theme-default). It's very minimalist, but it has what you need to start writing beautiful documentation.
+What you see above is our [docz-default-theme](https://github.com/pedronauck/docz/tree/master/packages/docz-theme-default). It's minimalist, but it has everything you need to start writing beautiful documentation.
 
 ### Creating themes
 
@@ -101,9 +101,9 @@ export default {
 
 ### Modifying the existing theme
 
-Creating a theme from scratch can be necessary depending on how big is your project and how much time you have to build your own theme. But this is not always what you need: sometimes you just need to modify some colors, fonts, spaces or whatever another thing that have in your mind.
+Creating a theme from scratch may be necessary depending on how big your project is and how much time you have. But this is not always the case: sometimes you just need to modify some colors, fonts, spacing, etc.
 
-Docz is awesome because that: it makes possible for you to create your own theme from scratch in a very simple way or just modify some properties of the chosen theme:
+Docz makes it possible for you to create your own theme from scratch in a very simple way or just override some properties of the chosen theme:
 
 ```js
 // doczrc.js
@@ -125,13 +125,13 @@ With just these few lines you can tweak your theme to match your styles:
 
 ![](https://cdn-std.dprcdn.net/files/acc_649651/LUoBjJ)
 
-The `themeConfig` property is what make this possible. It's just an object that every theme can define in its creation and use along the theme components. This is very flexible because you can create your own theme with some default configuration and give the user the capability to modify by their own taste.
+The `themeConfig` property is what makes this possible. It's just an object that every theme can define and use within the theme components. This is very flexible because you can create your own theme with some default configuration and give the user the capability to modify to their own taste.
 
 ## Plugins
 
-Plugins are very useful to speed up the development process. This concept is very used and disseminated nowadays in a lot of awesome tools because with it you can modify a bunch of processes and customize the project to your needs by just plugging some packages.
+Plugins are helpful to speed up the development process. This concept is widely used nowadays in a lot of awesome tools because with it you can modify a bunch of processes and customize the project to your needs by just plugging in some packages.
 
-Using a plugin in docz is easy. All you need to do is install the plugin that you want to use and call it on your project configuration:
+Using a plugin in docz is easy. All you need to do is install the plugin that you want to use and call it in your project configuration:
 
 ```js
 // docsrc.js
@@ -142,4 +142,4 @@ export default {
 }
 ```
 
-As you can see, a plugin is just a function passed inside an array. You can read more about how to create a plugin and the plugin's API in the [Creating Plugins](/documentation/creating-plugins) section, and see all the plugins created until now in the [Plugins](/plugins) menu.
+As you can see, a plugin is just a function passed inside an array. You can read more about how to create a plugin and the plugin API in the [Creating Plugins](/documentation/creating-plugins) section, and see all the available plugins in the [Plugins](/plugins) menu.
