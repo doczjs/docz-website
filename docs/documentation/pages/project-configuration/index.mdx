@@ -39,9 +39,20 @@ Specify the output directory for `docz build`
 - Type: `string`
 - Default: `**/*.mdx`
 
-Glob pattern used to find your files. By default, docz find all files inside the source folder that has a `.mdx` extension. You can be more specific you want and change this glob to find other rules.
+Glob pattern used to find your files. 
+By default, docz finds all files inside the source folder that has a `.mdx` extension. 
+[As of v0.10](https://github.com/pedronauck/docz/releases/tag/v0.10.0), you can customize it to resolve other filetypes:
 
-> If you want to change this glob is important maintain the `.mdx` extension in the glob
+```js
+// doczrc.js
+export default {
+  files: '**/*.{md,markdown,mdx}'
+}
+```
+
+You can be more specific if you want and change this glob to find other rules.
+
+> It is important to keep the `.mdx` extension in this string if you specify it
 
 ### base
 
