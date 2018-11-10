@@ -127,6 +127,37 @@ With just these few lines you can tweak your theme to match your styles:
 
 The `themeConfig` property is what makes this possible. It's just an object that every theme can define and use within the theme components. This is very flexible because you can create your own theme with some default configuration and give the user the capability to modify to their own taste.
 
+## Bundler config
+
+Docz uses Webpack to bundle your source files into their final form. Using the `modifyBundlerConfig` property, you can modify the built-in Webpack configuration however you like. `modifyBundlerConfig` takes a function with the built-in Webpack configuration object as its argument. Whatever you return from that function will be used as the new Webpack configuration object.
+
+One common use case is to add a Webpack plugin. Here is an example of how to add the `DirectoryNamedWebpackPlugin`.
+
+```js
+// doczrc.js
+const merge = require('webpack-merge');
+const DirectoryNamedWebpackPlugin = require('directory-named-webpack-plugin');
+
+const webpackOverlay = {
+  resolve: {
+    plugins: [
+      new DirectoryNamedWebpackPlugin({
+        honorIndex: true,
+        exclude: /node_modules/,
+      }),
+    ],
+  },
+};
+
+export default {
+  modifyBundlerConfig: config => {
+    return merge(config, webpackOverlay);
+  },
+};
+```
+
+You can see that the new configuration to be applied is stored in `webpackOverlay` and then merged into the existing configuration. This combined configuration is then returned and becomes the new Webpack configuration.
+
 ## Plugins
 
 Plugins are helpful to speed up the development process. This concept is widely used nowadays in a lot of awesome tools because with it you can modify a bunch of processes and customize the project to your needs by just plugging in some packages.
