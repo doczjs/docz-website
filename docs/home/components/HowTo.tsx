@@ -72,7 +72,7 @@ export const HowTo = withRouter(({ history }) => (
     <Container>
       <Title>How to</Title>
       <Text>Install Docz as a dependency</Text>
-      <Pre className="language-bash">$ yarn add docz --dev</Pre>
+      <Pre className="language-bash">$ yarn add docz docz-theme-default --dev</Pre>
       <Text>
         Create an <code>.mdx</code> file anywhere in your project
       </Text>
