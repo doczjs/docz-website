@@ -10,16 +10,28 @@ The project configuration is used when you need to define some specific customiz
 
 To customize your project configuration just create `doczrc.js` following this reference.
 
+## Env file
+
+You can also create a `.env` file or use an existing `.env` file. You can then define customizations via `DOCZ_<config-variable>`.
+
+## CLI arguments
+
+You can also pass customizations as arguments to the `docz dev` command: `docz dev --typescript --port=4838 --websocketPort=8738`
+
 > ### Tips and tricks
 >
 > You can create a `doczrc.json` file too if you want, but we recommend that you use a `js` file because just with javascript you can set plugins in your configuration since plugins are functions!
+
+> ### Running multiple docz apps concurrently
+>
+> You can run multiple docz apps concurrently by making each app run on their own port and websocket port. See config options below. 
 
 ## Basic config
 
 ### src
 
 - Type: `string`
-- Default: `./`
+- Default: `process.env.DOCZ_SOURCE || './'`
 
 Define the source folder that docz will find and parse your mdx files. Every file out of this folder will not be found.
 
@@ -30,14 +42,14 @@ Define the source folder that docz will find and parse your mdx files. Every fil
 ### dest
 
 - Type: `string`
-- Default: `.docz/dist`
+- Default: `process.env.DOCZ_DEST || '.docz/dist'`
 
 Specify the output directory for `docz build`
 
 ### files
 
 - Type: `string`
-- Default: `**/*.mdx`
+- Default: `process.env.DOCZ_FILES || '**/*.mdx'`
 
 Glob pattern used to find your files. 
 By default, docz finds all files inside the source folder that has a `.mdx` extension. 
@@ -57,7 +69,7 @@ You can be more specific if you want and change this glob to find other rules.
 ### base
 
 - Type: `string`
-- Default: `/`
+- Default: `process.env.DOCZ_BASE || '/'`
 
 The base URL of the site will be deployed at. You will need to set this if you plan to deploy your site under a subpath, for example, GitHub pages. If you plan to deploy your site to https://foo.github.io/bar/, the base should be set to `/bar/`.
 
@@ -68,28 +80,28 @@ The base is automatically prepend to all the URLs that start with `/` in other o
 ### title
 
 - Type: `string`
-- Default: `MyDoc`
+- Default: `process.env.DOCZ_TITLE || name as defined in package.json`
 
 The title for the site. This will be the prefix for all page titles and displayed in the sidebar in the default theme.
 
 ### description
 
 - Type: `string`
-- Default: `My awesome app using Docz`
+- Default: `process.env.DOCZ_DESCRIPTION || description as defined in package.json`
 
 The description for the site. It will be rendered as a `<meta>` tag in the page HTML.
 
 ### typescript
 
 - Type: `boolean`
-- Default: `false`
+- Default: `process.env.DOCZ_TYPESCRIPT || false`
 
 This option is used if you need to import Typescript components inside your `.mdx` files.
 
 ### propsParser
 
 - Type: `boolean`
-- Default: `true`
+- Default: `process.env.DOCZ_PROPS_PARSER || true`
 
 To be able to use the `<PropsTable />` component and parse properties of your components, we need to run a lot of processes that have some costs on the build process. If you need to disable this process to improve performance, you can just this property to `false`.
 
@@ -110,23 +122,52 @@ Specify the protocol of your dev server.
 ### host
 
 - Type: `string`
-- Default: `process.env.HOST || '0.0.0.0'`
+- Default: `process.env.DOCZ_HOST || '127.0.0.1'`
 
 Specify the host to use for the dev server.
 
 ### port
 
-- Type: `string`
-- Default: `process.env.PORT || 3000`
+- Type: `number`
+- Alias: `p`
+- Default: `process.env.DOCZ_PORT || 3000`
 
 Specify the port to use for the dev server.
+
+### websocket host
+
+- Type: `string`
+- Default: `process.env.DOCZ_WEBSOCKET_HOST || '127.0.0.1'`
+
+Specify the websocket host to use for the dev server.
+
+```js
+// doczrc.js
+export default {
+  websocketHost: '192.168.29.12',
+}
+```
+
+### websocket port
+
+- Type: `number`
+- Default: `process.env.DOCZ_WEBSOCKET_PORT || 60505`
+
+Specify the websocket port to use for the dev server.
+
+```js
+// doczrc.js
+export default {
+  websocketPort: '8373',
+}
+```
 
 ## Theming
 
 ### theme
 
 - Type: `string`
-- Default `docz-theme-default`
+- Default: `process.env.DOCZ_THEME || 'docz-theme-default'`
 
 Use this property to specify the theme for your site. You can pass the name of your theme if is a package like `docz-theme-default` and the docz will attempt to load the theme component at `node_modules/docz-default-theme`, or if you want to use some file inside your project, you can just pass the filepath relative to the root path of your project.
 
