@@ -1,8 +1,7 @@
 import React, { SFC } from 'react'
-import styled from 'react-emotion'
+import styled from 'styled-components'
 
 import * as colors from '@styles/colors'
-
 import { breakpoints } from '@styles/responsive'
 
 const scales = {
@@ -77,7 +76,7 @@ const getScale = ({ scale = 'normal' }: ButtonProps) => scales[scale]
 const getKind = ({ kind = 'primary', outline = false }: ButtonProps) =>
   kinds(outline)[kind]
 
-export const ButtonStyled = styled<ButtonProps, 'button'>('button')`
+export const ButtonStyled = styled.button<ButtonProps>`
   ${getKind};
   ${getScale};
   display: flex;

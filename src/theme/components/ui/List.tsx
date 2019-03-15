@@ -1,5 +1,5 @@
-import styled from 'react-emotion'
+import styled from 'styled-components'
 
-export const List = styled('ul')`
+export const List = styled.ul`
   ${p => p.theme.styles.list};
 `

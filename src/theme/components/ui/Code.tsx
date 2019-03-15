@@ -1,6 +1,6 @@
-import styled from 'react-emotion'
+import styled from 'styled-components'
 
-export const Code = styled('code')`
+export const Code = styled.code`
   margin: 0 3px;
   padding: 3px 5px;
   border-radius: 3px;

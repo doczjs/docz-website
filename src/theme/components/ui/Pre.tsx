@@ -7,11 +7,13 @@ import 'prismjs/components/prism-bash.min'
 import 'prismjs/components/prism-markdown.min'
 import 'prismjs/components/prism-typescript.min'
 
-import React, { PureComponent } from 'react'
+import * as React from 'react'
+import { useRef, useEffect } from 'react'
 import prism from 'prismjs'
-import styled, { cx } from 'react-emotion'
+import styled from 'styled-components'
+import cx from 'classnames'
 
-const PreStyled = styled('pre')`
+const PreStyled = styled.pre`
   ${p => p.theme.styles.pre};
 `
 
@@ -20,33 +22,22 @@ interface PreProps {
   className?: string
 }
 
-export class Pre extends PureComponent<PreProps> {
-  private el: any
+export const Pre: React.SFC<PreProps> = ({ children, className }) => {
+  const preRef = useRef<any>(null)
+  const hasChildren = children && children.props
+  const childrenProps = hasChildren && children.props.props
+  const childrenClassName = childrenProps && childrenProps.className
 
-  public render(): JSX.Element {
-    const { children } = this.props
-    const hasChildren = children && children.props
-    const childrenProps = hasChildren && children.props.props
-    const childrenClassName = childrenProps && childrenProps.className
+  useEffect(() => {
+    preRef && preRef.current && prism.highlightElement(preRef.current)
+  })
 
-    const className = cx('react-prism', this.props.className, childrenClassName)
-
-    return (
-      <PreStyled innerRef={ref => (this.el = ref)} className={className}>
-        {hasChildren ? children.props.children : children}
-      </PreStyled>
-    )
-  }
-
-  public componentDidMount(): void {
-    this.highlightCode()
-  }
-
-  public componentDidUpdate(): void {
-    this.highlightCode()
-  }
-
-  private highlightCode(): void {
-    prism.highlightElement(this.el)
-  }
+  return (
+    <PreStyled
+      ref={preRef}
+      className={cx('react-prism', className, childrenClassName)}
+    >
+      {hasChildren ? children.props.children : children}
+    </PreStyled>
+  )
 }

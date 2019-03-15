@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { SFC } from 'react'
-import styled from 'react-emotion'
+import styled from 'styled-components'
 
 interface OpenProps {
   opened: boolean
@@ -11,7 +11,7 @@ const IconMiddle = (p: OpenProps) => (!p.opened ? '1' : '0')
 const IconLast = (p: OpenProps) => (!p.opened ? '0px' : '-6px')
 const IconRotate = (p: OpenProps) => (!p.opened ? '0deg' : '45deg')
 
-const Icon = styled('div')`
+const Icon = styled.div`
   position: relative;
   width: 23px;
   height: 32px;
@@ -22,7 +22,7 @@ const Icon = styled('div')`
     scale(${(p: OpenProps) => (p.opened ? 0.8 : 1)});
 `
 
-const IconLine = styled('span')`
+const IconLine = styled.span`
   content: '';
   display: block;
   position: absolute;
@@ -49,7 +49,7 @@ const IconLine = styled('span')`
   }
 `
 
-const ToggleButton = styled('button')`
+const ToggleButton = styled.button`
   position: absolute;
   top: 14px;
   cursor: pointer;

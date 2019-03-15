@@ -1,18 +1,18 @@
 import * as React from 'react'
-import styled, { css } from 'react-emotion'
-import { Docs, Link } from 'docz'
-import { Github } from 'react-feather'
+import styled, { css } from 'styled-components'
+import { useDocs, Link, useMenus } from 'docz'
+import Github from 'react-feather/dist/icons/github'
 
 import { Container, Logo } from '@components/ui'
 
-const Wrapper = styled('div')`
+const Wrapper = styled.div`
   position: relative;
   height: 60px;
   width: 100%;
   background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);
   z-index: 99;
 
-  ${Container.toString()} {
+  ${Container} {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -29,7 +29,7 @@ const LogoLink = styled(Link)`
   height: 30px;
 `
 
-const Menu = styled('div')`
+const Menu = styled.div`
   ${p =>
     p.theme.mq({
       display: ['none', 'none', 'flex', 'flex'],
@@ -56,7 +56,7 @@ const MenuLink = styled(Link)`
   margin: 0 10px;
 `
 
-const IconLink = styled('a')`
+const IconLink = styled.a`
   ${linkStyle};
   display: flex;
   align-items: center;
@@ -68,44 +68,58 @@ const IconLink = styled('a')`
   }
 `
 
-export const isActive = (route: string) => (match: any, location: any) =>
-  (match && match.url === location.pathname) ||
-  (location.pathname.startsWith(route) && route !== '/')
+const MENUS = [
+  'Home',
+  'Introduction',
+  'Documentation',
+  'Plugins',
+  'Themes',
+  'Blog',
+]
 
-export const Topbar = () => (
-  <Wrapper>
-    <Container>
-      <LogoLink to="/">
-        <Logo height={30} />
-      </LogoLink>
-      <Docs>
-        {({ docs: allDocs }) => {
-          const docs = allDocs.filter(doc => !doc.parent)
+export const Topbar = () => {
+  const docs = useDocs()
+  const menuList = useMenus({
+    filter: e => {
+      return MENUS.indexOf(e.name) > -1
+    },
+  })
 
-          return (
-            <Menu>
-              {docs.map(doc => (
-                <MenuLink
-                  key={doc.id}
-                  to={doc.route}
-                  isActive={isActive(doc.route)}
-                >
-                  {doc.name}
+  if (!menuList) return null
+  return (
+    <Wrapper>
+      <Container>
+        <LogoLink to="/">
+          <Logo height={30} />
+        </LogoLink>
+        <Menu>
+          {menuList.map(menu => {
+            const doc = docs && docs.find(item => item.name === menu.name)
+            if (!doc) return null
+            return (
+              doc.route && (
+                <MenuLink key={menu.id} to={doc.route}>
+                  {menu.name}
                 </MenuLink>
-              ))}
-              <IconLink href="https://medium.com/doczoficial" target="_blank">
-                Blog
-              </IconLink>
-              <IconLink
-                href="https://github.com/pedronauck/docz"
-                target="_blank"
-              >
-                <Github width={30} />
-              </IconLink>
-            </Menu>
-          )
-        }}
-      </Docs>
-    </Container>
-  </Wrapper>
-)
+              )
+            )
+          })}
+          <IconLink
+            as="a"
+            href="https://medium.com/doczoficial"
+            target="_blank"
+          >
+            Blog
+          </IconLink>
+          <IconLink
+            as="a"
+            href="https://github.com/pedronauck/docz"
+            target="_blank"
+          >
+            <Github width={30} />
+          </IconLink>
+        </Menu>
+      </Container>
+    </Wrapper>
+  )
+}

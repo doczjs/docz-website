@@ -1,6 +1,6 @@
-import styled from 'react-emotion'
+import styled from 'styled-components'
 
-export const H2 = styled('h2')`
+export const H2 = styled.h2`
   position: relative;
   ${p => p.theme.styles.h2};
 

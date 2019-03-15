@@ -1,7 +1,7 @@
 // tslint:disable
-import { injectGlobal } from 'react-emotion'
+import { createGlobalStyle } from 'styled-components'
 
-injectGlobal`
+export const GithubBtnStyle = createGlobalStyle`
   .github-btn {
     font: bold 11px/14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
     height: 20px;

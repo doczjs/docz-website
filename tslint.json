@@ -7,7 +7,10 @@
     "object-literal-sort-keys": false,
     "no-console": false,
     "no-unused-expression": [true, "allow-fast-null-checks"],
-    "no-implicit-dependencies": false,
+    "no-implicit-dependencies": [
+      true,
+      ["@images", "@components", "@fonts", "@styles"]
+    ],
     "no-duplicate-imports": false,
     "no-submodule-imports": false,
     "no-shadowed-variable": false,
@@ -15,6 +18,7 @@
     "no-var-keyword": false,
     "no-parameter-reassignment": false,
     "no-object-literal-type-assertion": false,
+    "no-angle-bracket-type-assertion": false,
     "typedef": [true, "call-signature"]
   }
 }

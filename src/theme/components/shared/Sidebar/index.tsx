@@ -1,14 +1,13 @@
-import './ads'
-
 import * as React from 'react'
-import { Component, Fragment, SFC } from 'react'
-import { Docs, Entry, DocsRenderProps, Link as BaseLink } from 'docz'
-import styled from 'react-emotion'
-import { adopt } from 'react-adopt'
-import { Media } from 'react-breakpoints'
-import { Toggle } from 'react-powerplug'
+import { useCallback, useState, useEffect } from 'react'
+import { Fragment, SFC } from 'react'
+import { Entry, Link as BaseLink, useDocs, useMenus } from 'docz'
+import { useWindowSize } from 'react-use'
+import styled from 'styled-components'
 
 import { Hamburguer } from '@components/shared/Sidebar/Hamburguer'
+import { ADSStyleSheet, addCarbonAds } from './ads'
+import { breakpoints } from '@styles/responsive'
 
 interface WrapperProps {
   opened: boolean
@@ -16,14 +15,16 @@ interface WrapperProps {
   theme?: any
 }
 
-const toggle = (p: WrapperProps) => (p.opened && !p.desktop ? '-100%' : '0')
+const toggle = (p: WrapperProps) => {
+  return !p.opened && !p.desktop ? '-100%' : '0'
+}
 
 const position = (p: WrapperProps) =>
   p.theme.mq({
     position: ['absolute', 'absolute', 'relative', 'relative'],
   })
 
-const SidebarWrapper = styled('div')`
+const SidebarWrapper = styled.div`
   width: 280px;
   min-width: 280px;
   height: 100%;
@@ -44,14 +45,19 @@ const SidebarWrapper = styled('div')`
     p.theme.mq({
       top: ['60px', '60px', '0', '0'],
       marginRight: ['0px', '0px', '60px', '60px'],
-      padding: ['25px 30px', '25px 30px', '50px 40px 50px 0', '50px 40px 50px 0'],
+      padding: [
+        '25px 30px',
+        '25px 30px',
+        '50px 40px 50px 0',
+        '50px 40px 50px 0',
+      ],
       height: ['100%', '100%', 'auto', 'auto'],
       minHeight: ['auto', 'auto', '100%', '100%'],
-      overflow: ['hidden auto', 'hidden auto', 'inherit', 'inherit']
+      overflow: ['hidden auto', 'hidden auto', 'inherit', 'inherit'],
     })};
 `
 
-const Wrapper = styled('div')`
+const Wrapper = styled.div`
   position: -webkit-sticky;
   display: flex;
   flex-direction: column;
@@ -60,7 +66,7 @@ const Wrapper = styled('div')`
   ${p =>
     p.theme.mq({
       position: ['relative', 'relative', 'sticky', 'sticky'],
-      top: ['0px', '0px', '50px', '50px']
+      top: ['0px', '0px', '50px', '50px'],
     })};
 `
 
@@ -79,7 +85,7 @@ const Link = styled(BaseLink)`
   }
 `
 
-const SmallLink = styled('a')`
+const SmallLink = styled(BaseLink)`
   font-size: 16px;
   padding: 0 0 5px 10px;
 
@@ -90,13 +96,13 @@ const SmallLink = styled('a')`
   }
 `
 
-const Submenu = styled('div')`
+const Submenu = styled.div`
   display: flex;
   flex-direction: column;
   margin: 5px 0;
 `
 
-const MenuContainer = styled('div')`
+const MenuContainer = styled.div`
   display: block;
   position: relative;
   padding-bottom: 26px;
@@ -121,7 +127,7 @@ const MenuLink = styled(Link)`
   padding: 3px 0;
 `
 
-const IconLink = styled('a')`
+const IconLink = styled.a`
   font-family: Zilla Slab;
   display: block;
   font-weight: bold;
@@ -142,9 +148,9 @@ interface OpenProps {
   opened: boolean
 }
 
-const ToggleBackground = styled('div')`
+const ToggleBackground = styled.div`
   content: '';
-  display: ${(p: OpenProps) => (p.opened ? 'none' : 'block')};
+  display: ${(p: OpenProps) => (!p.opened ? 'none' : 'block')};
   position: fixed;
   background-color: rgba(0, 0, 0, 0.4);
   width: 100vw;
@@ -160,19 +166,25 @@ const ToggleBackground = styled('div')`
 interface MenuProps {
   doc: Entry
   active: string
-  handleSidebarToggle: () => void
+  onClick: React.MouseEventHandler
 }
 
-const Menu: SFC<MenuProps> = ({ doc, active, handleSidebarToggle }) => (
+const Menu: SFC<MenuProps> = ({ doc, active, onClick }) => (
   <Fragment>
-    <Link to={doc.route} onClick={handleSidebarToggle}>{doc.name}</Link>
+    <Link to={doc.route} onClick={onClick}>
+      {doc.name}
+    </Link>
     {active === doc.route && (
       <Submenu>
         {doc.headings.map(
           heading =>
             heading.depth > 1 &&
             heading.depth < 3 && (
-              <SmallLink key={heading.slug} href={`#${heading.slug}`} onClick={handleSidebarToggle}>
+              <SmallLink
+                key={heading.slug}
+                to={`${doc.route}#${heading.slug}`}
+                onClick={onClick}
+              >
                 {heading.value}
               </SmallLink>
             )
@@ -183,126 +195,81 @@ const Menu: SFC<MenuProps> = ({ doc, active, handleSidebarToggle }) => (
 )
 
 interface SidebarProps {
-  parent: string
-  active: string
+  menu: string
 }
 
-interface Media {
-  breakpoints: any
-  currentBreakpoint: string
-}
+export const Sidebar: SFC<SidebarProps> = ({ menu: current }) => {
+  const docs = useDocs()
+  const { width } = useWindowSize()
+  const [opened, setOpened] = useState(false)
 
-interface Toggle {
-  on: boolean
-  toggle: () => void
-}
+  const menus = useMenus()
+  const found = menus && menus.find(e => e.name === current)
+  const filtered = found && found.menu
+  const topBarMenu = filtered ? filtered.filter(menu => !menu.menu) : []
+  const isDesktop = width > breakpoints.mobile
 
-interface MapperProps {
-  docs: DocsRenderProps
-  media: Media
-  toggle: Toggle
-}
+  const toggle = useCallback(() => {
+    setOpened(s => !s)
+  }, [])
 
-type EnhancedProps = DocsRenderProps &
-  Toggle & {
-    media: Media
+  const handleSidebarToggle = (ev: React.SyntheticEvent<any>) => {
+    if (isDesktop) return
+    toggle && toggle()
   }
 
-const mapper = {
-  docs: <Docs />,
-  media: <Media />,
-  toggle: <Toggle initial={true} />,
-}
+  useEffect(() => {
+    addCarbonAds()
+  }, [])
 
-const mapProps = ({ docs, media, toggle }: MapperProps) => ({
-  ...docs,
-  ...toggle,
-  media,
-})
-
-const Composed = adopt<EnhancedProps>(mapper, mapProps)
-
-export const isActive = (route: string) => (match: any, location: any) =>
-  (match && match.url === location.pathname) ||
-  (location.pathname.startsWith(route) && route !== '/')
-
-export class Sidebar extends Component<SidebarProps> {
-  public addCarbonAds = () => {
-    const wrapper = document.getElementById('ads')
-    const script = document.createElement('script')
-
-    script.setAttribute('async', '')
-    script.setAttribute('type', 'text/javascript')
-    script.setAttribute(
-      'src',
-      '//cdn.carbonads.com/carbon.js?serve=CK7D6237&placement=wwwdoczsite'
-    )
-    script.setAttribute('id', '_carbonads_js')
-
-    if (wrapper) {
-      wrapper.appendChild(script)
-    }
-  }
-
-  public componentDidMount(): void {
-    this.addCarbonAds()
-  }
-
-  public render(): React.ReactNode {
-    const { active, parent } = this.props
-
-    return (
-      <Composed>
-        {({ docs: allDocs, media, toggle, on }: EnhancedProps) => {
-          const docs = allDocs.filter(doc => doc.parent === parent)
-          const topBarMenu = allDocs.filter(doc => !doc.parent)
-          const isDesktop = media.breakpoints[media.currentBreakpoint] > media.breakpoints.mobile ? true : false
-
-          const handleSidebarToggle = (ev: React.SyntheticEvent<any>) => {
-            if (isDesktop) return
-            toggle && toggle()
-          }
-
-          return (
+  return (
+    <React.Fragment>
+      <ADSStyleSheet />
+      <Hamburguer opened={opened} onClick={handleSidebarToggle} />
+      <SidebarWrapper opened={opened} desktop={isDesktop}>
+        <Wrapper>
+          {!isDesktop ? (
             <React.Fragment>
-              <Hamburguer opened={!on} onClick={handleSidebarToggle} />
-              <SidebarWrapper opened={on} desktop={isDesktop}>
-                <Wrapper>
-                  {!isDesktop ? (
-                    <React.Fragment>
-                      <MenuContainer>
-                        {topBarMenu.map(doc => (
-                          <MenuLink
-                            key={doc.id}
-                            to={doc.route}
-                            isActive={isActive(doc.route)}
-                            onClick={handleSidebarToggle}
-                          >
-                            {doc.name}
-                          </MenuLink>
-                        ))}
-                        <IconLink
-                          key="GitHub"
-                          href="https://github.com/pedronauck/docz"
-                          target="_blank"
-                          onClick={handleSidebarToggle}
-                        >
-                          GitHub
-                        </IconLink>
-                      </MenuContainer>
-                    </React.Fragment>
-                  ) : ('')}
-                  {docs.map(doc => (
-                    <Menu key={doc.id} doc={doc} active={active} handleSidebarToggle={handleSidebarToggle} />
-                  ))}
-                  <div id="ads" />
-                </Wrapper>
-              </SidebarWrapper>
-              <ToggleBackground opened={on} onClick={handleSidebarToggle} />
+              <MenuContainer>
+                {topBarMenu.map(doc => (
+                  <MenuLink
+                    key={doc.id}
+                    to={doc.route}
+                    onClick={handleSidebarToggle}
+                  >
+                    {doc.name}
+                  </MenuLink>
+                ))}
+                <IconLink
+                  key="GitHub"
+                  href="https://github.com/pedronauck/docz"
+                  target="_blank"
+                  onClick={handleSidebarToggle}
+                >
+                  GitHub
+                </IconLink>
+              </MenuContainer>
             </React.Fragment>
-          )
-        }}
-      </Composed>
-    )
-  }
+          ) : (
+            ''
+          )}
+          {filtered &&
+            filtered.map(menu => {
+              const doc = docs && docs.find(i => i.name === menu.name)
+              if (!doc) return null
+              return (
+                <Menu
+                  key={doc.id}
+                  doc={doc}
+                  active={current}
+                  onClick={handleSidebarToggle}
+                />
+              )
+            })}
+          <div id="ads" />
+        </Wrapper>
+      </SidebarWrapper>
+      <ToggleBackground opened={opened} onClick={handleSidebarToggle} />
+    </React.Fragment>
+  )
 }

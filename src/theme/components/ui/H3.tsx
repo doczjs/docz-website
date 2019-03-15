@@ -1,6 +1,6 @@
-import styled from 'react-emotion'
+import styled from 'styled-components'
 
-export const H3 = styled('h3')`
+export const H3 = styled.h3`
   ${p => p.theme.styles.h3};
 
   code {

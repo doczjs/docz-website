@@ -5,24 +5,47 @@ const PUBLIC = path.resolve(__dirname, 'public')
 const SRC = path.resolve(__dirname, 'src')
 
 export default {
-  src: './docs',
   title: 'Docz',
   description: 'It has never been so easy to document your things',
   indexHtml: 'src/index.html',
   theme: 'src/theme/index',
-  ordering: 'ascending',
+  typescript: true,
   propsParser: false,
-  mdPlugins: [externalLinks.default],
+  mdPlugins: [externalLinks],
+  ignore: ['site-map.md', 'readme.md'],
   htmlContext: {
     favicon: '/public/favicon.ico',
   },
-  modifyBundlerConfig: config => {
-    config.resolve.alias = Object.assign({}, config.resolve.alias, {
-      '@fonts': `${PUBLIC}/fonts`,
-      '@images': `${PUBLIC}/images`,
-      '@components': `${SRC}/theme/components`,
-      '@styles': `${SRC}/theme/styles`,
-    })
+  menu: [
+    'Home',
+    {
+      name: 'Introduction',
+      menu: [
+        'Getting Started',
+        'Writting MDX',
+        'Customizing',
+        'Documenting Your Things',
+        'Deploying Your Docs',
+      ],
+    },
+    {
+      name: 'Documentation',
+      menu: [
+        'Components API',
+        'Project Configuration',
+        'Creating Themes',
+        'Creating Plugins',
+      ],
+    },
+    'Plugins',
+    'Themes',
+  ],
+  onCreateWebpackChain: config => {
+    config.resolve.alias
+      .set('@fonts', `${PUBLIC}/fonts`)
+      .set('@images', `${PUBLIC}/images`)
+      .set('@components', `${SRC}/theme/components`)
+      .set('@styles', `${SRC}/theme/styles`)
 
     return config
   },

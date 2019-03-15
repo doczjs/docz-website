@@ -1,0 +1,73 @@
+---
+name: Getting Started
+route: /introduction/getting-started
+menu: Introduction
+---
+
+# Getting Started
+
+> Since v1 you need `react` and `react-dom` with `>= 16.8.0` installed.
+
+## ✅️ &nbsp; Migration Guide
+
+This documentation it's about our [new v1](https://github.com/pedronauck/docz/pull/656).
+If you need to migrate your docz project, please read our [Migration Guide](https://github.com/pedronauck/docz/blob/master/MIGRATION_GUIDE.md)
+
+## Installation
+
+First, you need to install docz on your project using some package manager (we're assuming [Yarn](https://yarnpkg.com/) here):
+
+```bash
+$ yarn add docz --dev
+```
+
+> ### Tips and tricks
+>
+> After you installed docz in your project, you may find it convenient to add two scripts in your `package.json` to run docz for you. This is an **optional step**:
+
+```json
+{
+  "name": "mycoolproject",
+  "scripts": {
+    "docz:dev": "docz dev",
+    "docz:build": "docz build"
+  },
+  "devDependencies": {
+    "docz": "latest"
+  }
+}
+```
+
+Now you can spin up your dev server just by running:
+
+```
+$ yarn docz:dev
+```
+
+## Using
+
+With your dev server up, you can start writing your documentation.
+
+Docz uses [MDX](https://github.com/mdx-js/specification) as a standard format because of the flexibility of writing JSX inside markdown files. Really cool, no?
+
+Note that you **don't need to follow any strict file architecture**. You can just create your `.mdx` files **anywhere in your project**.
+
+So, let's create our first `.mdx` and give it a name:
+
+```markdown
+---
+name: Hello world
+---
+
+# Hello world
+
+Hello, I'm a mdx file!
+```
+
+With the server up and your first `.mdx` created, you can open your browser and visit `localhost:3000` and you should see something like this:
+
+![](https://cdn-std.dprcdn.net/files/acc_649651/ZOUyUu)
+
+Easy, right?
+
+Now that you know how to get started with docz, see the [next section](/introduction/writing-mdx) where we'll delve into MDX and how you can use it to write your documents.

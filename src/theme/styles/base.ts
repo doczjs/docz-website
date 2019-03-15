@@ -1,5 +1,4 @@
-import './github-button'
-import { css, injectGlobal } from 'emotion'
+import { css, createGlobalStyle } from 'styled-components'
 
 import * as colors from './colors'
 import faktSoftNormal from '@fonts/FaktSoftPro-Normal.woff2'
@@ -12,7 +11,7 @@ const selection = (color: string) => css`
 `
 
 // tslint:disable
-injectGlobal`
+export const BaseStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Inconsolata');
   @import url('https://fonts.googleapis.com/css?family=Zilla+Slab:300,400,600');
 
@@ -62,7 +61,6 @@ injectGlobal`
     line-height: 1.62;
     letter-spacing: -0.005em;
     background: white;
-    overflow: hidden;
   }
 
   body {

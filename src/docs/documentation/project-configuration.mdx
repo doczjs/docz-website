@@ -1,0 +1,258 @@
+---
+name: Project Configuration
+route: /documentation/project-configuration
+menu: Documentation
+---
+
+# Project Configuration
+
+The project configuration is used when you need to define some specific customizations on your project. Like use plugins, chose themes, set project title, and other things.
+
+To customize your project configuration just create `doczrc.js` following this reference.
+
+> ### Tips and tricks
+>
+> You can create a `doczrc.json` file too if you want, but we recommend that you use a `js` file because just with javascript you can set plugins in your configuration since plugins are functions!
+
+## Basic config
+
+### src
+
+- Type: `string`
+- Default: `./`
+
+Define the source folder that docz will find and parse your mdx files. Every file out of this folder will not be found.
+
+> ### Tips and tricks
+>
+> If you want to boost performance, you can limit by passing your source folder here!
+
+### dest
+
+- Type: `string`
+- Default: `.docz/dist`
+
+Specify the output directory for `docz build`
+
+### files
+
+- Type: `string`
+- Default: `**/*.mdx`
+
+Glob pattern used to find your files.
+By default, docz finds all files inside the source folder that has a `.mdx` extension.
+[As of v0.10](https://github.com/pedronauck/docz/releases/tag/v0.10.0), you can customize it to resolve other filetypes:
+
+```js
+// doczrc.js
+export default {
+  files: '**/*.{md,markdown,mdx}'
+}
+```
+
+You can be more specific if you want and change this glob to find other rules.
+
+> It is important to keep the `.mdx` extension in this string if you specify it
+
+### base
+
+- Type: `string`
+- Default: `/`
+
+The base URL of the site will be deployed at. You will need to set this if you plan to deploy your site under a subpath, for example, GitHub pages. If you plan to deploy your site to https://foo.github.io/bar/, the base should be set to `/bar/`.
+
+> It should always start and end with a slash.
+
+The base is automatically prepend to all the URLs that start with `/` in other options, so you only need to specify it once.
+
+### title
+
+- Type: `string`
+- Default: `MyDoc`
+
+The title for the site. This will be the prefix for all page titles and displayed in the sidebar in the default theme.
+
+### description
+
+- Type: `string`
+- Default: `My awesome app using Docz`
+
+The description for the site. It will be rendered as a `<meta>` tag in the page HTML.
+
+### typescript
+
+- Type: `boolean`
+- Default: `false`
+
+This option is used if you need to import Typescript components inside your `.mdx` files.
+
+### propsParser
+
+- Type: `boolean`
+- Default: `true`
+
+To be able to use the `<PropsTable />` component and parse properties of your components, we need to run a lot of processes that have some costs on the build process. If you need to disable this process to improve performance, you can just this property to `false`.
+
+### debug
+
+- Type: `boolean`
+- Default: `process.env.DEBUG || false`
+
+Use this setting to debug your application and remove all progress bar from bundler.
+
+### protocol
+
+- Type: `string`
+- Default: `process.env.HTTPS === 'true' ? 'https' : 'http'`
+
+Specify the protocol of your dev server.
+
+### host
+
+- Type: `string`
+- Default: `process.env.HOST || '0.0.0.0'`
+
+Specify the host to use for the dev server.
+
+### port
+
+- Type: `string`
+- Default: `process.env.PORT || 3000`
+
+Specify the port to use for the dev server.
+
+## Theming
+
+### theme
+
+- Type: `string`
+- Default `docz-theme-default`
+
+Use this property to specify the theme for your site. You can pass the name of your theme if is a package like `docz-theme-default` and the docz will attempt to load the theme component at `node_modules/docz-default-theme`, or if you want to use some file inside your project, you can just pass the filepath relative to the root path of your project.
+
+```js
+// doczrc.js
+export default {
+  theme: '/src/my/theme/folder',
+}
+```
+
+> ### Important
+>
+> You need to pass a filepath inside the source folder of your project. If the file of your theme is outside it will not be compiled by the bundler!
+
+### themeConfig
+
+- Type: `Object`
+- Default: `{}`
+
+This is the config that your theme will use to customize it. By default, each theme has your own `themeConfig` that you can modify, so this object may vary according to each theme.
+
+You can see the theme config of default theme [here](https://github.com/pedronauck/docz/blob/master/packages/docz-theme-default/src/config.ts)
+
+### ordering
+
+- Type: `string`
+- Default: `descending`
+
+This property defines how document's property `order` will works
+
+### wrapper
+
+- Type: `string`
+- Default: `undefined`
+
+Component filepath relative from root to use as a wrapper on your application. This can be useful to set providers like the store provider of redux.
+
+```js
+// doczrc.js
+export default {
+  wrapper: 'src/wrapper',
+}
+```
+
+```js
+// src/wrapper.js
+import { Provider } from 'react-redux'
+
+const Wrapper = ({ children }) => (
+  <Provider store={/* your store */}>
+    {children}
+  </Provider>
+)
+```
+
+### indexHtml
+
+- Type: `string`
+- Default: `undefined`
+
+HTML filepath relative from root to use as `index.html` template. This can be useful if you want to put some external scripts, css links, and other things in the index file.
+
+By default we use this HTML file:
+
+```html
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="{{ description }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ title }}</title>
+    {{ head }}
+  </head>
+  <body>
+    <div id="root" />
+    {{ footer }}
+  </body>
+</html>
+```
+
+> ### Important
+>
+> The `div` with id `root` is required to render the react application, please don't remove it.
+
+## Build pipeline
+
+### hashRouter
+
+- Type: `Boolean`
+- Default: `false`
+
+Enable hash router navigation instead of use History API from browser.
+
+### plugins
+
+- Type: `Array`
+- Default: `[]`
+
+Specify an array of plugins that you want to use.
+
+### mdPlugins
+
+- Type: `Array`
+- Default: `[]`
+
+Array of [remark plugins](https://github.com/remarkjs/remark/blob/master/doc/plugins.md) to manipulate the MDXAST
+
+### hastPlugins
+
+- Type: `Array`
+- Default: `[]`
+
+Array of [rehype plugins](https://github.com/rehypejs/rehype/blob/master/doc/plugins.md) to manipulate the MDXHAST
+
+### modifyBundlerConfig
+
+- Type: `(config: BundlerConfig, dev: boolean, args: Argv) => BundlerConfig`
+- Default: `(config) => config`
+
+This function can modify the default bundler configuration.
+
+### modifyBabelRc
+
+- Type: `(babelrc: BabelRC, args: Argv) => BabelRC`
+- Default: `(babelrc) => babelrc`
+
+This function can modify the default babelrc configuration.

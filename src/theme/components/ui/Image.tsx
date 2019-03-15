@@ -1,24 +1,23 @@
 import * as React from 'react'
-import { SFC } from 'react'
-import { adopt } from 'react-adopt'
-import { Toggle, Hover } from 'react-powerplug'
-import { ZoomIn } from 'react-feather'
+import { SFC, useState, useRef } from 'react'
+import { useHoverDirty } from 'react-use'
+import ZoomIn from 'react-feather/dist/icons/zoom-in'
 import Lightbox from 'react-images'
-import styled from 'react-emotion'
+import styled from 'styled-components'
 
-const Wrapper = styled('div')`
+const Wrapper = styled.div`
   position: relative;
   margin: 30px 0;
   border: 1px solid ${p => p.theme.colors.grayLight};
 `
 
-const ImageStyled = styled('img')`
+const ImageStyled = styled.img`
   display: block;
   width: 100%;
   padding: 5px;
 `
 
-const ImageHover = styled('div')`
+const ImageHover = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -40,34 +39,27 @@ const ZoomIcon = styled(ZoomIn)`
 
 type ImageProps = React.ImgHTMLAttributes<any>
 
-const mapper = {
-  toggle: <Toggle initial={false} />,
-  hover: <Hover />,
+export const Image: SFC<ImageProps> = props => {
+  const [opened, setOpened] = useState(false)
+  const wrapperRef = useRef(null)
+  const hovered = useHoverDirty(wrapperRef)
+  const toggle = () => setOpened(s => !s)
+
+  return (
+    <Wrapper ref={wrapperRef}>
+      {hovered && (
+        <ImageHover>
+          <ZoomIcon size={80} onClick={toggle} />
+        </ImageHover>
+      )}
+      <ImageStyled {...props} />
+      {opened && (
+        <Lightbox
+          images={[{ src: props.src }]}
+          isOpen={opened}
+          onClose={toggle}
+        />
+      )}
+    </Wrapper>
+  )
 }
-
-const Composed = adopt(mapper, ({ toggle, hover }) => ({
-  ...toggle,
-  ...hover,
-}))
-
-export const Image: SFC<ImageProps> = props => (
-  <Composed>
-    {({ on, toggle, isHovered, bind }: any) => (
-      <Wrapper {...bind}>
-        {isHovered && (
-          <ImageHover>
-            <ZoomIcon size={80} onClick={toggle} />
-          </ImageHover>
-        )}
-        <ImageStyled {...props} />
-        {on && (
-          <Lightbox
-            images={[{ src: props.src }]}
-            isOpen={on}
-            onClose={toggle}
-          />
-        )}
-      </Wrapper>
-    )}
-  </Composed>
-)
