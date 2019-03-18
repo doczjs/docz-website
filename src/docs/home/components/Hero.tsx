@@ -2,9 +2,10 @@ import * as React from 'react'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import GitHubButton from 'react-github-button'
-import { navigate } from '@reach/router'
+import { Link as BaseLink } from 'docz'
 
 import { Button, Container, Logo } from '@components/ui'
+import { btnStyle } from '@components/ui/Button'
 import pattern from '@images/pattern.png'
 import image from '@images/builtin-components.png'
 
@@ -43,6 +44,10 @@ const Buttons = styled.div`
   display: flex;
 `
 
+const Link = styled(BaseLink)`
+  ${btnStyle};
+`
+
 export const Hero = () => {
   return (
     <Wrapper>
@@ -64,12 +69,12 @@ export const Hero = () => {
         />
         <Image src={image} alt="Built-in components" />
         <Buttons>
-          <Button scale="big" onClick={() => navigate('/docs/getting-started')}>
+          <Link scale="big" to="/docs/getting-started">
             Getting started
-          </Button>
-          <Button scale="big" onClick={() => navigate('/docs/introduction')}>
+          </Link>
+          <Link scale="big" to="/docs/introduction">
             Documentation
-          </Button>
+          </Link>
         </Buttons>
       </Container>
     </Wrapper>

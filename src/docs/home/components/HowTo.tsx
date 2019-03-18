@@ -1,8 +1,9 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { navigate } from '@reach/router'
+import { Link as BaseLink } from 'docz'
 
-import { Button, Container, Pre as BasePre } from '@components/ui'
+import { btnStyle } from '@components/ui/Button'
+import { Container, Pre as BasePre } from '@components/ui'
 import pattern from '@images/dark-pattern2.png'
 
 const Wrapper = styled.div`
@@ -54,6 +55,10 @@ const Pre = styled(BasePre)`
     })};
 `
 
+const Link = styled(BaseLink)`
+  ${btnStyle};
+`
+
 const mdxExample = `---
 name: Button
 ---
@@ -87,13 +92,7 @@ export const HowTo = () => (
       <Pre className="language-markdown">{mdxExample}</Pre>
       <Text>That's it, your docs are ready to fly!</Text>
       <Pre className="language-bash">$ yarn Docz dev</Pre>
-      <Button
-        scale="big"
-        kind="secondary"
-        onClick={() => navigate('/introduction/getting-started')}
-      >
-        More details
-      </Button>
+      <Link to="/docs/getting-started">More info</Link>
     </Container>
   </Wrapper>
 )

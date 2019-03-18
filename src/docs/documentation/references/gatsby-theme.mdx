@@ -77,10 +77,11 @@ module.exports = {
 
 > We highly indicate that you set your configuration using `doczrc.js` because of live reload that will change in real time your project settings, if you set your configs using the theme defition you will need to reset your dev server in order to see your changes.
 
-## Getting data from Docz
+## Getting data
 
-Using our Gatsby Theme you can enjoy all our hooks to get data for your pages.
-So, you can create isolated pages on Gatsby using gatsby pages and get data from Docz. Cool right?
+Using our Gatsby Theme you can enjoy all our hooks to get data for your pages and also get data from Gatsby.
+So, you can create isolated pages on Gatsby using gatsby pages and get data from Docz or maybe pass data
+for your Docz documents using source from gatsby.
 
 Imagine, that you have your home page insides `/pages` and you want to show all documents parsed from Docz. You can easy get this by doing:
 
@@ -97,3 +98,17 @@ const Home = () => {
 
 export default Home
 ```
+
+Or you can have a mdx document inside Docz that have data from Gatsby too:
+
+```markdown
+---
+name: MyDoc
+---
+
+import { MyComponentWithSomeData } from './my-component-with-data'
+
+<MyComponentWithSomeData />
+```
+
+Cool right?

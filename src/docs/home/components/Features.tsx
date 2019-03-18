@@ -4,6 +4,7 @@ import { Link } from 'docz'
 
 import { Container } from '@components/ui'
 import magicWand from '@images/icons/magic-wand.svg'
+import gatsby from '@images/icons/gatsby.svg'
 import settings from '@images/icons/settings.svg'
 import plug from '@images/icons/plug.svg'
 import rocket from '@images/icons/rocket.svg'
@@ -21,7 +22,7 @@ const ListItems = styled.div`
       gridTemplateColumns: [
         'repeat(1, 1fr)',
         'repeat(1, 1fr)',
-        'repeat(1, 0.7fr)',
+        'repeat(1, 0.8fr)',
       ],
     })}
 `
@@ -87,6 +88,17 @@ export const Features = () => (
           <Text>
             Docz uses Webpack 4 under the hood, optimized for lightning fast dev
             servers and build times, so you can focus on writing your docs!
+          </Text>
+        </Info>
+      </FeatureItem>
+      <FeatureItem>
+        <Image src={gatsby} />
+        <Info>
+          <Title>Gatsby friendly</Title>
+          <Text>
+            As a very good alternative for our bundler, you can use Gatsby by
+            using the new Gatsby Themes to build your documentation as get a lot
+            of benefits from it like static builds, custom data sources, etc.
           </Text>
         </Info>
       </FeatureItem>
