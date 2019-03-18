@@ -1,0 +1,72 @@
+---
+name: Built-ins components
+route: /docs/built-ins-components
+parent: Documentation
+menu: General
+---
+
+# Built-ins components
+
+Docz has built-in components that help you to document your things. Using the power of components and AST to parse and generate data for them, we can do so much, like render your components on the fly, create tables with contents, custom getters by traversing your file, etc. The sky is the limit here!
+
+## Playground Component
+
+With the `<Playground>` component, you can render your component inside a playground and see the code used in Docz in a single view:
+
+```markdown
+---
+name: Button
+---
+
+import { Playground } from 'docz'
+import { Button } from './Button'
+
+# Button
+
+## Basic usage
+
+<Playground>
+  <Button>Click me</Button>
+  <Button kind="secondary">Click me</Button>
+</Playground>
+```
+
+![](https://cdn-std.dprcdn.net/files/acc_649651/zqI01R)
+
+As you see, `<Playground>` rendered your component in a blank state, and right below, displayed the code used to render it. This can be very useful to test and develop your components in a good environment while you document it.
+
+## Component Props
+
+Maybe the most important thing when you write a component is know which properties it has.
+However, keeping a good properties documentation of your component can be boring, because you need to write
+the props specification and maintain the original props definition. And we know that to keep both in sync can be troublesome!
+
+Docz offers a solution to this problem called the `<Props>`. It's a simple component that automatically gets the
+props definition of your component and display them in a cool component.
+Simple like that and works nicely with Flow and Typescript.
+
+```markdown
+---
+name: Button
+---
+
+import { Playground, Props } from 'docz'
+import { Button } from './'
+
+# Button
+
+<Props of={Button} />
+
+## Basic usage
+
+<Playground>
+  <Button>Click me</Button>
+  <Button kind="secondary">Click me</Button>
+</Playground>
+```
+
+And now you have a table of properties:
+
+![](https://cdn-std.dprcdn.net/files/acc_649651/M9DATx)
+
+You can see more about our built-in components on [Components API](/docs/components-api).

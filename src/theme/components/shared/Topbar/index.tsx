@@ -1,16 +1,19 @@
 import * as React from 'react'
-import styled, { css } from 'styled-components'
-import { useDocs, Link, useMenus } from 'docz'
 import Github from 'react-feather/dist/icons/github'
+import { useWindowSize } from 'react-use'
+import styled, { css } from 'styled-components'
+import { Link } from 'docz'
 
+import { Hamburguer } from '@components/shared/Sidebar/Hamburguer'
 import { Container, Logo } from '@components/ui'
+import { breakpoints } from '@styles/responsive'
 
 const Wrapper = styled.div`
-  position: relative;
-  height: 60px;
+  z-index: 999;
   width: 100%;
+  position: fixed;
+  height: 60px;
   background-image: linear-gradient(to right, #92fe9d 0%, #00c9ff 100%);
-  z-index: 99;
 
   ${Container} {
     display: flex;
@@ -30,10 +33,7 @@ const LogoLink = styled(Link)`
 `
 
 const Menu = styled.div`
-  ${p =>
-    p.theme.mq({
-      display: ['none', 'none', 'flex', 'flex'],
-    })};
+  display: flex;
 `
 
 const linkStyle = (p: any) => css`
@@ -68,57 +68,71 @@ const IconLink = styled.a`
   }
 `
 
-const MENUS = [
-  'Home',
-  'Introduction',
-  'Documentation',
-  'Plugins',
-  'Themes',
-  'Blog',
+interface MenuListItem {
+  id: number
+  label: React.ReactNode
+  route?: string
+  href?: string
+}
+
+const MENU_LIST: MenuListItem[] = [
+  {
+    id: 1,
+    label: 'Home',
+    route: '/',
+  },
+  {
+    id: 2,
+    label: 'Documentation',
+    route: '/docs/introduction',
+  },
+  {
+    id: 3,
+    label: 'Plugins',
+    route: '/plugins',
+  },
+  {
+    id: 4,
+    label: 'Themes',
+    route: '/themes',
+  },
 ]
 
 export const Topbar = () => {
-  const docs = useDocs()
-  const menuList = useMenus({
-    filter: e => {
-      return MENUS.indexOf(e.name) > -1
-    },
-  })
+  const { width } = useWindowSize()
+  const showFullMenu = width > breakpoints.tablet
 
-  if (!menuList) return null
   return (
     <Wrapper>
       <Container>
         <LogoLink to="/">
-          <Logo height={30} />
+          <Logo height={30} small={!showFullMenu} />
         </LogoLink>
-        <Menu>
-          {menuList.map(menu => {
-            const doc = docs && docs.find(item => item.name === menu.name)
-            if (!doc) return null
-            return (
-              doc.route && (
-                <MenuLink key={menu.id} to={doc.route}>
-                  {menu.name}
-                </MenuLink>
-              )
-            )
-          })}
-          <IconLink
-            as="a"
-            href="https://medium.com/doczoficial"
-            target="_blank"
-          >
-            Blog
-          </IconLink>
-          <IconLink
-            as="a"
-            href="https://github.com/pedronauck/docz"
-            target="_blank"
-          >
-            <Github width={30} />
-          </IconLink>
-        </Menu>
+        {showFullMenu ? (
+          <Menu>
+            {MENU_LIST.map(({ id, label, route, href }) => (
+              <MenuLink key={id} {...(route ? { to: route } : { href })}>
+                {label}
+              </MenuLink>
+            ))}
+            <IconLink
+              as="a"
+              href="https://medium.com/doczoficial"
+              target="_blank"
+            >
+              Blog
+            </IconLink>
+            <IconLink
+              as="a"
+              href="https://github.com/pedronauck/docz"
+              target="_blank"
+            >
+              <Github width={30} />
+            </IconLink>
+          </Menu>
+        ) : (
+          <Hamburguer />
+        )}
       </Container>
     </Wrapper>
   )

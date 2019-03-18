@@ -1,12 +1,13 @@
 ---
 name: Creating Plugins
-route: /documentation/creating-plugins
-menu: Documentation
+route: /docs/creating-plugins
+parent: Documentation
+menu: References
 ---
 
 # Creating Plugins
 
-Plugins give you the ability to modify docz processes, default configurations and create hooks for build and render. This is a perfect place to integrate docz with other tools.
+Plugins give you the ability to modify Docz processes, default configurations and create hooks for build and render. This is a perfect place to integrate Docz with other tools.
 
 To create a plugin you just need to use the `createPlugin` method from [docz-core](https://github.com/pedronauck/docz/tree/master/packages/docz-core)
 
@@ -15,8 +16,11 @@ import { createPlugin } from 'docz-core'
 
 const myPlugin = () => createPlugin({
   setConfig: (config) => /* ... */,
-  modifyBundlerConfig: (config, dev) => /* ... */,
-  modifyBabelRc: (babelrc) => /* ... */,
+  modifyBundlerConfig: (config, dev, args) => /* ... */,
+  modifyBabelRc: (babelrc, args) => /* ... */,
+  modifyFiles: (files, args) => /* ... */,
+  onCreateWebpackChain: (config) => /* ... */,
+  onPreCreateApp: (app) =>  /* ... */,
   onCreateApp: (app) => /* ... */,
   onServerListening: (server) => /* ... */,
   onPreBuild: () => /* ... */,
@@ -26,9 +30,7 @@ const myPlugin = () => createPlugin({
 })
 ```
 
-## Plugins API
-
-### `setConfig`
+## `setConfig`
 
 Use to modify or create custom project configurations.
 
@@ -36,7 +38,7 @@ Use to modify or create custom project configurations.
 
 - **config:** Default configuration object
 
-#### Return
+###### Return
 
 - `Config`
 
@@ -86,7 +88,7 @@ type SetConfig = (config: Config) => Config
 
 ---
 
-### `modifyBundlerConfig`
+## `modifyBundlerConfig`
 
 Use to modify bundler configuration
 
@@ -94,13 +96,13 @@ Use to modify bundler configuration
 
 - **config:** Default bundler configuration object
 - **dev:** A boolean showing if is a `dev` environment
-- **args:** The docz config object merged with argv
+- **args:** The Docz config object merged with argv
 
-### Return
+#### Return
 
 - `BundlerConfig`
 
-### Types definitions
+#### Types definitions
 
 ```ts
 type ModifyBundlerConfig<C = any> = (config: C, dev: boolean) => C
@@ -108,20 +110,20 @@ type ModifyBundlerConfig<C = any> = (config: C, dev: boolean) => C
 
 ---
 
-### `modifyBabelRc`
+## `modifyBabelRc`
 
 Use to modify babelrc configuration
 
 #### Params
 
 - **babelrc:** Default babelrc configuration object
-- **args:** The docz config object merged with argv
+- **args:** The Docz config object merged with argv
 
-### Return
+#### Return
 
 - `BabelRc`
 
-### Types definitions
+#### Types definitions
 
 ```ts
 interface BabelRC {
@@ -136,7 +138,48 @@ type ModifyBabelRC = (babelrc: BabelRC) => BabelRC
 
 ---
 
-### `onCreateApp`
+## `modifyFiles`
+
+Use to modify mdx files before parsing
+
+#### Params
+
+- **files:** Files parsed by Docz
+- **args:** The Docz config object merged with argv
+
+#### Return
+
+- `string[]`
+
+#### Types definitions
+
+```ts
+export type ModifyFiles = (files: string[], args: Config) => string[]
+```
+
+---
+
+## `onPreCreateApp`
+
+Method trigered before the app creation
+
+#### Params
+
+- **app:** The underlying Koa app
+
+###### Return
+
+- `void`
+
+#### Type definitions
+
+```ts
+type onPreCreateApp = <A>(app: A) => void
+```
+
+---
+
+## `onCreateApp`
 
 Method trigered when the app is created
 
@@ -144,7 +187,7 @@ Method trigered when the app is created
 
 - **app:** The underlying Koa app
 
-#### Return
+###### Return
 
 - `void`
 
@@ -156,7 +199,34 @@ type onCreateApp = <A>(app: A) => void
 
 ---
 
-### `onServerListening`
+## `onCreateWebpackChain`
+
+Method trigered when the webpack chain config is created.
+Use this method to modify your webpack configuration using webpack-chain.
+
+#### Params
+
+- **config:** Default webpack-chain bundler configuration object
+- **dev:** A boolean showing if is a `dev` environment
+- **args:** The Docz config object merged with argv
+
+###### Return
+
+- `WebpackChainConfig`
+
+#### Type definitions
+
+```ts
+export type OnCreateWebpackChain = (
+  config: WebpackChainConfig,
+  dev: boolean,
+  args: Config,
+) => void
+```
+
+---
+
+## `onServerListening`
 
 Method triggered when server is ready and listening
 
@@ -164,7 +234,7 @@ Method triggered when server is ready and listening
 
 - **server:** Http server object
 
-#### Return
+###### Return
 
 - `void`
 
@@ -176,7 +246,7 @@ type OnServerListening = <S>(server: S) => void
 
 ---
 
-### `onPreBuild`
+## `onPreBuild`
 
 Method triggered before the build process
 
@@ -184,7 +254,7 @@ Method triggered before the build process
 
 - **config:** Default bundler configuration object
 
-#### Return
+###### Return
 
 - `void`
 
@@ -196,7 +266,7 @@ type OnPreBuild<C = any> = (config: C) => void
 
 ---
 
-### `onPostBuild`
+## `onPostBuild`
 
 Method triggered after the build process
 
@@ -204,7 +274,7 @@ Method triggered after the build process
 
 - **config:** Default bundler configuration object
 
-#### Return
+###### Return
 
 - `void`
 
@@ -216,7 +286,7 @@ type onPostBuild<C = any> = (config: C) => void
 
 ---
 
-### `onPreRender`
+## `onPreRender`
 
 Method triggered before the app render
 
@@ -224,7 +294,7 @@ Method triggered before the app render
 
 - `none`
 
-#### Return
+###### Return
 
 - `void`
 
@@ -236,7 +306,7 @@ type onPreRender = () => void
 
 ---
 
-### `onPostRender`
+## `onPostRender`
 
 Method triggered after the app render
 
@@ -244,7 +314,7 @@ Method triggered after the app render
 
 - `none`
 
-#### Return
+###### Return
 
 - `void`
 

@@ -8,7 +8,7 @@ export const primary = ocean
 export const white = '#FFFFFF'
 export const grayExtraLight = '#EFF2F7'
 export const grayLight = '#E5E9F2'
-export const gray = '#D3DCE6'
+export const gray = '#BEC6CB'
 export const grayDark = '#8492A6'
 
 export const text = main

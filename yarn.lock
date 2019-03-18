@@ -1683,10 +1683,10 @@ babel-plugin-dynamic-import-node@2.2.0:
   dependencies:
     object.assign "^4.1.0"
 
-babel-plugin-export-metadata@1.0.0-alpha.129+8565128a:
-  version "1.0.0-alpha.129"
-  resolved "https://registry.npmjs.org/babel-plugin-export-metadata/-/babel-plugin-export-metadata-1.0.0-alpha.129.tgz#b0541317429b8b470114048e70e6d7d7c48dea83"
-  integrity sha512-l/Jn+Zhuikf02ZaEUFAfINbGNJInpvoM34GHnMJmwSzKGyGcW1t7Msy9XI3G9JSebCstVZ7Tsis/WX8B2uDbTw==
+babel-plugin-export-metadata@1.0.0-alpha.132+b856168c:
+  version "1.0.0-alpha.132"
+  resolved "https://registry.npmjs.org/babel-plugin-export-metadata/-/babel-plugin-export-metadata-1.0.0-alpha.132.tgz#642cad93a2e5ded00a933eeb55a57331263707b8"
+  integrity sha512-IH4NakiiHlaY9YV219sbswMV1E0lNt9AAaCNUiDVvCIxREio2ioToEonkx88DNwjPTmz85yuj/fDinjpL7bk7Q==
   dependencies:
     "@babel/cli" "^7.2.3"
     "@babel/core" "^7.3.4"
@@ -2974,10 +2974,10 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
-docz-core@1.0.0-alpha.129+8565128a:
-  version "1.0.0-alpha.129"
-  resolved "https://registry.npmjs.org/docz-core/-/docz-core-1.0.0-alpha.129.tgz#04237896d41e14a8f65eecccd20af6bbde1ff895"
-  integrity sha512-DiCWUBa1Z7DnYWJkHFL83Zs9fxm5xY1YosUtQLQsqr+TAn1TxFE7MSrMqe+Z1hUKegzH2NTrkUqrcm076LeU6A==
+docz-core@1.0.0-alpha.132+b856168c:
+  version "1.0.0-alpha.132"
+  resolved "https://registry.npmjs.org/docz-core/-/docz-core-1.0.0-alpha.132.tgz#26317baeac3150237830c15d7d2278860a119501"
+  integrity sha512-ORYBzuZMfeBX0Z/ztHTnSRMLev8KGLhiz9V4WKNnVqfSjgg8CW4ok7jEYy2L8mk0xOcrqD3RdtUIBgrppGFBbw==
   dependencies:
     "@babel/core" "7.3.4"
     "@babel/polyfill" "7.2.5"
@@ -2986,7 +2986,7 @@ docz-core@1.0.0-alpha.129+8565128a:
     "@sindresorhus/slugify" "^0.9.0"
     "@svgr/webpack" "^4.1.0"
     babel-loader "^8.0.5"
-    babel-plugin-export-metadata "1.0.0-alpha.129+8565128a"
+    babel-plugin-export-metadata "1.0.0-alpha.132+b856168c"
     babel-plugin-named-asset-import "^0.3.1"
     babel-preset-react-app "^7.0.2"
     cache-loader "^2.0.1"
@@ -2994,7 +2994,7 @@ docz-core@1.0.0-alpha.129+8565128a:
     chokidar "^2.1.2"
     common-tags "^1.8.0"
     detect-port "^1.3.0"
-    docz-utils "1.0.0-alpha.129+8565128a"
+    docz-utils "1.0.0-alpha.132+b856168c"
     dotenv "^7.0.0"
     env-dot-prop "^2.0.1"
     express "^4.16.4"
@@ -3007,21 +3007,21 @@ docz-core@1.0.0-alpha.129+8565128a:
     get-pkg-repo "^4.1.0"
     html-minifier "^3.5.21"
     humanize-string "^2.0.0"
-    load-cfg "1.0.0-alpha.129+8565128a"
+    load-cfg "1.0.0-alpha.132+b856168c"
     lodash "^4.17.11"
     mini-html-webpack-plugin "^0.2.3"
     p-reduce "^2.0.0"
     react-dev-utils "^8.0.0"
     react-docgen "^4.1.0"
-    react-docgen-actual-name-handler "1.0.0-alpha.129+8565128a"
+    react-docgen-actual-name-handler "1.0.0-alpha.132+b856168c"
     react-docgen-external-proptypes-handler "^1.0.2"
     react-docgen-imported-proptype-handler "^1.0.4"
     react-docgen-typescript "^1.12.3"
     react-hot-loader "^4.8.0"
     recast "^0.17.3"
-    rehype-docz "1.0.0-alpha.129+8565128a"
+    rehype-docz "1.0.0-alpha.132+b856168c"
     rehype-slug "^2.0.2"
-    remark-docz "1.0.0-alpha.129+8565128a"
+    remark-docz "1.0.0-alpha.132+b856168c"
     remark-frontmatter "^1.3.1"
     remark-parse "^6.0.2"
     resolve "^1.10.0"
@@ -3042,10 +3042,10 @@ docz-core@1.0.0-alpha.129+8565128a:
     ws "^6.2.0"
     yargs "^13.2.2"
 
-docz-utils@1.0.0-alpha.129+8565128a:
-  version "1.0.0-alpha.129"
-  resolved "https://registry.npmjs.org/docz-utils/-/docz-utils-1.0.0-alpha.129.tgz#1ac7cc8813537de4c4d4512cd0ac327b5d5f4298"
-  integrity sha512-qlDZqCVEgrwlNOmxGAbIYSGl/7dFgKS19WJIBkcUsJnlQ9T8Ja36ighCyoqpZiCfS4b0sMzdfCJtc2bBHrvC9Q==
+docz-utils@1.0.0-alpha.132+b856168c:
+  version "1.0.0-alpha.132"
+  resolved "https://registry.npmjs.org/docz-utils/-/docz-utils-1.0.0-alpha.132.tgz#cdb702903d95665d11c48ff36ba5193399b4cbf6"
+  integrity sha512-18m8mZ+ePIlm6B3K6PS7UPMLccIDf51HRCho7m0agLGm6iMVsTe+dLKw9JsVEgovrqvsz3HFrojqb5/AJHVhAA==
   dependencies:
     "@babel/generator" "^7.3.4"
     "@babel/parser" "^7.3.4"
@@ -3072,17 +3072,17 @@ docz-utils@1.0.0-alpha.129+8565128a:
     unist-util-is "^2.1.2"
     unist-util-visit "^1.4.0"
 
-docz@1.0.0-alpha.129+8565128a:
-  version "1.0.0-alpha.129"
-  resolved "https://registry.npmjs.org/docz/-/docz-1.0.0-alpha.129.tgz#b180c8b587bffef9ee27fe3b2f230edce5b21689"
-  integrity sha512-q/MyPU8w9ChWy2tDJZ3oj9Mj0Qq5YjcBa8M+3ysgmwOaL7/YSMuoOAulakjMzGf51czGv400e+PFddRqCTmdkQ==
+docz@1.0.0-alpha.132+b856168c:
+  version "1.0.0-alpha.132"
+  resolved "https://registry.npmjs.org/docz/-/docz-1.0.0-alpha.132.tgz#9e3d749e065d8f9c49839f4cf90acfa2f8ff0ecd"
+  integrity sha512-2eJedbLd2C30jnlGshDAbwariJHdSX8EydX5rMOG/ieKQ7Kh4f52IK5S4cm6U+az294jpw6NkTtI3fTQmPw+nA==
   dependencies:
     "@loadable/component" "^5.7.0"
     "@mdx-js/tag" "^0.20.3"
     "@reach/router" "^1.2.1"
     array-sort "^1.0.0"
     capitalize "^2.0.0"
-    docz-core "1.0.0-alpha.129+8565128a"
+    docz-core "1.0.0-alpha.132+b856168c"
     fast-deep-equal "^2.0.1"
     lodash "^4.17.11"
     match-sorter "^2.3.0"
@@ -4888,10 +4888,10 @@ levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-load-cfg@1.0.0-alpha.129+8565128a:
-  version "1.0.0-alpha.129"
-  resolved "https://registry.npmjs.org/load-cfg/-/load-cfg-1.0.0-alpha.129.tgz#7a977bcad73d2de2b6302fd678ef89ffc8374816"
-  integrity sha512-6anOXqMxVwIXq6Wihhmsj2m02AQclhppkbihJAH2Lt3TiB/Y76mDjerMRYsRff13aw/iVz746ul5YMU1uRKKJg==
+load-cfg@1.0.0-alpha.132+b856168c:
+  version "1.0.0-alpha.132"
+  resolved "https://registry.npmjs.org/load-cfg/-/load-cfg-1.0.0-alpha.132.tgz#b690c345303f0b222daf7560f72835afe100961f"
+  integrity sha512-KXZ43WeR3XDbhzV/NFO27lT8HRCmMpb7TLjNxQVZJiYpyhf1chPTIkDqzdnSb7UmkhRqsaxdXsnZNyy9feWScw==
   dependencies:
     "@babel/preset-env" "^7.3.4"
     "@babel/register" "^7.0.0"
@@ -6360,10 +6360,10 @@ react-dev-utils@^8.0.0:
     strip-ansi "5.0.0"
     text-table "0.2.0"
 
-react-docgen-actual-name-handler@1.0.0-alpha.129+8565128a:
-  version "1.0.0-alpha.129"
-  resolved "https://registry.npmjs.org/react-docgen-actual-name-handler/-/react-docgen-actual-name-handler-1.0.0-alpha.129.tgz#fd39d6e7515404baa99dd8886b115418d94e8848"
-  integrity sha512-NxzdsQw2q+qdjF21QG0uc8OaK0R0xBOvZbvefqUEnkQPeeIYe7Qu7Asoq9blzO+/EDrsvEL7LnYQ3VvVgzSgXw==
+react-docgen-actual-name-handler@1.0.0-alpha.132+b856168c:
+  version "1.0.0-alpha.132"
+  resolved "https://registry.npmjs.org/react-docgen-actual-name-handler/-/react-docgen-actual-name-handler-1.0.0-alpha.132.tgz#ada8c55f04472f913a2ce899c8f999e52a03810f"
+  integrity sha512-jvfBglnwsELmY9Ju12u+W8btvg7ELLYvR96TYJ6jlZq4slbY/TUS5O4TM1x+gKDKuxue8SFhB74CfnoPSL0SCg==
   dependencies:
     react-docgen "^4.1.0"
     recast "^0.17.3"
@@ -6685,12 +6685,12 @@ regjsparser@^0.6.0:
   dependencies:
     jsesc "~0.5.0"
 
-rehype-docz@1.0.0-alpha.129+8565128a:
-  version "1.0.0-alpha.129"
-  resolved "https://registry.npmjs.org/rehype-docz/-/rehype-docz-1.0.0-alpha.129.tgz#8700c0603aba4afb59949cdf4bf4880f285c9f9c"
-  integrity sha512-MaPUiXiX4E8nXqWQ21GeDG8TKSvIE3Uy8aOXgsr6qAIPx1VM+5PoOS5jeBZWCQSXuwbRqQU9qvsNMayUmhNuFQ==
+rehype-docz@1.0.0-alpha.132+b856168c:
+  version "1.0.0-alpha.132"
+  resolved "https://registry.npmjs.org/rehype-docz/-/rehype-docz-1.0.0-alpha.132.tgz#19679f629674e9ea77a0cc25e8fe87ab34c90d36"
+  integrity sha512-6LHcAPHSg/xo8XeEkCwl1Xrv61eGYJLPidlrL1GaUerHPss3QW9Kr091S37RJoEZv/ygYhEniGeoWXLoy7HjfA==
   dependencies:
-    docz-utils "1.0.0-alpha.129+8565128a"
+    docz-utils "1.0.0-alpha.132+b856168c"
     hast-util-to-string "^1.0.1"
     jsx-ast-utils "^2.0.1"
     lodash.flatten "^4.4.0"
@@ -6721,10 +6721,10 @@ relateurl@0.2.x:
   resolved "https://registry.npmjs.org/relateurl/-/relateurl-0.2.7.tgz#54dbf377e51440aca90a4cd274600d3ff2d888a9"
   integrity sha1-VNvzd+UUQKypCkzSdGANP/LYiKk=
 
-remark-docz@1.0.0-alpha.129+8565128a:
-  version "1.0.0-alpha.129"
-  resolved "https://registry.npmjs.org/remark-docz/-/remark-docz-1.0.0-alpha.129.tgz#164e03ce595fd4a8ee32286f037e77bfbbe8c12b"
-  integrity sha512-nqGU3R1iPzFnc+UWYvD6m2mmR1X37yvM+H9PgsiEk2gaKPC1OT8Lsl4JuM5lpsRlR9o2huR1GpSjiKQ/EDhKbw==
+remark-docz@1.0.0-alpha.132+b856168c:
+  version "1.0.0-alpha.132"
+  resolved "https://registry.npmjs.org/remark-docz/-/remark-docz-1.0.0-alpha.132.tgz#6297db6cde721ced6adc419a2e23f45ebbbccc02"
+  integrity sha512-kZC5i+/JjASNy0ZnP74VzMeZEHPHA/bJszOEvUOEu7RInL83LX119k/tsDFuJotx+UkJzjceBbOcSjODSI5PDw==
   dependencies:
     unist-util-remove "^1.0.1"
     unist-util-visit "^1.4.0"

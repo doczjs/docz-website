@@ -1,0 +1,70 @@
+---
+name: Getting started
+route: /docs/getting-started
+parent: Documentation
+menu: General
+---
+
+# Getting Started
+
+> ⚠️ Since v1 you need `react` and `react-dom` with `>= 16.8.0` installed.
+
+## Migration Guide
+
+This documentation it's about v1. If you need to migrate your Docz project, please read our [Migration Guide](/docs/migration-guide)
+
+## Installation
+
+Getting started with **Docz** is something really easy and quick.
+First of all, you will need to install **Docz** and some theme on your project using your favorite package manager (we'll asume yarn for this example):
+
+```bash
+$ yarn add docz@next docz-theme-default@next --dev
+```
+
+> ### Tips and tricks
+>
+> After you installed Docz in your project, you may find it convenient to add two scripts in your `package.json` to run Docz for you. This is an **optional step**:
+
+```json
+{
+  "name": "mycoolproject",
+  "scripts": {
+    "docz:dev": "docz dev",
+    "docz:build": "docz build"
+  },
+  "devDependencies": {
+    "docz": "latest"
+  }
+}
+```
+
+Now you can spin up your dev server just by running:
+
+```
+$ yarn docz:dev
+```
+
+## Using
+
+With your dev server up, you can start writing your documentation.
+
+Docz uses [MDX](https://mdxjs.com/) as a standard format because of the flexibility of writing JSX inside markdown files.
+
+Note that you **don't need to follow any strict file architecture**. You can just create your `.mdx` files **anywhere in your project**.
+
+So, let's create our first `.mdx` and give it a name:
+
+```markdown
+---
+name: Hello world
+---
+
+# Hello world
+
+Hello, I'm a mdx file!
+```
+
+With your first `.mdx` created, you can open your browser and visit `localhost:3000` and you should see something like this:
+
+![](https://cdn-std.dprcdn.net/files/acc_649651/kXg01b)

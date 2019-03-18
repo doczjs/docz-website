@@ -1,0 +1,48 @@
+---
+name: Document settings
+route: /docs/document-settings
+parent: Documentation
+menu: General
+---
+
+# Document settings
+
+Document settings can be something simple, but powerful. They should be defined in the top of the `.mdx`
+using yaml and can be used to change whatever you want by passing this config to your theme.
+
+By default the document has just tree properties that can't be overrided:
+
+```markdown
+---
+name: My Document
+route: /custom-route
+menu: Documents
+---
+```
+
+These properties are self-explanatory, but here is their definition:
+
+- `name` Define the name of your component.
+- `route *(optional)*` Define the route of your component.
+
+>If you don't pass any here, we'll create a slug getting the filepath of your file as route.
+
+- `menu  *(optional)*` Group documents into a single menu by changing this prop.
+
+## Custom properties
+
+With just this properties perhaps you couldn't do many customizations.
+But, all documents can have arbitrary properties and you can use them to built your theme.
+
+Example: you can define a property called `fullpage` to define whether your document is a page with `100%` width or not:
+
+```
+---
+name: My Document
+fullpage: true
+---
+```
+
+Now when you're creating your theme you can use this property to define inside your page component if shows a container of not.
+
+This is very powerful and gives you flexibility when developing your own themes.

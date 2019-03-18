@@ -3,7 +3,7 @@ import { SFC } from 'react'
 import styled from 'styled-components'
 
 interface OpenProps {
-  opened: boolean
+  opened?: boolean
 }
 
 const IconFirst = (p: OpenProps) => (!p.opened ? '0px' : '10px')
@@ -49,7 +49,7 @@ const IconLine = styled.span`
   }
 `
 
-const ToggleButton = styled.button`
+const ToggleButton = styled.button<OpenProps>`
   position: absolute;
   top: 14px;
   cursor: pointer;
@@ -67,13 +67,12 @@ const ToggleButton = styled.button`
 
   ${p =>
     p.theme.mq({
-      display: ['block', 'block', 'none', 'none'],
-      right: ['2px', '10px', '10px', '10px']
+      right: ['2px', '10px', '10px', '10px'],
     })};
 `
 
 interface HamburguerProps extends OpenProps {
-  onClick: (ev: React.SyntheticEvent<any>) => void
+  onClick?: (ev: React.SyntheticEvent<any>) => void
 }
 
 export const Hamburguer: SFC<HamburguerProps> = ({ opened, onClick }) => (

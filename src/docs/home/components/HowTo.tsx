@@ -18,13 +18,13 @@ const Wrapper = styled.div`
 
     ${p =>
       p.theme.mq({
-        padding: ['50px 10px', '50px 20px', '50px 20px', '100px 0'],
+        padding: ['50px 10px', '50px 20px'],
       })};
   }
 `
 
 const Title = styled.h2`
-  margin: 0 0 40px;
+  margin: 0;
   font-family: 'Zilla Slab';
   font-size: 52px;
   font-weight: 600;
@@ -55,16 +55,22 @@ const Pre = styled(BasePre)`
 `
 
 const mdxExample = `---
-name: Hello world
+name: Button
 ---
 
-import { MyComponent } from './MyComponent'
+import { Playground, Props } from 'docz'
+import { Button } from './'
 
-# Hello world
+# Button
 
-I'm a markdown document that can have components!
+<Props of={Button} />
 
-<MyComponent />
+## Basic usage
+
+<Playground>
+  <Button>Click me</Button>
+  <Button kind="secondary">Click me</Button>
+</Playground>
 `
 
 export const HowTo = () => (
@@ -72,13 +78,15 @@ export const HowTo = () => (
     <Container>
       <Title>How to</Title>
       <Text>Install Docz as a dependency</Text>
-      <Pre className="language-bash">$ yarn add docz --dev</Pre>
+      <Pre className="language-bash">
+        $ yarn add docz@next docz-theme-default@next --dev
+      </Pre>
       <Text>
         Create an <code>.mdx</code> file anywhere in your project
       </Text>
       <Pre className="language-markdown">{mdxExample}</Pre>
       <Text>That's it, your docs are ready to fly!</Text>
-      <Pre className="language-bash">$ yarn docz dev</Pre>
+      <Pre className="language-bash">$ yarn Docz dev</Pre>
       <Button
         scale="big"
         kind="secondary"

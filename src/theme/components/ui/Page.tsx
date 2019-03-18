@@ -8,77 +8,49 @@ import { Container } from './Container'
 import { Sidebar, Topbar } from '@components/shared'
 import { breakpoints } from '@styles/responsive'
 
-interface WrapperProps {
-  padding: boolean
-  noflex: boolean
-}
-
-const padding = (p: WrapperProps) => (p.padding ? 40 : 0)
-const noflex = (p: WrapperProps) => (p.noflex ? 'block' : 'flex')
-
-const Wrapper = styled.div<WrapperProps>`
+const Wrapper = styled.div`
   flex: 1;
+  margin-top: 60px;
 
   ${Container} {
-    display: ${noflex};
+    display: flex;
     min-height: 100%;
 
     ${p =>
       p.theme.mq({
-        paddingLeft: ['14px', '20px', '20px', '20px'],
-        paddingRight: ['14px', '20px', '20px', '20px'],
-      })};
-
-    padding-top: ${padding}px;
-    padding-bottom: ${padding}px;
+        padding: ['0 10px', '0 20px'],
+      })}
   }
 `
 
 const Document = styled.div`
-  width: 100%;
-  padding: 40px 0;
+  ${p =>
+    p.theme.mq({
+      paddingTop: ['10px', '30px'],
+    })}
 `
 
-export const Page: SFC<PageProps> = ({ children, doc }) => {
-  const { menu, sidebar, fullpage, noflex } = doc
+export const Page: SFC<PageProps> = ({ children, doc, location }) => {
+  const { parent, fullpage } = doc
   const { width } = useWindowSize()
-  const showSidebar = Boolean(menu || sidebar)
-  const isAtLeastDesktop = width > breakpoints.mobile
+  const isAtLeastDesktop = width > breakpoints.tablet
+  const showSidebar = Boolean(parent)
 
   return (
     <React.Fragment>
       <Topbar />
-      <Wrapper padding={!showSidebar} noflex={noflex}>
+      <Wrapper>
         {fullpage ? (
-          <Fragment>
-            {isAtLeastDesktop ? (
-              <Fragment>{children}</Fragment>
-            ) : (
-              <Fragment>
-                <Sidebar menu={menu || doc.name} />
-                {children}
-              </Fragment>
-            )}
-          </Fragment>
+          <Fragment>{children}</Fragment>
         ) : (
           <Container>
-            {showSidebar ? (
-              <Fragment>
-                <Sidebar menu={menu || doc.name} />
-                <Document>{children}</Document>
-              </Fragment>
-            ) : (
-              <Fragment>
-                {isAtLeastDesktop ? (
-                  <Fragment>{children}</Fragment>
-                ) : (
-                  <Fragment>
-                    <Sidebar menu={menu || doc.name} />
-                    {children}
-                  </Fragment>
-                )}
-              </Fragment>
+            {isAtLeastDesktop && showSidebar && (
+              <Sidebar
+                menu={parent || doc.name}
+                pathname={location && location.pathname}
+              />
             )}
+            <Document>{children}</Document>
           </Container>
         )}
       </Wrapper>

@@ -4,7 +4,7 @@ Docz theme build for [docz site](http://docz.site)!
 
 ## Installation and usage
 
-Just install the dependencies, then run docz devserver to make changes!
+Just install the dependencies, then run Docz devserver to make changes!
 
 ```bash
 yarn install

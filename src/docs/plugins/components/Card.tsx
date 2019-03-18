@@ -2,10 +2,9 @@ import * as React from 'react'
 import { SFC } from 'react'
 import styled from 'styled-components'
 
-import { Box as BaseBox, ButtonLink } from '@components/ui'
+import { Box as BaseBox } from '@components/ui'
 
 const Box = styled(BaseBox)`
-  width: 50%;
   padding: 20px;
 `
 
@@ -16,10 +15,21 @@ const Title = styled.h3`
 
 const Description = styled.p`
   margin: 0 0 10px;
+  font-size: 16px;
 `
 
-const Link = styled(ButtonLink)`
+const Link = styled.a`
   margin: 0;
+
+  &,
+  &:visited,
+  &:hover {
+    color: ${p => p.theme.colors.oceanDark};
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
 `
 
 interface CardProps {
@@ -36,10 +46,11 @@ export const Card: SFC<CardProps> = ({
   link,
 }) => (
   <Box className={className}>
-    <Title>{name}</Title>
+    <Title>
+      <Link href={link} target="_blank">
+        {name}
+      </Link>
+    </Title>
     <Description>{description}</Description>
-    <Link scale="small" href={link} target="_blank" kind="secondary">
-      View Source
-    </Link>
   </Box>
 )

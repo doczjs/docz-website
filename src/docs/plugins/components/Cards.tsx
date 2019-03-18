@@ -3,20 +3,19 @@ import { SFC } from 'react'
 import styled from 'styled-components'
 
 import { Card as BaseCard } from './Card'
-import { mq } from '@styles/responsive'
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
   width: 100%;
+  grid-gap: 20px;
+
+  ${p =>
+    p.theme.mq({
+      gridTemplateColumns: ['repeat(1, 1fr)', 'repeat(2, 1fr)'],
+    })}
 `
 
-const Card = styled(BaseCard)`
-  ${mq({
-    width: ['100%', 'calc(50% - 20px)', 'calc(50% - 20px)', 'calc(50% - 20px)'],
-    margin: ['10px 0', '10px', '10px', '10px'],
-  })};
-`
+const Card = styled(BaseCard)``
 
 export const Cards: SFC = () => (
   <Wrapper>
@@ -47,7 +46,7 @@ export const Cards: SFC = () => (
     />
     <Card
       name="docz-plugin-snapshots"
-      description="A plugin for docz that creates jest snapshots for all documented component usages"
+      description="A plugin for Docz that creates jest snapshots for all documented component usages"
       link="https://github.com/JosephConradBlack/docz-plugin-snapshots"
     />
   </Wrapper>

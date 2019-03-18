@@ -17,28 +17,30 @@ export default {
     favicon: '/public/favicon.ico',
   },
   menu: [
-    'Home',
     {
-      name: 'Introduction',
+      name: 'General',
       menu: [
-        'Getting Started',
-        'Writting MDX',
+        'Introduction',
+        'Getting started',
+        'Writing MDX',
         'Customizing',
-        'Documenting Your Things',
-        'Deploying Your Docs',
+        'Built-ins components',
+        'Document settings',
+        'Deploying your docs',
       ],
     },
     {
-      name: 'Documentation',
+      name: 'References',
       menu: [
-        'Components API',
+        'Migration Guide',
         'Project Configuration',
-        'Creating Themes',
+        'Components & Hooks API',
+        'Gatsby Theme',
         'Creating Plugins',
+        'Creating Themes',
+        'MDX Plugins',
       ],
     },
-    'Plugins',
-    'Themes',
   ],
   onCreateWebpackChain: config => {
     config.resolve.alias

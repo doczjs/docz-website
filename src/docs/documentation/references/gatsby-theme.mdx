@@ -1,0 +1,99 @@
+---
+name: Gatsby Theme
+route: /docs/gatsby-theme
+menu: References
+parent: Documetation
+---
+
+# Gatsby Theme
+
+> ⚠️ This is experimental and subject to breaking changes.
+
+Gatsby themes is one of the coolest features of all times in Gatsby, with the introduction of theming in Gatsby,
+it's easier than ever to get started building a Gatsby site. Shared functionality, data sourcing, and design can all be prepackaged
+as a Gatsby Theme that's an NPM install away.
+
+The enjoy Gatsby theme features, use it as an environment for your documentation and give you more power yet, now we have
+a `gastby-theme-docz` that you can just use Docz as you use in the basic way, but enjoy all features of the Gatsby environment.
+
+If you liked it, but you don't know what is a Gatsby theme, please read [the official docs](https://www.gatsbyjs.org/docs/gatsby-theme)
+
+## How to use
+
+To use our gatsby theme it's so simple. First of all, just install some packages:
+
+```
+yarn add gatsby gatsby-theme-docz@next docz@next docz-theme-default@next -D
+```
+
+Then set the `docz-theme-default` theme in the `__experimentalThemes` option inside your `gatsby-config.js`
+
+```js
+// gatsby-config.js
+module.exports = {
+  __experimentalThemes = ['gatsby-theme-docz']
+}
+```
+
+Then, add some `.mdx` inside your project:
+
+```markdown
+---
+name: Hello world
+route: /
+---
+
+# Hello world
+
+Hello, I'm a mdx file!
+```
+
+Now just run gatsby in development mode:
+
+```bash
+$ yarn gatsby develop
+```
+
+If everything works, you should see something like this:
+
+![](https://cdn-std.dprcdn.net/files/acc_649651/rK9fYf)
+
+## Configuration
+
+You can usually set your config using `doczrc.js` file ([see all available](/docs/project-configuration)) or if you want to
+set some default options for your theme, you can set `options` on theme definition.
+
+```js
+// gatsby-config.js
+module.exports = {
+  __experimentalThemes = [{
+    resolve: 'gatsby-theme-docz'
+    options: {
+      /* your options here */
+    }
+  }]
+}
+```
+
+> We highly indicate that you set your configuration using `doczrc.js` because of live reload that will change in real time your project settings, if you set your configs using the theme defition you will need to reset your dev server in order to see your changes.
+
+## Getting data from Docz
+
+Using our Gatsby Theme you can enjoy all our hooks to get data for your pages.
+So, you can create isolated pages on Gatsby using gatsby pages and get data from Docz. Cool right?
+
+Imagine, that you have your home page insides `/pages` and you want to show all documents parsed from Docz. You can easy get this by doing:
+
+```js
+import React from 'react'
+import { useDocs } from 'docz'
+
+const Home = () => {
+  const docs = useDocs()
+  return (
+    <div>{/* my coolest home */}</div>
+  )
+}
+
+export default Home
+```
