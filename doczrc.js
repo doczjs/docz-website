@@ -7,7 +7,7 @@ const SRC = path.resolve(__dirname, 'src')
 export default {
   title: 'Docz',
   description: 'It has never been so easy to document your things',
-  indexHtml: 'src/index.html',
+  indexHtml: 'public/index.html',
   theme: 'src/theme/index',
   typescript: true,
   propsParser: false,
