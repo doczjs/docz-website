@@ -50,25 +50,19 @@ const IconLine = styled.span`
 `
 
 const ToggleButton = styled.button<OpenProps>`
-  position: absolute;
-  top: 14px;
   cursor: pointer;
   z-index: 99;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 5px 6px;
+  margin-left: 10px;
   width: 42px;
   height: 30px;
   transition: transform 0.3s;
   outline: none;
   border: none;
   background: transparent;
-
-  ${p =>
-    p.theme.mq({
-      right: ['2px', '10px', '10px', '10px'],
-    })};
 `
 
 interface HamburguerProps extends OpenProps {

@@ -1,24 +1,25 @@
 import * as React from 'react'
-import { useCallback, useState, useEffect } from 'react'
+import { useCallback, useContext, useEffect } from 'react'
 import { Fragment, SFC } from 'react'
 import { Entry, Link as BaseLink, useDocs, useMenus } from 'docz'
 import { useWindowSize } from 'react-use'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { ADSStyleSheet, addCarbonAds } from './ads'
 import { breakpoints } from '@styles/responsive'
+import { mainContext } from '../Main'
+import { TOPBAR_LINKS, IconLink } from '../Topbar'
 
 interface WrapperProps {
   opened: boolean
-  desktop: boolean
-  theme?: any
+  mobile: boolean
 }
 
 const toggle = (p: WrapperProps) => {
-  return !p.opened && !p.desktop ? '-100%' : '0'
+  return !p.opened && p.mobile ? '-100%' : '0'
 }
 
-const SidebarWrapper = styled.div`
+const SidebarWrapper = styled.div<WrapperProps>`
   width: 280px;
   height: 100%;
   min-width: 280px;
@@ -29,6 +30,17 @@ const SidebarWrapper = styled.div`
   background: #fff;
   transition: transform 0.2s, background 0.3s;
   transform: translateX(${toggle});
+
+  ${p =>
+    p.mobile &&
+    css`
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: auto;
+      z-index: 9999;
+      padding: 30px;
+    `};
 `
 
 const Wrapper = styled.div`
@@ -143,21 +155,45 @@ const Menu: SFC<MenuProps> = ({ doc, active, onClick }) => {
   )
 }
 
+interface TopbarMenuProps {
+  onClick: React.MouseEventHandler
+}
+
+const TopbarMenu: React.SFC<TopbarMenuProps> = ({ onClick }) => {
+  return (
+    <React.Fragment>
+      {TOPBAR_LINKS.map(({ id, children, ...props }) => {
+        const Component = props.to ? Link : IconLink
+        return (
+          <Component key={id} {...props} onClick={onClick}>
+            {children}
+          </Component>
+        )
+      })}
+    </React.Fragment>
+  )
+}
+
 interface SidebarProps {
   menu: string
   pathname?: string
+  mobile?: boolean
 }
 
-export const Sidebar: SFC<SidebarProps> = ({ menu: current, pathname }) => {
+export const Sidebar: SFC<SidebarProps> = ({
+  menu: current,
+  pathname,
+  mobile,
+}) => {
   const docs = useDocs()
   const { width } = useWindowSize()
-  const [opened, setOpened] = useState(false)
+  const { showing, setShowing } = useContext(mainContext)
 
   const menus = useMenus()
-  const isDesktop = width > breakpoints.mobile
+  const isDesktop = width > breakpoints.tablet
 
   const toggle = useCallback(() => {
-    setOpened(s => !s)
+    setShowing((s: any) => !s)
   }, [])
 
   const handleSidebarToggle = (ev: React.SyntheticEvent<any>) => {
@@ -172,8 +208,9 @@ export const Sidebar: SFC<SidebarProps> = ({ menu: current, pathname }) => {
   return (
     <React.Fragment>
       <ADSStyleSheet />
-      <SidebarWrapper opened={opened} desktop={isDesktop}>
+      <SidebarWrapper opened={showing} mobile={Boolean(mobile)}>
         <Wrapper>
+          {mobile && <TopbarMenu onClick={handleSidebarToggle} />}
           {menus &&
             menus.map(({ id, name, menu }) => {
               if (!menu) return null
@@ -200,7 +237,9 @@ export const Sidebar: SFC<SidebarProps> = ({ menu: current, pathname }) => {
           <div id="ads" />
         </Wrapper>
       </SidebarWrapper>
-      <ToggleBackground opened={opened} onClick={handleSidebarToggle} />
+      {!isDesktop && (
+        <ToggleBackground opened={showing} onClick={handleSidebarToggle} />
+      )}
     </React.Fragment>
   )
 }

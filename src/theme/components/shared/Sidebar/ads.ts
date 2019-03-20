@@ -12,8 +12,8 @@ export const ADSStyleSheet = createGlobalStyle`
     display: block;
     overflow: hidden;
     max-width: var(--width);
-    margin-top: 40px;
-    margin-bottom: 50px;
+    margin-top: 30px;
+    margin-bottom: 0;
     padding: .7rem;
     border-radius: 4px;
     text-align: center;

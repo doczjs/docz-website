@@ -76,6 +76,11 @@ export const BaseStyle = createGlobalStyle`
     min-height: 100vh;
   }
 
+  body.with-overlay,
+  body.with-overlay #root {
+    overflow: hidden;
+  }
+
   a, a:visited, a:active {
     text-decoration: none;
     color: ${colors.link};
