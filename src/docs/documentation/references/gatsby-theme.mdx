@@ -31,7 +31,7 @@ Then set the `docz-theme-default` theme in the `__experimentalThemes` option ins
 ```js
 // gatsby-config.js
 module.exports = {
-  __experimentalThemes = ['gatsby-theme-docz']
+  __experimentalThemes: ['gatsby-theme-docz']
 }
 ```
 
@@ -66,7 +66,7 @@ set some default options for your theme, you can set `options` in the theme defi
 ```js
 // gatsby-config.js
 module.exports = {
-  __experimentalThemes = [{
+  __experimentalThemes: [{
     resolve: 'gatsby-theme-docz'
     options: {
       /* your options here */
