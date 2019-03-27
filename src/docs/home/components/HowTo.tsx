@@ -91,7 +91,7 @@ export const HowTo = () => (
       </Text>
       <Pre className="language-markdown">{mdxExample}</Pre>
       <Text>That's it, your docs are ready to fly!</Text>
-      <Pre className="language-bash">$ yarn Docz dev</Pre>
+      <Pre className="language-bash">$ yarn docz dev</Pre>
       <Link to="/docs/getting-started">More info</Link>
     </Container>
   </Wrapper>
