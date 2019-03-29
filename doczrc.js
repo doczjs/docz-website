@@ -12,7 +12,7 @@ export default {
   typescript: true,
   propsParser: false,
   mdPlugins: [externalLinks],
-  ignore: ['site-map.md', 'readme.md'],
+  ignore: ['site-map.md', 'readme.md', 'src/theme/**'],
   htmlContext: {
     favicon: '/public/favicon.ico',
   },
