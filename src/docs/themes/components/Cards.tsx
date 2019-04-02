@@ -24,7 +24,7 @@ export const Cards: SFC = () => (
       image="https://cdn-std.dprcdn.net/files/acc_649651/TkJQcV"
       name="docz-theme-default"
       description="Default theme created by docz"
-      link="https://github.com/pedronauck/docz/tree/master/packages/docz-theme-default"
+      link="https://github.com/pedronauck/docz/tree/master/core/docz-theme-default"
     />
   </Wrapper>
 )
