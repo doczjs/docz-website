@@ -15,15 +15,12 @@ const dash = keyframes`
   }
 `
 
-const spinnerClass = (delay: number = 0) => css`
-  stroke-dasharray: 100;
-  animation: ${dash} 5s ${delay}s cubic-bezier(0.455, 0.03, 0.515, 0.955)
-    infinite;
-`
-
-const Lines = styled.path`
+const Lines = styled.path<{ delay: string }>`
   stroke: ${p => p.theme.colors.primary};
   stroke-width: 3px;
+  stroke-dasharray: 100;
+  animation: ${dash} 5s ${p => p.delay}s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+    infinite;
 `
 
 const Path = styled.path`
@@ -44,7 +41,7 @@ const Spinner = ({ size = 60 }) => (
         stroke-width="5"
         stroke-linecap="round"
         stroke-linejoin="round"
-        className={spinnerClass(1.5)}
+        delay="1.5"
       />
       <Lines
         d="M47.75,18.5 L86.25,18.5"
@@ -52,7 +49,7 @@ const Spinner = ({ size = 60 }) => (
         stroke-width="5"
         stroke-linecap="round"
         stroke-linejoin="round"
-        className={spinnerClass(0.2)}
+        delay="0.2"
       />
       <Lines
         d="M30.9375,38.5 L72.0625,38.5"
@@ -60,7 +57,7 @@ const Spinner = ({ size = 60 }) => (
         stroke-width="5"
         stroke-linecap="round"
         stroke-linejoin="round"
-        className={spinnerClass(1)}
+        delay="1"
       />
       <Lines
         d="M31,56.5 L59,56.5"
@@ -68,7 +65,7 @@ const Spinner = ({ size = 60 }) => (
         stroke-width="5"
         stroke-linecap="round"
         stroke-linejoin="round"
-        className={spinnerClass(3)}
+        delay="3"
       />
       <Lines
         d="M31.375,72.5 L50.625,72.5"
@@ -76,7 +73,7 @@ const Spinner = ({ size = 60 }) => (
         stroke-width="5"
         stroke-linecap="round"
         stroke-linejoin="round"
-        className={spinnerClass(2)}
+        delay="2"
       />
     </g>
   </svg>
