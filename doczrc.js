@@ -13,8 +13,9 @@ export default {
   propsParser: false,
   mdPlugins: [externalLinks],
   ignore: ['site-map.md', 'readme.md', 'src/theme/**'],
+  public: './public',
   htmlContext: {
-    favicon: '/public/favicon.ico',
+    favicon: '/public/images/favicon.png',
   },
   menu: [
     {
