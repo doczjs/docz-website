@@ -120,13 +120,13 @@ const map = {
   inlineCode: components.Code,
 }
 
-const Theme = () => {
+const Theme = ({ children }) => {
   const config = useConfig()
   return (
     <ThemeProvider theme={config}>
-      <DocPreview components={map}>
+      <ComponentsProvider components={map}>
         {children}
-      </DocPreview>
+      </ComponentsProvider>
     </ThemeProvider>
   )
 }
@@ -200,14 +200,14 @@ const map = {
   inlineCode: components.Code,
 }
 
-const Theme = () => {
+const Theme = ({ children }) => {
   const config = useConfig()
   return (
     <ThemeProvider theme={config}>
       <Menu />
-      <DocPreview components={map}>
+      <ComponentsProvider components={map}>
         {children}
-      </DocPreview>
+      </ComponentsProvider>
     </ThemeProvider>
   )
 }
