@@ -231,7 +231,7 @@ export function useDocs(): Docs[]
 ## `useMenus`
 
 This hook will return the menu built by Docz using your documents.
-Use this to get your menus easier of use `useDocs` if you want the documents ordered like the order in your project configuration.
+Use this to get your menus easier or use `useDocs` if you want the documents ordered like the order in your project configuration.
 
 ```js
 import { useMenus } from 'docz'
@@ -244,8 +244,8 @@ const App = () => {
 
 ### Params
 
-- **query**: `String`
-  Use this to filter menu results
+- **options**: `Object`
+  - `query: String` Use `query` to filter menu results. The query is matched against the menu headers, not page content.
 
 ### Return
 
