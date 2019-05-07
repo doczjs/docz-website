@@ -218,8 +218,19 @@ Use this property to specify the theme for your site. You can pass the name of y
 ```js
 // doczrc.js
 export default {
-  theme: '/src/my/theme/folder',
+  theme: 'src/theme',
 }
+```
+
+Example project structure:
+
+```
+pages/
+  hello-world.mdx
+src/
+  theme.js
+doczrc.js
+package.json
 ```
 
 > ### Important
