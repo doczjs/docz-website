@@ -47,4 +47,14 @@ After that, just fill settings like below, passing your build command and the de
 
 ![](https://cdn-std.dprcdn.net/files/acc_649651/3uvA9J)
 
+Finally, add the following file to your project's root folder.
+
+```toml
+# COMMENT: This a rule for Single Page Applications as Docz site is one
+[[redirects]]
+  from = "/*"
+  to = "/"
+  status = 200
+```
+
 That's all. Now you have your documentation hosted on a domain with a quick and easy deploy process configured.
