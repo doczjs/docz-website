@@ -83,9 +83,7 @@ export const HowTo = () => (
     <Container>
       <Title>How to</Title>
       <Text>Install Docz as a dependency</Text>
-      <Pre className="language-bash">
-        $ yarn add docz docz-theme-default --dev
-      </Pre>
+      <Pre className="language-bash">$ yarn add docz react react-dom --dev</Pre>
       <Text>
         Create an <code>.mdx</code> file anywhere in your project
       </Text>

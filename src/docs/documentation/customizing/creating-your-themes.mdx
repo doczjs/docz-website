@@ -1,11 +1,11 @@
 ---
-name: Creating Themes
-route: /docs/creating-themes
+name: Creating your themes
+route: /docs/creating-your-themes
 parent: Documentation
-menu: References
+menu: Customizing
 ---
 
-# Creating Themes
+# Creating your themes
 
 One of the main features of Docz is that you can create your own theme from scratch and just use data parsed from Docz.
 We provide a bunch of components that can help you to create your own theme without pain.
@@ -16,30 +16,23 @@ Let's use this project structure through the following examples:
 pages/
   hello-world.mdx
 src/
+  gatsby-theme-docz/
+    index.js
   ui/
     Page.js
-  theme.js
 doczrc.js
 package.json
 ```
 
-## Setting theme filepath
-
-First of all, you need to set the path of your theme in the [Project Configuration](/docs/project-configuration) by changing the `theme` property.
-
-```js
-// doczrc.js
-export default {
-  theme: 'src/theme',
-}
-```
+The oldest way to acomplish that is by using the `theme` property inside the `doczrc.js` file. Now, if you want to create
+your own theme, just create a file located at `src/gatsby-theme-docz/index.js`
 
 ## Creating your theme component
 
 Then just create your component passing the `children` inside it and export it as default using the [`theme()`](/docs/components-api) high order component as an enhancer.
 
 ```js
-// src/theme.js
+// src/gatsby-theme-docz/index.js
 import React from 'react'
 import { theme } from 'docz'
 
@@ -60,7 +53,7 @@ Each theme has your own default `themeConfig` object that define whatever you wa
 It's very useful to set something like custom fonts, colors, spaces, some styles properties and other project global variables.
 
 ```js
-// src/theme.js
+// src/gatsby-theme-docz/index.js
 import React from 'react'
 import { theme } from 'docz'
 
@@ -81,7 +74,7 @@ By default, Docz will use this object as default configuration and merge it with
 Using together with `useConfig` hook you can do a lot of things, like use css-in-js theming or retrieve props from your `themeConfig` in a deep render component.
 
 ```js
-// src/theme.js
+// src/gatsby-theme-docz/index.js
 import React from 'react'
 import { theme, useConfig } from 'docz'
 import { ThemeProvider } from 'emotion-theming'
@@ -113,7 +106,7 @@ provide for MDX and Docz each component that you want to render inside your docu
 components passed to the provider, you can easily change how your mdx file will be rendered and change default behaviors and styles.
 
 ```js
-// src/theme.js
+// src/gatsby-theme-docz/index.js
 import React from 'react'
 import { theme, useConfig, ComponentsProvider } from 'docz'
 import { ThemeProvider } from 'emotion-theming'
@@ -193,7 +186,7 @@ export const Menu = () => {
 Now you have a fully functional navigation to your documentation and you can simply use it your `<Menu />` component inside your theme:
 
 ```js
-// src/theme.js
+// src/gatsby-theme-docz/index.js
 import React from 'react'
 import { theme, useConfig, ComponentsProvider } from 'docz'
 import { ThemeProvider } from 'emotion-theming'

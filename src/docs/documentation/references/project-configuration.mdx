@@ -17,15 +17,11 @@ You can also create a `.env` file or use an existing `.env` file. You can then d
 
 ## CLI arguments
 
-You can also pass customizations as arguments to the `docz dev` command: `docz dev --typescript --port=4838 --websocketPort=8738`
+You can also pass customizations as arguments to the `docz dev` command: `docz dev --typescript --port=4838`
 
 > ### Tips and tricks
 >
 > You can create a `doczrc.json` file too if you want, but we recommend that you use a `js` file because just with javascript you can set plugins in your configuration since plugins are functions!
-
-> ### Running multiple Docz apps concurrently
->
-> You can run multiple Docz apps concurrently by making each app run on their own port and websocket port. See config options below.
 
 ## Basic config
 
@@ -178,64 +174,19 @@ Specify the host to use for the dev server.
 
 Specify the port to use for the dev server.
 
-### websocket host
-
-- Type: `string`
-- Default: `process.env.DOCZ_WEBSOCKET_HOST || '127.0.0.1'`
-
-Specify the websocket host to use for the dev server.
-
-```js
-// doczrc.js
-export default {
-  websocketHost: '192.168.29.12',
-}
-```
-
-### websocket port
-
-- Type: `number`
-- Default: `process.env.DOCZ_WEBSOCKET_PORT || 60505`
-
-Specify the websocket port to use for the dev server.
-
-```js
-// doczrc.js
-export default {
-  websocketPort: '8373',
-}
-```
-
 ## Theming
 
 ### theme
 
-- Type: `string`
-- Default: `process.env.DOCZ_THEME || 'docz-theme-default'`
-
-Use this property to specify the theme for your site. You can pass the name of your theme if is a package like `docz-theme-default` and the Docz will attempt to load the theme component at `node_modules/docz-default-theme`, or if you want to use some file inside your project, you can just pass the filepath relative to the root path of your project.
-
-```js
-// doczrc.js
-export default {
-  theme: 'src/theme',
-}
-```
-
-Example project structure:
-
-```
-pages/
-  hello-world.mdx
-src/
-  theme.js
-doczrc.js
-package.json
-```
-
-> ### Important
+> This property was removed in the v2
 >
-> You need to pass a filepath inside the source folder of your project. If the file of your theme is outside it will not be compiled by the bundler!
+> Check more information about how to use it [here](http://localhost:3000/docs/migration-guide#theme-property-removed)
+
+### wrapper
+
+> This property was removed in the v2.
+>
+> Check more information about how to use it [here](http://localhost:3000/docs/migration-guide#wrapper-property-removed)
 
 ### themeConfig
 
@@ -245,76 +196,6 @@ package.json
 This is the config that your theme will use to customize it. By default, each theme has your own `themeConfig` that you can modify, so this object may vary according to each theme.
 
 You can see the theme config of default theme [here](https://github.com/pedronauck/docz/blob/master/core/docz-theme-default/src/config.ts)
-
-### wrapper
-
-- Type: `string`
-- Default: `undefined`
-
-Component filepath relative from root to use as a wrapper on your application. This can be useful to set providers like the store provider of redux.
-
-```js
-// doczrc.js
-export default {
-  wrapper: 'src/wrapper',
-}
-```
-
-```js
-// src/wrapper.js
-import { Provider } from 'react-redux'
-
-const Wrapper = ({ children }) => (
-  <Provider store={/* your store */}>
-    {children}
-  </Provider>
-)
-```
-
-### indexHtml
-
-- Type: `string`
-- Default: `undefined`
-
-HTML filepath relative from root to use as `index.html` template. This can be useful if you want to put some external scripts, css links, and other things in the index file.
-
-By default we use this HTML file:
-
-```html
-<!DOCTYPE html>
-<html lang="{{ lang }}">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="{{ description }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ title }}</title>
-    {{ head }}
-  </head>
-  <body>
-    <div id="root" />
-    {{ footer }}
-  </body>
-</html>
-```
-
-> ### Important
->
-> The `div` with id `root` is required to render the react application, please don't remove it.
-
-### codeSandbox
-
-- Type: `Boolean`
-- Default: `true`
-
-This option is used if you need to disable the codesandbox integration displayed in the `<Playground />`:
-
-```js
-// doczrc.js
-export default {
-  codeSandbox: false
-}
-```
 
 ## Build pipeline
 
@@ -358,21 +239,18 @@ Array of [rehype plugins](https://github.com/rehypejs/rehype/blob/master/doc/plu
 
 ### onCreateWebpackChain
 
-- Type: `(config: WebpackChainConfig, dev: boolean, args: Argv) => WebpackChainConfig`
-- Default: `(config) => config`
-
-This function can modify the default bundler configuration by using [webpack-chain](https://github.com/neutrinojs/webpack-chain).
+> This property was removed in the v2. Use Gatsby hooks instead.
+>
+> More info about it [here](http://localhost:3000/docs/powered-by-gatsby)
 
 ### modifyBundlerConfig
 
-- Type: `(config: BundlerConfig, dev: boolean, args: Argv) => BundlerConfig`
-- Default: `(config) => config`
-
-This function can modify the default bundler configuration.
+> This property was removed in the v2. Use Gatsby hooks instead.
+>
+> More info about it [here](http://localhost:3000/docs/powered-by-gatsby)
 
 ### modifyBabelRc
 
-- Type: `(babelrc: BabelRC, args: Argv) => BabelRC`
-- Default: `(babelrc) => babelrc`
-
-This function can modify the default babelrc configuration.
+> This property was removed in the v2. Use Gatsby hooks instead.
+>
+> More info about it [here](http://localhost:3000/docs/powered-by-gatsby)

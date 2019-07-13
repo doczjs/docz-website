@@ -20,11 +20,6 @@ const Card = styled(BaseCard)``
 export const Cards: SFC = () => (
   <Wrapper>
     <Card
-      name="docz-plugin-css"
-      description="Plugin to parse css files inside your documents"
-      link="https://github.com/pedronauck/docz-plugin-css"
-    />
-    <Card
       name="docz-plugin-storybook"
       description="Docz plugin that makes migrating from Storybook in a breeze"
       link="https://github.com/hydrateio/docz-plugin-storybook"
@@ -33,11 +28,6 @@ export const Cards: SFC = () => (
       name="docz-plugin-netlify"
       description="Deploy your documentation to Netlify"
       link="https://github.com/nicholasess/docz-plugin-netlify"
-    />
-    <Card
-      name="docz-plugin-postcss"
-      description="Docz plugin for PostCSS"
-      link="https://github.com/andreasonny83/docz-plugin-postcss"
     />
     <Card
       name="docz-plugin-svg-sprite-loader"

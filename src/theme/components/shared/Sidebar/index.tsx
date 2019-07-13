@@ -24,7 +24,7 @@ const SidebarWrapper = styled.div<WrapperProps>`
   height: 100%;
   min-width: 280px;
   height: 100%;
-  padding: 40px 20px 40px 0;
+  padding: 20px 20px 20px 0;
   margin-right: 60px;
   border-right: 1px solid ${p => p.theme.colors.grayLight};
   background: #fff;
@@ -209,6 +209,7 @@ export const Sidebar: SFC<SidebarProps> = ({
     <React.Fragment>
       <ADSStyleSheet />
       <SidebarWrapper opened={showing} mobile={Boolean(mobile)}>
+        <div id="ads" />
         <Wrapper>
           {mobile && <TopbarMenu onClick={handleSidebarToggle} />}
           {menus &&
@@ -234,7 +235,6 @@ export const Sidebar: SFC<SidebarProps> = ({
                 </React.Fragment>
               )
             })}
-          <div id="ads" />
         </Wrapper>
       </SidebarWrapper>
       {!isDesktop && (

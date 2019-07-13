@@ -4,10 +4,10 @@ import styled from 'styled-components'
 import GitHubButton from 'react-github-button'
 import { Link as BaseLink } from 'docz'
 
-import { Button, Container, Logo } from '@components/ui'
+import { Container, Logo } from '@components/ui'
 import { btnStyle } from '@components/ui/Button'
 import pattern from '@images/pattern.png'
-import image from '@images/builtin-components.png'
+import image from '@images/header-img.png'
 
 const Wrapper = styled.div`
   width: 100%;

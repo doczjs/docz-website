@@ -11,7 +11,6 @@ menu: References
 >
 > By default, this components and hooks just works inside a Docz theme, because it needs a lot of data that just has in a Docz environment
 
-
 ---
 
 ## `<ComponentsProvider>`
@@ -52,7 +51,7 @@ const Theme = theme(({ children }) => (
 ```ts
 interface ComponentsMap {
   loading?: CT
-  page?: CT<PageProps>
+  layout?: CT<LayoutProps>
   notFound?: CT<RouteComponentProps<any>>
   playground?: PlaygroundComponent
   h1?: CT<any> | string
@@ -76,31 +75,6 @@ interface ComponentsProviderProps = {
 }
 
 export const ComponentsProvider: React.SFC<ComponentsProviderProps>
-```
-
----
-
-## `<Link>`
-
-Use this component to create links inside your theme.
-
-```js
-import React from 'react'
-import { Link } from 'docz'
-
-const App = () => <Link to="/my-document-route">Name</Link>
-```
-
-### Properties
-
-- to: `string`<br />
-  The link path
-
-### Type Definitions
-
-```ts
-import { LinkProps } from '@reach/router'
-export const Link: React.SFC<LinkProps>
 ```
 
 ---

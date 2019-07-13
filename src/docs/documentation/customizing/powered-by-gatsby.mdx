@@ -1,0 +1,54 @@
+---
+name: Powered by Gatsby
+route: /docs/powered-by-gatsby
+parent: Documentation
+menu: Customizing
+---
+
+# Powered by Gatsby
+
+[Gatsby](https://gatsbyjs.org) is a blazing fast modern site generator for React and one of the greatest modern tools
+of the new frontend era. It has a huge ecosystem and community around it and a very concise team behind.
+
+The Docz core since the new v2 is entirely build around Gatsby, this is the biggest change
+in the project since its creation and one of the best things that we could make for the tool.
+
+Using Gatsby as bundler behind the scenes we won a lot of benefits like:
+
+* Stay focused in create features instead of lead with bundler management
+* Static and optimized builds by default
+* Fast dev-experience and better worflow
+* Huge ecosystem of tools, plugins and community
+* Better and easy way to customize things inside Docz
+* More power in order to create your documentation
+
+## Gatsby API and Hooks
+
+Gatsby has a pretty damn good [API for developers](https://www.gatsbyjs.org/docs/api-reference/) and a lot of hooks
+and life cycle methods that you can use in order to customize the process of
+your bundler. Indeed you can hook into it in a lot of ways and all these hooks
+and properties you can use with Docz.
+
+> Check [all Gatsby API references](https://www.gatsbyjs.org/docs/api-reference/) here
+
+So, if you want to use any of those Gatsby configurations file inside your Docz
+project, just create it in the root and we'll lead with them for you.
+
+Like, if you want to make some change in the webpack configuration, you can use
+the `onCreateWebpackConfig` hook inside the `gatsby-node.js` file:
+
+```js
+// gatsby-node.js
+export.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    module: {
+      rules: [
+        {
+          test: 'my-css',
+          use: [loaders.style(), loaders.css()]
+        },
+      ],
+    },
+  })
+}
+```

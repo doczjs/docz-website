@@ -11,19 +11,20 @@ menu: General
 
 ## Migration Guide
 
-This documentation it's about v1. If you need to migrate your Docz project, please read our [Migration Guide](/docs/migration-guide)
+This documentation it's about v2. If you need to migrate your Docz project, please read our [Migration Guide](/docs/migration-guide)
 
 ## Installation
 
 Getting started with **Docz** is something really easy and quick.
-First of all, you will need to install **Docz** and some theme on your project using your favorite package manager (we'll assume yarn for this example):
+First of all, you will need to install **Docz**  using your favorite package manager (we'll assume yarn for this example):
 
 ```bash
-$ yarn add docz docz-theme-default --dev
+$ yarn add docz react react-dom --dev
 ```
 
-> ### Tips and tricks
->
+> ### Warnings and tips
+> Don't forget to install **react** and **react-dom**
+
 > After you installed Docz in your project, you may find it convenient to add two scripts in your `package.json` to run Docz for you. This is an **optional step**:
 
 ```json
@@ -47,11 +48,10 @@ $ yarn docz:dev
 
 ## Using
 
-With your dev server up, you can start writing your documentation.
+With your dev server up, you can start writing your documentation. Docz uses [MDX](https://mdxjs.com/) as a standard
+format because of the flexibility of writing JSX inside markdown files.
 
-Docz uses [MDX](https://mdxjs.com/) as a standard format because of the flexibility of writing JSX inside markdown files.
-
-Note that you **don't need to follow any strict file architecture**. You can just create your `.mdx` files **anywhere in your project**.
+> Note that you **don't need to follow any strict file architecture**. You can just create your `.mdx` files **anywhere in your project**.
 
 So, let's create our first `.mdx` and give it a name:
 
@@ -67,8 +67,4 @@ Hello, I'm a mdx file!
 
 With your first `.mdx` created, you can open your browser and visit `localhost:3000` and you should see something like this:
 
-![](https://cdn-std.dprcdn.net/files/acc_649651/kXg01b)
-
-## Configuration
-
-As you proceed in your usage, you will likely need to configure your docz config and themes with a `doczrc.js` file. Please read our [Customizing](/docs/customizing) and [Project Configuration](/docs/project-configuration) docs.
+![](https://cdn-std.dprcdn.net/files/acc_649651/Y825GV)

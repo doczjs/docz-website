@@ -71,6 +71,17 @@ export const Features = () => (
   <Container>
     <ListItems>
       <FeatureItem>
+        <Image src={gatsby} />
+        <Info>
+          <Title>Powered by Gatsby</Title>
+          <Text>
+            Docz since the v2 is enterily built using Gatsby under the hood,
+            optimized for a lightning fast dev experience and build times and
+            with a hugh ecosystem of plugins and tools.
+          </Text>
+        </Info>
+      </FeatureItem>
+      <FeatureItem>
         <Image src={magicWand} />
         <Info>
           <Title>Zero config</Title>
@@ -82,33 +93,13 @@ export const Features = () => (
         </Info>
       </FeatureItem>
       <FeatureItem>
-        <Image src={rocket} />
-        <Info>
-          <Title>Really Blazing Fast</Title>
-          <Text>
-            Docz uses Webpack 4 under the hood, optimized for lightning fast dev
-            servers and build times, so you can focus on writing your docs!
-          </Text>
-        </Info>
-      </FeatureItem>
-      <FeatureItem>
-        <Image src={gatsby} />
-        <Info>
-          <Title>Gatsby friendly</Title>
-          <Text>
-            As a very good alternative for our bundler, you can use Gatsby by
-            using the new Gatsby Themes to build your documentation as get a lot
-            of benefits from it like static builds, custom data sources, etc.
-          </Text>
-        </Info>
-      </FeatureItem>
-      <FeatureItem>
         <Image src={settings} />
         <Info>
           <Title>Easy to customize</Title>
           <Text>
-            Easily create and modify <Link to="/themes">themes</Link> for your
-            documentation website, just like the one you see here!
+            Using <b>component shadowing</b> you can easily create and modify
+            your theme for your documentation website, just like the one you see
+            here!
           </Text>
         </Info>
       </FeatureItem>
@@ -131,10 +122,9 @@ export const Features = () => (
           <Title>Fully pluggable</Title>
           <Text>
             Plugins have always been a great way to allow for functional,
-            flexible and optimized applications. In docz, you can use them to
-            hook into the Docz dataflow. Have a look at our{' '}
-            <Link to="/plugins">existing plugins</Link>, or create your own
-            plugins to help you build awesome docs!
+            flexible and optimized applications. In Docz, you can use them to
+            hook into the Docz dataflow and use all Gatsby plugins to improve
+            your documentation.
           </Text>
         </Info>
       </FeatureItem>
