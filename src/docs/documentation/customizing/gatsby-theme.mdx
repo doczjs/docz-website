@@ -9,8 +9,7 @@ menu: Customizing
 
 If you want to use Docz in a Gatsby environment, use our `gatsby-theme-docz` is the better choice.
 
-Gatsby themes is one of the coolest features of all time in Gatsby. With the introduction of theming in Gatsby,
-it's easier than ever to get started building a Gatsby site. Shared functionality, data sourcing, and design can all be prepackaged as a Gatsby Theme that's an NPM install away.
+Gatsby themes is one of the coolest features of all time in Gatsby. With the introduction of theming in Gatsby, it's easier than ever to get started building a Gatsby site. Shared functionality, data sourcing, and design can all be prepackaged as a Gatsby Theme that's an NPM install away.
 
 Our theme has all components and algorithms used to render your documentation website, with it we can explore a lot of Gatsby features and put all this things together in order
 to create a really usefull documentation for you. Because of `gatsby-theme-docz` you can enjoy of a lot easier system to customize and improve your docs too.
@@ -21,8 +20,8 @@ If you like it, but you don't know what is a Gatsby theme, please read [the offi
 
 It's so simple to use our Gatsby theme. First of all, just install some packages:
 
-```
-yarn add gatsby gatsby-theme-docz docz react react-dom
+ ```
+yarn add gatsby gatsby-theme-docz@next docz@next react react-dom
 ```
 
 Then set the `gatsby-theme-docz` in the `plugins` option inside your `gatsby-config.js`
@@ -91,18 +90,15 @@ export default {
 }
 ```
 
-## Component Shadowing
+## Customizing components
 
-Components shadowing is one of the best things included in the new Gatsby theme feature, with it is possible to replace
-theme files just by creating your own file following a file naming convetion.
+Components shadowing is one of the best things included in the new Gatsby theme feature, with it is possible to replace theme files just by creating your own file following a file naming convetion.
 
-Example: If you're using our `gatsby-theme-docz` which has a `Header` component located at `src/components/Header/index.js`
-you can override the component by creating `src/gatsby-theme-docz/components/Header/index.js`. Cool right?
+Example: If you're using our `gatsby-theme-docz` which has a `Header` component located at `src/components/Header/index.js` you can override the component by creating `src/gatsby-theme-docz/components/Header/index.js`. Cool right?
 
 ## Adding your logo
 
-So, now that you know about how component shadowing works on Gatsby themes, if you don't want to override the entire `<Header>` component
-but just change your logo inside it, your can shadow the `<Logo>` component used in the header just by creating your own at `src/gatsby-theme-docz/components/Logo/index.js`
+So, now that you know about how component shadowing works on Gatsby themes, if you don't want to override the entire `<Header>` component but just change your logo inside it, your can shadow the `<Logo>` component used in the header just by creating your own at `src/gatsby-theme-docz/components/Logo/index.js`
 
 ```js
 // src/gatsby-theme-docz/components/Logo/index.js
@@ -116,9 +112,7 @@ Easy, right?
 
 ## Creating your own Docz theme
 
-One of the coolest thing of Docz is that you can create your own theme if you want from scratch and use all benefits of it.
-The oldest way to acomplish that is by using the `theme` property inside the `doczrc.js` file. Now, if you want to create
-your own theme, just create a file located at `src/gatsby-theme-docz/index.js`
+One of the coolest thing of Docz is that you can create your own theme if you want from scratch and use all benefits of it. The oldest way to acomplish that is by using the `theme` property inside the `doczrc.js` file. Now, if you want to create your own theme, just create a file located at `src/gatsby-theme-docz/index.js`
 
 ```js
 import React from 'react'
@@ -160,8 +154,7 @@ More info about [here](/docs/creating-your-themes)
 
 ## Wrapping the entire app
 
-Sometime you need to wrap your entire application in order to add some `Provider` or just to load some script.
-You can do this easily inside our theme by creating a file located at `src/gatsby-theme-docz/wrapper.js`
+Sometime you need to wrap your entire application in order to add some `Provider` or just to load some script. You can do this easily inside our theme by creating a file located at `src/gatsby-theme-docz/wrapper.js`
 
 ```js
 // src/gatsby-theme-docz/index.js
@@ -177,8 +170,7 @@ export default ({ children }) => (
 
 ## Theme UI integrated
 
-As default theme systeAs default theme system we are using the [Theme-UI](https://theme-ui.com/), it's a library for build consistent, themeable React apps
-based on constraint-based design principles.
+As default theme systeAs default theme system we are using the [Theme-UI](https://theme-ui.com/), it's a library for build consistent, themeable React apps based on constraint-based design principles.
 
 You can modify our based theme creating your own style, combining these modifications with the component shadowing and creating a totally differente documentation.
 
