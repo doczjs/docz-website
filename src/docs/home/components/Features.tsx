@@ -75,9 +75,9 @@ export const Features = () => (
         <Info>
           <Title>Powered by Gatsby</Title>
           <Text>
-            Docz since the v2 is enterily built using Gatsby under the hood,
-            optimized for a lightning fast dev experience and build times and
-            with a hugh ecosystem of plugins and tools.
+            Docz since the v2 is entirely built using Gatsby under the hood,
+            optimised for a lightning fast dev experience and build times and
+            with a huge ecosystem of plugins and tools.
           </Text>
         </Info>
       </FeatureItem>

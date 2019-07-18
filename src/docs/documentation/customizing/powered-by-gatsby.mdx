@@ -17,29 +17,27 @@ Using Gatsby as bundler behind the scenes we won a lot of benefits like:
 
 * Stay focused in create features instead of lead with bundler management
 * Static and optimized builds by default
-* Fast dev-experience and better worflow
+* Fast dev-experience and better workflow
 * Huge ecosystem of tools, plugins and community
 * Better and easy way to customize things inside Docz
 * More power in order to create your documentation
 
 ## Gatsby API and Hooks
 
-Gatsby has a pretty damn good [API for developers](https://www.gatsbyjs.org/docs/api-reference/) and a lot of hooks
-and life cycle methods that you can use in order to customize the process of
-your bundler. Indeed you can hook into it in a lot of ways and all these hooks
+Gatsby has a pretty damn good [API for developers](https://www.gatsbyjs.org/docs/api-reference/) and a lot of hooks and life cycle methods that you can use in order to customize the process of
+your bundle. Indeed you can hook into it in a lot of ways and all these hooks
 and properties you can use with Docz.
 
 > Check [all Gatsby API references](https://www.gatsbyjs.org/docs/api-reference/) here
 
-So, if you want to use any of those Gatsby configurations file inside your Docz
-project, just create it in the root and we'll lead with them for you.
+So, if you want to use any of those Gatsby configurations file inside your Docz project, just create it in the root and we'll lead with them for you.
 
 Like, if you want to make some change in the webpack configuration, you can use
 the `onCreateWebpackConfig` hook inside the `gatsby-node.js` file:
 
 ```js
 // gatsby-node.js
-export.onCreateWebpackConfig = ({ actions }) => {
+exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     module: {
       rules: [
@@ -52,3 +50,19 @@ export.onCreateWebpackConfig = ({ actions }) => {
   })
 }
 ```
+
+Or if you want to change your Babel configuration you can use `onCreateBabelConfig` hook for this:
+
+```js
+// gatsby-node.js
+exports.onCreateBabelConfig = ({ actions }) => {
+  actions.setBabelPlugin({
+    name:  `babel-plugin-emotion`,
+    options: {
+      sourceMap: true,
+    },
+  })
+}
+```
+
+Indeed you have a lot of hooks and actions that you can use to modify or get some information about your bundler process.
