@@ -22,9 +22,9 @@ export const Cards: SFC = () => (
   <Wrapper>
     <Card
       image="https://cdn-std.dprcdn.net/files/acc_649651/TkJQcV"
-      name="docz-theme-default"
+      name="gatsby-theme-docz"
       description="Default theme created by docz"
-      link="https://github.com/pedronauck/docz/tree/master/core/docz-theme-default"
+      link="https://github.com/pedronauck/docz/tree/master/core/gatsby-theme-docz"
     />
     <Card
       image="https://github.com/zicodeng/docz-theme-ztopia/blob/master/public/images/demo.gif?raw=true"
