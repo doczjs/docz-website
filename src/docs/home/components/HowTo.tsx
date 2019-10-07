@@ -61,6 +61,7 @@ const Link = styled(BaseLink)`
 
 const mdxExample = `---
 name: Button
+route: /
 ---
 
 import { Playground, Props } from 'docz'
