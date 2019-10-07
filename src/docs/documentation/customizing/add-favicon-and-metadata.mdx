@@ -1,0 +1,37 @@
+---
+name: Add Favicon and Metadata
+route: /docs/add-favicon-and-metadata
+parent: Documentation
+menu: Customizing
+---
+
+To add a favicon and metadata to your generated gatsby site, follow this quick guide
+
+Add [`react-helmet`](https://github.com/nfl/react-helmet) along with [`gatsby-plugin-react-helmet`](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-react-helmet)
+
+[How do I add react-helmet to my docz app ?](https://www.gatsbyjs.org/docs/add-page-metadata/)
+
+Once you've added react-helmet you can shadow the `src/wrapper.js` theme component to add metadata
+
+so you would create a file : `src/gatsby-theme-docz/wrapper.js` (path is important) and inside it : 
+
+```js
+import * as React from 'react'
+import { Helmet } from 'react-helmet'
+
+const Wrapper = ({ children }) => <React.Fragment>
+	<Helmet>
+		<meta charSet="utf-8" />
+		<title>My Title</title>
+		<link rel="icon" 
+      		type="image/png" 
+		    href="http://example.com/myicon.png"
+		>
+	</Helmet>
+	{children}
+</React.Fragment>
+export default Wrapper
+
+```
+
+And that should do it 👍.
