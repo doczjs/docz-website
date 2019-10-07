@@ -1,0 +1,32 @@
+---
+name: Usage with TypeScript
+route: /docs/usage-with-typescript
+parent: Documentation
+menu: General
+---
+
+# Using docz with Typescript
+
+To use docz with TypeScript codebase you need to add `typescript: true` to your doczrc.js
+
+```js
+export default {
+  typescript: true
+}
+```
+
+# Documenting Props in TypeScript
+
+`docz` exports a Props component that takes in a component and generates a table of its props types, descriptions and default values.
+
+Make sure to reference the full path to the module you're documenting in your MDX file
+
+```mdx
+import { Props } from 'docz'
+import Button from './Button.tsx'
+
+### Button Props
+<Props of={Button} />
+
+```
+
