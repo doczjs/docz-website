@@ -5,16 +5,17 @@ parent: Documentation
 menu: Customizing
 ---
 
-To add a favicon and metadata to your generated gatsby site, follow this quick guide
+# Add favicon and metadata
 
-Add [`react-helmet`](https://github.com/nfl/react-helmet) along with [`gatsby-plugin-react-helmet`](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-plugin-react-helmet)
+Adding metadata to your site is done by configuring Gatsby in combination with [`react-helmet`](https://github.com/nfl/react-helmet) [**source @ gatsby**](https://www.gatsbyjs.org/docs/add-page-metadata/).
 
-[How do I add react-helmet to my docz app ?](https://www.gatsbyjs.org/docs/add-page-metadata/)
 
-Once you've added react-helmet you can shadow the `src/wrapper.js` theme component to add metadata
+### Shadowing the Wrapper-component
 
-so you would create a file : `src/gatsby-theme-docz/wrapper.js` (path is important) and inside it : 
+The metadata is set up in a file called `wrapper.js` which lives in docz theme package: `gatsby-theme-docz`. To override it we need to [Shadow the component](https://www.gatsbyjs.org/blog/2019-04-29-component-shadowing/), which means that we need to create a copy of the file with the "same" file path and name in our own `src`-directory.
 
+1. Create a file called `wrapper.js` in `src/gatsby-theme-docz`. Then path is important.
+2. Paste the following content and edit it to your liking
 ```js
 import * as React from 'react'
 import { Helmet } from 'react-helmet'
@@ -22,16 +23,15 @@ import { Helmet } from 'react-helmet'
 const Wrapper = ({ children }) => <React.Fragment>
 	<Helmet>
 		<meta charSet="utf-8" />
-		<title>My Title</title>
-		<link rel="icon" 
-      		type="image/png" 
-		    href="http://example.com/myicon.png"
-		>
+		<title>My Shadow!</title>
+		<link rel="icon"
+      		type="image/png"
+		      href="http://example.com/myicon.png"
+		/>
 	</Helmet>
 	{children}
 </React.Fragment>
 export default Wrapper
-
 ```
 
-And that should do it 👍.
+If you rebuild your site now it should use this component as a wrapper instead of the themes component.

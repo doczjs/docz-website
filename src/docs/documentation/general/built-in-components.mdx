@@ -35,7 +35,7 @@ import { Button } from './Button'
 ![](https://cdn-std.dprcdn.net/files/acc_649651/hrRpoR)
 
 As you see, `<Playground>` rendered your component in a blank state, and right below, displayed the code used to.
-This can be very useful to test and develop your components in a good environment while you document it.
+This can be very useful to test and develop your components in a good environment while you document it. The code below the component is also editable and the changes you make to that code will reflect live in the component above!
 
 ## Component Props
 
@@ -67,8 +67,44 @@ import { Button } from './'
 </Playground>
 ```
 
-And now you have a list of properties:
+The button that will display the props must have some annotation on the props. For non flow or typescript users this can be achieved with [`prop-types`](https://www.npmjs.com/package/prop-types)
+
+```jsx
+import React from 'react'
+import t from 'prop-types'
+
+const Button = ({ children, kind }) => {
+  // Do something nice with the kind prop, like add a class with it
+  return <button>{children}</button>
+}
+
+Button.propTypes = {
+  /**
+   * This is a pretty good description for this prop.
+   */
+  kind: t.oneOf(['primary', 'secondary', 'cancel', 'dark', 'gray']),
+}
+Button.defaultProps = {
+  kind: 'primary',
+}
+export Button
+```
+
+If you have used `prop-types` you should now have a list of properties in a nicely formatted table:
 
 ![](https://cdn-std.dprcdn.net/files/acc_649651/KEm5mH)
 
-You can see more about our built-in components on [Components API](/docs/components-api).
+The same can be achieved in typescript by adding comments to the props interface of your component:
+
+```jsx
+import React from 'react'
+
+interface ButtonProps {
+  /**
+   * This is a pretty good description for this prop.
+   */
+  kind: 'primary' | 'secondary' | 'cancel' | 'dark' | 'gray'
+}
+```
+
+You can read more in depth about our built-in components on [**Components API**](/docs/components-api). If you are more interested in learning more about the MDX-pages you could head on to [**Document Settings**](/docs/document-settings)

@@ -11,7 +11,7 @@ Now that you know about writing your docs, let's talk about how you can build an
 The first thing that you need to do is run the build script created in your `package.json`:
 
 ```bash
-$ yarn build
+$ yarn docz:build
 ```
 
 If everything goes well, this command will generate all static files for you in the `.docz/dist` folder and you will see something like this in your terminal:
@@ -28,6 +28,17 @@ You can change the build destination folder by changing the `dest` prop on your 
 // doczrc.js
 export default {
   dest: '/my-dist-folder',
+}
+```
+
+## Changing base folder
+
+If you are using something like [GitHub Pages](https://pages.github.com/) chances are that you are not deploying your site directly under the root of your user. For example if you have a `docz`-repository on your GitHub the URL for deploying that repository will be `https://your-username.github.io/docz`. You can specify in which subdirectory your files will be deployed with the `base`-property of `doczrc.js`.
+
+```js
+// doczrc.js
+export default {
+  base: '/docz',
 }
 ```
 
