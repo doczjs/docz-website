@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "docz dev",
-    "build": "docz build"
+    "build": "docz build",
+    "deploy": "docz build && cd .docz/dist/ && mv index.html 200.html && surge . --domain docz-v1.surge.sh"
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
