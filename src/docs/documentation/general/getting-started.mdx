@@ -11,15 +11,20 @@ menu: General
 
 ## Migration Guide
 
-This documentation it's about v2. If you need to migrate your Docz project, please read our [Migration Guide](/docs/migration-guide)
+This documentation it's about **v2**. If you need to migrate your Docz project, please read our [**Migration Guide**](/docs/migration-guide).
+If you are looking for documentation for v1 it's [**here**](https://docz-v1.surge.sh/)
 
 ## Installation
 
 Getting started with **Docz** is something really easy and quick.
-First of all, you will need to install **Docz**  using your favorite package manager (we'll assume yarn for this example):
+First of all, you will need to install **Docz** using your favorite package manager:
 
 ```bash
-$ yarn add docz@next react react-dom --dev
+$ yarn add docz@next react react-dom
+```
+or
+```bash
+$ npm add docz@next react react-dom
 ```
 
 > ### Warnings and tips
@@ -29,26 +34,32 @@ $ yarn add docz@next react react-dom --dev
 
 ```json
 {
-  "name": "mycoolproject",
+  "name": "next-gen-documentation",
   "scripts": {
     "docz:dev": "docz dev",
     "docz:build": "docz build"
   },
-  "devDependencies": {
-    "docz": "latest"
+  "dependencies": {
+    "docz": "latest",
+    "react": "16.8.0",
+    "react-dom": "16.8.0"
   }
 }
 ```
 
-Now you can spin up your dev server just by running:
+Now you can spin up your dev server by running:
 
-```
+```bash
 $ yarn docz:dev
+```
+or
+```bash
+$ npm run docz:dev
 ```
 
 ## Using
 
-With your dev server up, you can start writing your documentation. Docz uses [MDX](https://mdxjs.com/) as a standard
+With your dev server up, you can start writing your documentation. Docz uses [**MDX**](https://mdxjs.com/) as a standard
 format because of the flexibility of writing JSX inside markdown files.
 
 > Note that you **don't need to follow any strict file architecture**. You can just create your `.mdx` files **anywhere in your project**.
@@ -69,3 +80,5 @@ Hello, I'm a mdx file!
 With your first `.mdx` created, you can open your browser and visit `localhost:3000` and you should see something like this:
 
 ![](https://cdn-std.dprcdn.net/files/acc_649651/Y825GV)
+
+_MDX_ is markdown with extra everything. We cover more on what you can do with _MDX_ under [**Writing MDX**](/docs/writing-mdx)

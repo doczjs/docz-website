@@ -15,7 +15,7 @@ More details about MDX in the [Official website.](https://mdxjs.com/)
 ## Working with components
 
 For now, you only need to know that with MDX you can use your components inside markdown.
-But how? Let's take a look at how we can improve our `.mdx` created before by importing and using a component inside it:
+But how? Let's take a look at how we can improve our `.mdx` created before by importing and using a component inside it. The example below assumes we have a exported component named `Button` in a file named `Button.jsx`/`Button.tsx` located in the same folder as the `.mdx`-file we are editing.
 
 ```markdown
 ---
@@ -34,6 +34,8 @@ Hello, I'm still a mdx file, but now I have a button component!
 And, if you really have a `Button` component to import, you'll see something like this:
 
 ![](https://cdn-std.dprcdn.net/files/acc_649651/Fgbg4F)
+
+With MDX you can mix _React Components_ or _html-elements_ with regular markdown allowing you to either document your own components _or_ creating helper components that makes documentation easier. **Docz** comes with some prebuilt helper components which will help you document components faster, these are covered in [**Built-in components**](/docs/built-ins-components).
 
 > ### Note
 >
