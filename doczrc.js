@@ -24,7 +24,7 @@ export default {
         'Introduction',
         'Getting started',
         'Writing MDX',
-        'Built-ins components',
+        'Built-in components',
         'Document settings',
         'Deploying your docs',
       ],
