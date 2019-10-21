@@ -64,7 +64,7 @@ export const Hero = () => {
         <GitHubButton
           type="stargazers"
           size="large"
-          namespace="pedronauck"
+          namespace="doczjs"
           repo="docz"
         />
         <Image src={image} alt="Built-in components" />
