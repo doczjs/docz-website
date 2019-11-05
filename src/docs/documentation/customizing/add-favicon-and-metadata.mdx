@@ -7,7 +7,9 @@ menu: Customizing
 
 # Add favicon and metadata
 
-Adding metadata to your site is done by configuring Gatsby in combination with [`react-helmet`](https://github.com/nfl/react-helmet) [**source @ gatsby**](https://www.gatsbyjs.org/docs/add-page-metadata/).
+Adding metadata to your site is done by configuring Gatsby in combination with [`react-helmet-async`](https://github.com/staylor/react-helmet-async) [**source @ gatsby**](https://www.gatsbyjs.org/docs/add-page-metadata/). 
+
+> Please note that we're referencing `react-helmet-async`, and not `react-helmet`. This is because of [this issue](https://github.com/nfl/react-helmet/issues/426). `react-helmet-async` is an API-compatible fork, so you shouldn't need to do anything except importing from a different package.
 
 
 ### Shadowing the Wrapper-component
@@ -18,7 +20,7 @@ The metadata is set up in a file called `wrapper.js` which lives in docz theme p
 2. Paste the following content and edit it to your liking
 ```js
 import * as React from 'react'
-import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet-async'
 
 const Wrapper = ({ children }) => <React.Fragment>
 	<Helmet>
