@@ -7,10 +7,10 @@ menu: Customizing
 
 # Creating your themes
 
-One of the main features of Docz is that you can create your own theme from scratch and just use the data parsed from Docz.
+One of the main features of Docz is that it allows you to create your own theme from scratch and just use the data parsed from Docz.
 We provide a bunch of components that can help you create your own theme with little effort.
 
-Let's use this project structure through the following examples:
+Let's assume we have the following project structure :
 
 ```
 pages/
@@ -25,12 +25,17 @@ package.json
 ```
 
 
-The oldest way to acomplish that is by using the `theme` property inside the `doczrc.js` file. Now, if you want to create
-your own theme, just create a file located at `src/gatsby-theme-docz/index.js`
+The previous way of customizing docz in v0 and v1 was to use the `theme` property inside the `doczrc.js` file. 
+
+With v2, we leverage GatsbyJS theme shadowing to override any and all files of the theme.
+
+For example, to create a new theme wrapper and override some styles, we create a file located at `src/gatsby-theme-docz/index.js` that shadows [gatsby-theme-docz/src/index.js](https://github.com/doczjs/docz/blob/master/core/gatsby-theme-docz/src/index.js) 
+and provide a new theme container implementation as shown below.
+
 
 ## Creating your theme component
 
-Then just create your component passing the `children` inside it and export it as default using the [`theme()`](/docs/components-api) high order component as an enhancer.
+Create your theme component that takes in `children` as props and export it as default while using the [`theme()`](/docs/components-api) high order component as an enhancer.
 
 ```js
 // src/gatsby-theme-docz/index.js
@@ -42,16 +47,17 @@ const Theme = ({ children }) => <div>{children}</div>
 export default theme()(Theme)
 ```
 
-> It's required to pass the `children` property inside your theme in order to render Docz routes properly.
+> It's required to "pass down" the `children` property inside your theme component in order to render Docz routes properly.
 
-In fact, if you just create something like above you won't have nothing too much useful to show.
-So, is important that you use the Docz [built-in components](/docs/components-api) to help you to create beautiful documents
-pages and use the parsed data from data for mount menus and other things.
+If you create something like the above example you won't have anything too useful to show.
+To customize your documentation make sure to check the [gatsby-docz-theme](https://github.com/doczjs/docz/tree/master/core/gatsby-theme-docz/src) source code
+to decide which modules you want to override.
 
 ## Default theme configuration
 
-Each theme has your own default `themeConfig` object that define whatever you want to turn customizable.
-It's very useful to set something like custom fonts, colors, spaces, some styles properties and other project global variables.
+Each theme has its own default `themeConfig` object that allows you to override any part of the default theme found [here](https://github.com/doczjs/docz/blob/master/core/gatsby-theme-docz/src/theme/index.js).
+
+The `themeConfig` allows you to customize fonts, colors, spaces, styles properties and other project global variables.
 
 ```js
 // src/gatsby-theme-docz/index.js
@@ -71,14 +77,15 @@ const themeConfig = {
 export default theme(themeConfig)(Theme)
 ```
 
-By default, Docz will use this object as default configuration and merge it with the `themeConfig` setting in the project configuration.
-Using together with `useConfig` hook you can do a lot of things, like use css-in-js theming or retrieve props from your `themeConfig` in a deep render component.
+By default, Docz will use [this object](https://github.com/doczjs/docz/blob/master/core/gatsby-theme-docz/src/theme/index.js) as the default configuration and merge it with the `themeConfig` setting in the project configuration.
+
+You can then use the `useConfig` hook to do a lot of things, like use css-in-js theming or retrieve props from your `themeConfig` in a deep rendered component.
 
 ```js
 // src/gatsby-theme-docz/index.js
 import React from 'react'
 import { theme, useConfig } from 'docz'
-import { ThemeProvider } from 'emotion-theming'
+import { ThemeProvider } from 'theme-ui'
 
 const Theme = () => {
   const config = useConfig()
@@ -102,15 +109,15 @@ export default theme(themeConfig)(Theme)
 
 ## Providing Components
 
-How we explain in the components API section, the `<ComponentsProvider>` is the component responsible to
-provide for MDX and Docz each component that you want to render inside your documents. With these
-components passed to the provider, you can easily change how your mdx file will be rendered and change default behaviors and styles.
+As explained in the components API section, the `<ComponentsProvider>` is the component responsible for providing components to MDX and Docz to render your markdown files with. 
+
+With these components passed to the provider, you can change how your mdx file will be rendered and alter default behaviors and styles.
 
 ```js
 // src/gatsby-theme-docz/index.js
 import React from 'react'
 import { theme, useConfig, ComponentsProvider } from 'docz'
-import { ThemeProvider } from 'emotion-theming'
+import { ThemeProvider } from 'theme-ui'
 
 import * as components from './ui'
 
@@ -153,17 +160,21 @@ const themeConfig = {
 export default theme(themeConfig)(Theme)
 ```
 
-This is powerful because it forces you to write base components and create a default style for each one that will be used along the entire documents without the need to repeat any of them.
+This is powerful because it pushes you to think about your site as a set of base components 
+and to create a default style for each one that will be used in all your documents while keeping your code DRY.
 
 ## Getting data from documents
 
-So far you almost have an entire theme component. But just with the code above you will see just a document page without any link or
-information about all documents do you have. Create something like a menu with all documents is essential to create navigation.
+By now you should have a working site. But with the code above you will only see a single page without any link or information about the rest of your documents.
 
-You can do this easily by using the `useMenus` and `<Link>` component.
+Having a way to navigate your documentation is essential in your documentation site.
 
-The first one will give you information about all menus parsed from Docz and the second one ability to navigate to them.
-First of all, create something like a `<Menu />` component (we using a menu just to illustrate here):
+Let's create a `Menu` component by using the `useMenus` hook and the `<Link>` component.
+
+The hook will give you information about all the menus' information parsed by Docz 
+and the component will provide a way to navigate between them.
+
+An example `Menu` component is shown below : 
 
 ```js
 // src/Menu.js
@@ -184,7 +195,7 @@ export const Menu = () => {
 }
 ```
 
-Now you have a fully functional navigation to your documentation and you can simply use it your `<Menu />` component inside your theme:
+This will create a fully functional navigation menu to your documentation and you can then use the `<Menu />` component inside your theme:
 
 ```js
 // src/gatsby-theme-docz/index.js
@@ -234,16 +245,26 @@ const themeConfig = {
 
 export default theme(themeConfig)(Theme)
 ```
-
-You can still use this component to create other things like a search component, some custom page or whatever came in your mind.
+You can also use this component to create other things like a search component, link to custom pages or whatever else you would like.
 
 ## Using documents settings
 
-Another really interesting thing that you can do when you're creating your own theme is using the component's map `<Page>` to customize the document preview depending on each document settings. Since each document can have your own settings defined in the top of `.mdx` and the `Page` component receive a prop called `doc` that's the current rendered doc, you can use these settings to create page variations, like that:
+Another interesting thing that you can do when you're creating your own theme is to use the `componentMap`'s `<Page>` component to customize the document preview depending on each document's settings. 
 
-Let's suppose that some pages of your documentation should have a hero image, but some don't. You can give a `hero` property for your document, and base on that prop you'll show or not the hero:
+Each document can have its own settings defined in the header of the `.mdx` file. 
+
+The `Page` component receives a prop called `doc` that contains the settings data. You can use this data to build your own variations of the rendered pages.
+
+For example, suppose that you'd like to add a hero image to some documents and leave others unchanged. 
+
+You could do that by providing a `hero` property to your document, and then if that property is defined you would render a hero, else you would show the document as is.
+
+Your markdown would look something like this : 
 
 ```markdown
+<!-- 
+hello-world.mdx
+-->
 ---
 name: Hello world
 hero: /my/hero/img.png
@@ -251,10 +272,10 @@ hero: /my/hero/img.png
 
 # Hello world
 
-This is just a page!
+This is a page!
 ```
 
-After defining the hero page of your document, let's see how your `Page` component will look:
+And your `Page` component would look like the following : 
 
 ```js
 // src/ui/Page.js
@@ -270,10 +291,8 @@ export const Page = ({ doc, children }) => (
 )
 ```
 
-Simple as that! Now you can create a lot of variations of your documents page.
-
-How I told you, without pain and a lot of work your you can have a custom and very functional theme for your documentation. So, let's create your own theme and share with the community!
+Armed with this knowledge, you can create many variations of your documents based on the data provided in your MDX.
 
 ## Examples
 
-If you'd like to see an example of a theme, you can check the [source code](https://github.com/doczjs/docz/tree/master/core/gatsby-theme-docz) of `gatsby-theme-docz`.
+To see an example of a theme, you can check the [source code](https://github.com/doczjs/docz/tree/master/core/gatsby-theme-docz/src) of `gatsby-theme-docz`.
