@@ -7,10 +7,11 @@ menu: General
 
 # Document settings
 
-Document settings can be something simple, but powerful. They should be defined in the top of the `.mdx`
-using yaml and can be used to change whatever you want by passing this config to your theme.
+Document settings provide a way to enrich documents with metadata used to generate your documentation site.
 
-By default the document has **three** properties that can't be overriden:
+They are defined at the top of the `.mdx` file, use YAML and can be used to customize your pages by passing this data to your theme.
+
+Every document has **three** main properties that can be overriden :
 
 ```markdown
 ---
@@ -20,18 +21,21 @@ menu: Documents
 ---
 ```
 
-- `name` Define the name of your component, the title of the page
-- `route *(optional)*` Define the route of your component.
+- `name` The name of your document, used as the title of the page
+- `route *(optional)*` The route or path to your document's generated page. e.g. /docs/my-component
 
->If you don't pass any here, we'll create a slug getting the filepath of your file as route.
+> If you don't pass any here, docz will create a slug using the filepath of your file as route. e.g. /src-components-my-components/
 
-- `menu  *(optional)*` Group documents into a single menu by changing this prop.
+- `menu  *(optional)*` The menu within which your document is contained. It allows you to group documents into a single menu by changing this prop.
 
 ## Custom properties
 
-The built in properties are for docz but docz is exstensible and you can create your own themes where you could have different needs and need different properties. Custom properties can be set in the document settings and they will automatically be parsed.
+The built in properties are for docz but docz is extensible and you can create your own themes which could need different properties.
 
-For example you can define a property called `fullpage` to define whether your document is a page with `100%` width or not:
+Custom properties can be set in the document settings and they will automatically be parsed.
+
+For example you could define a property called `fullpage` to define whether your document is a page with `100%` width or not:
+
 ```
 ---
 name: My Document
@@ -39,4 +43,4 @@ fullpage: true
 ---
 ```
 
-When you later on are creating a theme these settings are passed to your theme components which you can read more about under [**Creating your themes: Using documents settings**](/docz/creating-your-themes#using-documents-settings)
+You could then use this property when overriding or creating a theme as shown in [**Creating your themes: Using documents settings**](/docz/creating-your-themes#using-documents-settings)
