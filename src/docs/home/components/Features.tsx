@@ -7,7 +7,6 @@ import magicWand from '@images/icons/magic-wand.svg'
 import gatsby from '@images/icons/gatsby.svg'
 import settings from '@images/icons/settings.svg'
 import plug from '@images/icons/plug.svg'
-import rocket from '@images/icons/rocket.svg'
 import mdx from '@images/icons/mdx.svg'
 import typescript from '@images/icons/typescript.svg'
 
@@ -75,9 +74,10 @@ export const Features = () => (
         <Info>
           <Title>Powered by Gatsby</Title>
           <Text>
-            Docz since the v2 is entirely built using Gatsby under the hood,
-            optimised for a lightning fast dev experience and build times and
-            with a huge ecosystem of plugins and tools.
+            Starting from v2, Docz is entirely built using GatsbyJS. It's
+            optimised for a lightning fast development experience and speedy
+            build times. This also allows you to leverage GatsbyJS's huge
+            ecosystem of plugins and tools.
           </Text>
         </Info>
       </FeatureItem>
@@ -86,9 +86,9 @@ export const Features = () => (
         <Info>
           <Title>Zero config</Title>
           <Text>
-            No worrying about complex configuration settings to build and run
-            your documentation. With Docz you can init your app with just a
-            single command.
+            No need to worry about complex configuration settings to build and
+            run your documentation. With Docz you can create customizable sites
+            with a single command.
           </Text>
         </Info>
       </FeatureItem>
@@ -97,9 +97,9 @@ export const Features = () => (
         <Info>
           <Title>Easy to customize</Title>
           <Text>
-            Using <b>component shadowing</b> you can easily create and modify
-            your theme for your documentation website, just like the one you see
-            here!
+            Using <b>component shadowing</b> you can create your own theme or
+            customize the provided theme to make your documentation website
+            stand out.
           </Text>
         </Info>
       </FeatureItem>
@@ -108,9 +108,9 @@ export const Features = () => (
         <Info>
           <Title>Based on MDX</Title>
           <Text>
-            MDX is <i>Markdown + JSX</i>, bringing the world of components to
+            MDX is <i>Markdown + JSX</i>, it brings the world of components to
             Markdown. MDX makes it possible to import and use your components in
-            a Markdown-style file. Docz fully leverages this, and provides many
+            Markdown-style files. Docz fully leverages this, and provides many
             built-in components that augment and speed up your documentation
             workflow.
           </Text>
@@ -121,10 +121,10 @@ export const Features = () => (
         <Info>
           <Title>Fully pluggable</Title>
           <Text>
-            Plugins have always been a great way to allow for functional,
-            flexible and optimized applications. In Docz, you can use them to
-            hook into the Docz dataflow and use all Gatsby plugins to improve
-            your documentation.
+            Plugins provide a great way to add functionality to your application
+            without changing your code. With Docz, you can hook into the
+            dataflow and build steps of your application using GatsbyJS and Docz
+            plugins.
           </Text>
         </Info>
       </FeatureItem>
@@ -133,10 +133,10 @@ export const Features = () => (
         <Info>
           <Title>TypeScript support</Title>
           <Text>
-            Docz provides full, native TypeScript support for your TSX
-            components and custom types. In fact, all Docz packages are built
-            using TypeScript. Check out the{' '}
-            <Link to="/docs/components-api">API section</Link> for more
+            Docz provides native TypeScript support for TSX components and can
+            generate documentation from your prop types and comments in your
+            code. All exported Docz components are built using TypeScript. Check
+            out the <Link to="/docs/components-api">API section</Link> for more
             information.
           </Text>
         </Info>

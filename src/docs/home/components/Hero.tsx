@@ -70,7 +70,7 @@ export const Hero = () => {
         <Image src={image} alt="Built-in components" />
         <Buttons>
           <Link scale="big" to="/docs/getting-started">
-            Getting started
+            Getting Started
           </Link>
           <Link scale="big" to="/docs/introduction">
             Documentation

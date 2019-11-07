@@ -91,9 +91,9 @@ export const HowTo = () => (
         Create an <code>.mdx</code> file anywhere in your project
       </Text>
       <Pre className="language-markdown">{mdxExample}</Pre>
-      <Text>That's it, your docs are ready to fly!</Text>
+      <Text>That's it, your docs are ready to go !</Text>
       <Pre className="language-bash">$ yarn docz dev</Pre>
-      <Link to="/docs/getting-started">More info</Link>
+      <Link to="/docs/getting-started">More Info</Link>
     </Container>
   </Wrapper>
 )
