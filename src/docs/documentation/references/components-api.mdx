@@ -9,13 +9,13 @@ menu: References
 
 > ### Note
 >
-> By default, this components and hooks just works inside a Docz theme, because it needs a lot of data that just has in a Docz environment
+> By default, these components and hooks only work inside a Docz theme, because they rely on a lot of data fetched by docz at build-time.
 
 ---
 
 ## `<ComponentsProvider>`
 
-Use this provider to pass your components to MDX use them inside it as a HTML tags.
+Use this provider to pass your components to MDX and they will be used when converting your markdown to html.
 
 ```js
 import React from 'react'
@@ -81,7 +81,7 @@ export const ComponentsProvider: React.SFC<ComponentsProviderProps>
 
 ## `<Playground>`
 
-Used to render your component inside a playground and showing the code used for that.
+Used to render your component inside a playground and show an editable version of your code inside it.
 
 ### Properties
 
@@ -91,7 +91,7 @@ Used to render your component inside a playground and showing the code used for 
 
 ```ts
 interface PlaygroundProps {
-  children: React.ReactNode | () => React.ReactNode
+  children: React.ReactNode | () => React.ReactNode | React.ReactNode[]
 }
 ```
 
@@ -114,7 +114,9 @@ import MyComponent from './MyComponent'
 
 ### Descriptions
 
-You can add descriptions for your props by adding a comment on the line above the prop. Note: Description comments must be in the format `/** Description */`.
+You can add descriptions for your props by adding a comment on the line above the prop. 
+
+> Note: Description comments must be in the format `/** Description */`.
 
 ```js
 MyComponent.propTypes = {
@@ -131,7 +133,7 @@ MyComponent.propTypes = {
 
 ## `useComponents`
 
-Hook responsible for access the components map passed as a to the `<ComponentsProvider>` of your theme.
+Hook responsible for accessing the components map passed as a prop to the `<ComponentsProvider>` of your theme.
 
 ```js
 import { useComponents } from 'docz'
@@ -205,7 +207,7 @@ export function useDocs(): Docs[]
 ## `useMenus`
 
 This hook will return the menu built by Docz using your documents.
-Use this to get your menus easier or use `useDocs` if you want the documents ordered like the order in your project configuration.
+Use this to quickly get your menus or use `useDocs` if you want the documents ordered in the order of your project configuration.
 
 ```js
 import { useMenus } from 'docz'
@@ -290,8 +292,9 @@ export function useConfig(): Config
 
 ## `theme()`
 
-If you want to create your custom theme you need to use `theme()` function. It's a High Order Component that
-receives as the first parameter a `config` property and returns a function that receives your theme component as a parameter:
+If you want to create your custom theme you need to use the `theme()` function. 
+It's a Higher Order Component that receives a `config` property as the first parameter 
+and returns a function that receives your theme component as a parameter:
 
 ```js
 import React from 'react'
