@@ -85,13 +85,13 @@ export const TOPBAR_LINKS: MenuListItem[] = [
   {
     id: 2,
     children: 'Documentation',
-    to: '/docs/introduction',
+    to: '/docs/getting-started',
   },
-  {
-    id: 3,
-    children: 'Plugins',
-    to: '/plugins',
-  },
+  // {
+  //   id: 3,
+  //   children: 'Plugins',
+  //   to: '/plugins',
+  // },
   {
     id: 4,
     children: 'Themes',
