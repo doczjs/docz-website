@@ -8,50 +8,54 @@ menu: Customizing
 # Powered by Gatsby
 
 [Gatsby](https://gatsbyjs.org) is a blazing fast modern site generator for React and one of the greatest modern tools
-of the new frontend era. It has a huge ecosystem and community around it and a very concise team behind.
+of the new frontend era. It has a huge ecosystem and community around it and a very talented team behind it.
 
-The Docz core since the new v2 is entirely build around Gatsby, this is the biggest change
+Starting from v2, docz's core is entirely built around Gatsby, this is the biggest change
 in the project since its creation and one of the best things that we could make for the tool.
 
-Using Gatsby as bundler behind the scenes we won a lot of benefits like:
+Using Gatsby as bundler behind the scenes gives you a lot of benefits like :
 
-* Stay focused in create features instead of lead with bundler management
+* Stay focused on creating features instead of worrying about bundler management
 * Static and optimized builds by default
 * Fast dev-experience and better workflow
 * Huge ecosystem of tools, plugins and community
 * Better and easy way to customize things inside Docz
-* More power in order to create your documentation
 
 ## Gatsby API and Hooks
 
-Gatsby has a pretty damn good [API for developers](https://www.gatsbyjs.org/docs/api-reference/) and a lot of hooks and life cycle methods that you can use in order to customize the process of
-your bundle. Indeed you can hook into it in a lot of ways and all these hooks
-and properties you can use with Docz.
+Gatsby has an extensive [API for developers](https://www.gatsbyjs.org/docs/api-reference/) and a lot of hooks and lifecycle methods that you can use in order to customize your build process. 
 
-> Check [all Gatsby API references](https://www.gatsbyjs.org/docs/api-reference/) here
+You can hook into it in a lot of ways and all of these hooks and properties are available when you use docz.
 
-So, if you want to use any of those Gatsby configurations file inside your Docz project, create it in the root and we'll handle them for you.
+> Check [the Gatsby API reference](https://www.gatsbyjs.org/docs/api-reference/) here.
 
-If you want to make some change in the webpack configuration, you can use
-the `onCreateWebpackConfig` hook inside the `gatsby-node.js` file:
+If you want to use any of those Gatsby configurations file inside your Docz project,
+create it in the root and docz will do the rest.
+
+If you want to make some changes to your webpack configuration, you can use
+the `onCreateWebpackConfig` hook by exporting a function from the `gatsby-node.js` file.
+
+For example to create aliases or change how your modules are resolved, you can do something like the below example :  
 
 ```js
 // gatsby-node.js
-exports.onCreateWebpackConfig = ({ actions }) => {
-  actions.setWebpackConfig({
-    module: {
-      rules: [
-        {
-          test: 'my-css',
-          use: [loaders.style(), loaders.css()]
-        },
-      ],
+const path = require('path')
+
+exports.onCreateWebpackConfig = args => {
+  args.actions.setWebpackConfig({
+    resolve: {
+      modules: [path.resolve(__dirname, '../src'), 'node_modules'],
+      alias: {
+        '@': path.resolve(__dirname, '../src/components/'),
+      },
     },
   })
 }
 ```
 
-Or if you want to change your Babel configuration you can use `onCreateBabelConfig` hook for this:
+> ⚠ Note the '..' in the path because the docz gatsby project lives in the `.docz` directory
+
+Or if you want to change your Babel configuration you can use the `onCreateBabelConfig` hook for this:
 
 ```js
 // gatsby-node.js
@@ -65,4 +69,4 @@ exports.onCreateBabelConfig = ({ actions }) => {
 }
 ```
 
-Indeed you have a lot of hooks and actions that you can use to modify or get some information about your bundler process.
+You can use these hooks and actions to modify or get information about your bundler process.

@@ -7,18 +7,19 @@ menu: Customizing
 
 # Gatsby Theme
 
-If you want to use Docz in a Gatsby environment, use our `gatsby-theme-docz` is the better choice.
+If you want to use Docz in a Gatsby application, you can use `gatsby-theme-docz`.
 
 Gatsby themes is one of the coolest features of all time in Gatsby. With the introduction of theming in Gatsby, it's easier than ever to get started building a Gatsby site. Shared functionality, data sourcing, and design can all be prepackaged as a Gatsby Theme that's an NPM install away.
 
 Our theme has all components and algorithms used to render your documentation website, with it we can explore a lot of Gatsby features and put all this things together in order
-to create a really usefull documentation for you. Because of `gatsby-theme-docz` you can enjoy of a lot easier system to customize and improve your docs too.
+to create a really useful documentation website. 
+With `gatsby-theme-docz` you can get the full power of docz in your existing Gatsby app.
 
-If you like it, but you don't know what is a Gatsby theme, please read [the official docs](https://www.gatsbyjs.org/docs/themes/introduction/)
+If you're not sure what a Gatsby theme is, please read [the official docs](https://www.gatsbyjs.org/docs/themes/introduction/)
 
 ## How to use
 
-It's so simple to use our Gatsby theme. First of all, just install some packages:
+First, install some packages:
 
  ```
 yarn add gatsby gatsby-theme-docz@next docz@next react react-dom
@@ -33,7 +34,7 @@ module.exports = {
 }
 ```
 
-Then, add some `.mdx` inside your project:
+Then, add some `.mdx` in your project:
 
 ```markdown
 ---
@@ -59,7 +60,7 @@ If everything works, you should see something like this:
 ## Configuration
 
 Set your config by using `doczrc.js` file ([see all available](https://www.docz.site/docs/project-configuration)) or if you want to
-set some defaults for your theme, use `options` on plugin definition:
+set some defaults for your theme, use `options` in the plugin definition:
 
 ```js
 // gatsby-config.js
@@ -92,7 +93,7 @@ export default {
 
 ## Customizing components
 
-Components shadowing is one of the best things included in the new Gatsby theme feature, with it is possible to replace theme files just by creating your own file following a file naming convetion.
+Components shadowing is one of the best things included in the new Gatsby theme feature, with it, it is possible to replace theme files just by creating your own file following a file naming convention.
 
 Example: If you're using our `gatsby-theme-docz` which has a `Header` component located at `src/components/Header/index.js` you can override the component by creating `src/gatsby-theme-docz/components/Header/index.js`. Cool right?
 
@@ -112,7 +113,11 @@ Easy, right?
 
 ## Creating your own Docz theme
 
-One of the coolest thing of Docz is that you can create your own theme if you want from scratch and use all benefits of it. The oldest way to acomplish that is by using the `theme` property inside the `doczrc.js` file. Now, if you want to create your own theme, just create a file located at `src/gatsby-theme-docz/index.js`
+One of the coolest thing of Docz is that you can create your own theme if you want from scratch and keep all docz's benefits.
+
+Previously, this was accomplished by using the `theme` property inside the `doczrc.js` file. 
+
+Starting from v2, if you want to create your own theme, just create a file located at `src/gatsby-theme-docz/index.js`
 
 ```js
 import React from 'react'
@@ -170,9 +175,11 @@ export default ({ children }) => (
 
 ## Theme UI integrated
 
-As default theme system we are using the [Theme-UI](https://theme-ui.com/), it's a library for build consistent, themeable React apps based on constraint-based design principles.
+Docz's code uses [Theme-UI](https://theme-ui.com/) as the default theme system. 
 
-You can modify our based theme creating your own style, combining these modifications with the component shadowing and creating a totally differente documentation.
+[Theme-UI](https://theme-ui.com/) is a library for building consistent, themeable React apps based on constraint-based design principles.
+
+You can modify the default theme and create your own style by combining these modifications with component shadowing.
 
 Check our [base theme object](https://github.com/pedronauck/docz/blob/feat/gatsby/core/gatsby-theme-docz/src/theme/index.js) to see the properties.
 
@@ -191,7 +198,7 @@ export default {
 }
 ```
 
-Or, to create your own theme it's easy, just create this file in the root of your project: `src/gatsby-theme-docz/theme/index.js`.
+Or, to create your own theme, just create this file in the root of your project: `src/gatsby-theme-docz/theme/index.js`.
 
 ```js
 import baseTheme from 'gatsby-theme-docz/src/theme'
@@ -208,7 +215,7 @@ export default merge(baseTheme, {
 
 ## Changing code highlight
 
-Both code highlights shortcodes and the `<Playground>` component are using [prism-react-renderer](https://github.com/FormidableLabs/prism-react-renderer) to highlight the code.
+Both code highlights shortcodes and the `<Playground>` component use [prism-react-renderer](https://github.com/FormidableLabs/prism-react-renderer) to highlight the code.
 If you want to modify and use another PrismJS theme, you can do that just passing a `prismTheme` property for your theme.
 
 ```js
@@ -260,11 +267,11 @@ export default {
 
 ## Getting data
 
-Using our Gatsby Theme you can enjoy all our hooks to get data for your pages and also get data from Gatsby.
+Using our Gatsby Theme you can use all Gatsby hooks to get data for your pages and from Gatsby.
 So, you can create isolated pages on Gatsby using gatsby pages and get data from Docz or maybe pass data
 for your Docz documents using source from gatsby.
 
-Imagine, that you have your home page inside `/pages` and you want to show all documents parsed from Docz. You can easy get this by doing:
+Imagine, that you have your home page inside `/pages` and you want to show all documents parsed from Docz. You can get this by doing:
 
 ```js
 import React from 'react'
