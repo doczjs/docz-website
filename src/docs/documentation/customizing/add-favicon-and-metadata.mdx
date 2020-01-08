@@ -22,7 +22,8 @@ The metadata is set up in a file called `wrapper.js` which lives in docz theme p
 import * as React from 'react'
 import { Helmet } from 'react-helmet-async'
 
-const Wrapper = ({ children }) => <React.Fragment>
+// The doc prop contains some metadata about the page being rendered that you can use.
+const Wrapper = ({ children, doc }) => <React.Fragment>
 	<Helmet>
 		<meta charSet="utf-8" />
 		<title>My Shadow!</title>
