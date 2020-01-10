@@ -11,13 +11,14 @@ Document settings provide a way to enrich documents with metadata used to genera
 
 They are defined at the top of the `.mdx` file, use YAML and can be used to customize your pages by passing this data to your theme.
 
-Every document has **three** main properties that can be overriden :
+Every document has **four** main properties that can be overriden :
 
 ```markdown
 ---
 name: My Document
 route: /custom-route
 menu: Documents
+hidden: false
 ---
 ```
 
@@ -27,6 +28,7 @@ menu: Documents
 > If you don't pass any here, docz will create a slug using the filepath of your file as route. e.g. /src-components-my-components/
 
 - `menu  *(optional)*` The menu within which your document is contained. It allows you to group documents into a single menu by changing this prop.
+- `hidden  *(optional)*` Hide the document from the menu. It can still be accessed with the link
 
 ## Custom properties
 
