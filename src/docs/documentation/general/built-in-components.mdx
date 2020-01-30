@@ -43,6 +43,51 @@ This can be very useful to test and develop your components in a good environmen
 
 Note that you can edit the code below the components from your browser and see the changes you make be reflected live above it!
 
+### Stateful components
+
+The `<Playground>` component is also able to let you edit stateful and functional components:
+
+```jsx
+import { Playground } from 'docz'
+
+# Counter
+
+<Playground>
+  {() => {
+    const [counter, setCounter] = React.useState(0)
+    return (
+      <>
+        <button onClick={() => setCounter(counter => counter+1)}>
+          Increase
+        </button>
+        <p>{counter}</p>
+      </>
+    )
+  }}
+</Playground>
+```
+
+If you wrap the previous render inside a separate `<Counter>` component, it becomes:
+
+```jsx
+import { Playground } from 'docz'
+import { Counter } from './Counter'
+
+# Counter
+
+<Playground>
+  {() => {
+    const [counter, setCounter] = React.useState(0)
+    return (
+      <Counter
+        value={counter}
+        onChange={() => setCounter(counter => counter+1)}
+      />
+    )
+  }}
+</Playground>
+```
+
 ## Component Props
 
 One of the most important things when documenting a component is to know which props it expects.
