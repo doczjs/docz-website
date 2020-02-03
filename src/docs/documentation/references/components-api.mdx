@@ -114,7 +114,7 @@ import MyComponent from './MyComponent'
 
 ### Descriptions
 
-You can add descriptions for your props by adding a comment on the line above the prop. 
+You can add descriptions for your props by adding a comment on the line above the prop.
 
 > Note: Description comments must be in the format `/** Description */`.
 
@@ -290,10 +290,59 @@ export function useConfig(): Config
 
 ---
 
+## `useComponentProps`
+
+Available since `v2.3.0`.
+
+Get you the type definition of a specific component defined by the query.
+Can be useful when you need data from type definition found by docgen, one use case would be if you want to filter all components relatively to a group of type.
+
+```js
+const Props = ({ props, ...others }) => {
+  const marginProps = useComponentProps({
+    componentName: 'MarginComponent',
+    fileName: 'path/to/MarginComponent.js'
+  })
+  const filteredProps = filterProps(props, marginProps)
+  return <DoczProps props={filteredProps} {...others} />
+}
+```
+
+### Type Definitions
+
+```ts
+interface Query {
+  componentName: string
+  fileName: string
+}
+
+interface PropDefinition {
+  defaultValue: string
+  description: string
+  name: string
+  parent: string
+  required: boolean
+  type: string
+}
+
+interface ComponentPropsDefinition {
+  [propName: string]: PropDefinition
+}
+
+useComponentProps(query: Query): ComponentPropsDefinition
+```
+
+> **Docgen** can only pickup the type definition of component and function, if you need type definition of a specific interface, you must create a fake component.
+
+```ts
+const MarginComponent = (_: MarginProps) => null
+```
+---
+
 ## `theme()`
 
-If you want to create your custom theme you need to use the `theme()` function. 
-It's a Higher Order Component that receives a `config` property as the first parameter 
+If you want to create your custom theme you need to use the `theme()` function.
+It's a Higher Order Component that receives a `config` property as the first parameter
 and returns a function that receives your theme component as a parameter:
 
 ```js
