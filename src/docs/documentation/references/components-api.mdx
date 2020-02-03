@@ -294,10 +294,12 @@ export function useConfig(): Config
 
 Available since `v2.3.0`.
 
-Get you the type definition of a specific component defined by the query.
-Can be useful when you need data from type definition found by docgen, one use case would be if you want to filter all components relatively to a group of type.
+Gets you the type definition of a specific component defined by the query.
+Can be useful when you need data from type definition found by docgen, one use case would be if you want to filter all components based on a group of type.
 
 ```js
+import { useComponentProps } from 'docz'
+
 const Props = ({ props, ...others }) => {
   const marginProps = useComponentProps({
     componentName: 'MarginComponent',
