@@ -32,5 +32,11 @@ export const Cards: SFC = () => (
       description="Ztopia theme created by zicodeng"
       link="https://github.com/zicodeng/docz-theme-ztopia"
     />
+    <Card
+      image="https://raw.githubusercontent.com/nejcm/docz-theme-extended/master/screenshot.jpg"
+      name="docz-theme-extended"
+      description="Extended default docz theme."
+      link="https://github.com/nejcm/docz-theme-extended"
+    />
   </Wrapper>
 )
